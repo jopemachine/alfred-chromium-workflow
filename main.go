@@ -19,6 +19,8 @@ func alfredCallback () {
 		switch commandType {
 		case "chs":
 			API.FetchSearchData(wf, query)
+		case "chh":
+			API.FetchHistory(wf, query)
 		// case "cha":
 		// case "cha":
 		}

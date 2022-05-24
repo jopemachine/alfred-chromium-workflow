@@ -25,6 +25,12 @@ var CheckError = func (err error) {
 	}
 }
 
+var EnsureDirectoryExist = func (dirPath string) {
+	if !FileExist(dirPath) {
+		os.Mkdir(dirPath, 0777)
+	}
+}
+
 var GetDBFilePath = func (chromeProfilePath string, dbFile string) string {
 	var targetPath string
 
@@ -142,25 +148,6 @@ var GetChromeBookmark = func () (bookmarkJson []map[string]interface{}) {
 	CheckError(err)
 	err = json.Unmarshal(bookmarkData, &bookmarkJson)
 	CheckError(err)
-
-	return
-}
-
-var DeleteDuplcatedItems = func (historys []map[string]string, itemLimitCount int) (result []map[string]string, deletedCount int) {
-	var previousTitle string
-
-	for idx, item := range historys {
-		if idx >= itemLimitCount {
-			break
-		}
-
-		if item["title"] == previousTitle {
-			deletedCount += 1
-		} else {
-			previousTitle = item["title"]
-			result = append(result, item)
-		}
-	}
 
 	return
 }

@@ -23,7 +23,7 @@ var InitConfig = func () {
 	os.Setenv("LOCALE", "en_US")
 	os.Setenv("CHROME_PROFILE", "Profile 3")
 	os.Setenv("EXCLUDE_DOMAINS", "")
-	os.Setenv("RESULT_LIMIT_COUNT", "5")
+	os.Setenv("RESULT_LIMIT_COUNT", "50")
 }
 
 var ImportConfig = func () {

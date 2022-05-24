@@ -690,7 +690,7 @@
 				<key>scriptfile</key>
 				<string></string>
 				<key>subtext</key>
-				<string>Search chrome queries</string>
+				<string>Search Queries</string>
 				<key>title</key>
 				<string>chs</string>
 				<key>type</key>
@@ -1166,13 +1166,13 @@
 				<key>runningsubtext</key>
 				<string>Searching...</string>
 				<key>script</key>
-				<string>./node_modules/.bin/run-node src/fetchBookmark.js '{query}'</string>
+				<string>./alfred-chromium-workflow 'chb' '{query}'</string>
 				<key>scriptargtype</key>
 				<integer>0</integer>
 				<key>scriptfile</key>
 				<string>index.js</string>
 				<key>subtext</key>
-				<string>Search chrome bookmark</string>
+				<string>Search Bookmarks</string>
 				<key>title</key>
 				<string>chb</string>
 				<key>type</key>
@@ -1519,13 +1519,13 @@
 				<key>runningsubtext</key>
 				<string>Searching...</string>
 				<key>script</key>
-				<string>./node_modules/.bin/run-node src/fetchHistory.js '{query}'</string>
+				<string>./alfred-chromium-workflow 'chh' '{query}'</string>
 				<key>scriptargtype</key>
 				<integer>0</integer>
 				<key>scriptfile</key>
 				<string>index.js</string>
 				<key>subtext</key>
-				<string>Search chrome history</string>
+				<string>Search History</string>
 				<key>title</key>
 				<string>chh</string>
 				<key>type</key>
