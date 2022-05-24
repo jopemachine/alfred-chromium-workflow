@@ -4,7 +4,6 @@ import (
 	"fmt"
 	"os"
 	"io/ioutil"
-	// "path/filepath"
 	"github.com/deanishe/awgo"
 )
 
@@ -70,7 +69,6 @@ var FetchHistory = func (wf *aw.Workflow, query string) {
 		unixTimestamp := ConvertChromeTimeToUnixTimestamp(urlLastVisitTime)
 		localeTimeStr := GetLocaleString(unixTimestamp)
 
-		// iconPath, err := filepath.Abs(fmt.Sprintf(`./cache/%s.png`, domainName))
 		iconPath := fmt.Sprintf(`cache/%s.png`, domainName)
 		CheckError(err)
 
@@ -92,5 +90,4 @@ var FetchHistory = func (wf *aw.Workflow, query string) {
 		itemCount += 1
 	}
 }
-
 

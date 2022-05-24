@@ -59,10 +59,10 @@ var FetchSearchData = func (wf *aw.Workflow, query string) {
 			Copytext(url).
 			Largetype(url)
 
-		iconPath := fmt.Sprintf(`cache/%s`, domainName)
+		iconPath := fmt.Sprintf(`cache/%s.png`, domainName)
 
 		if FileExist(iconPath) {
-			item.Icon(&aw.Icon{iconPath, aw.IconTypeFileIcon})
+			item.Icon(&aw.Icon{iconPath, ""})
 		}
 
 		previousTitle = title
