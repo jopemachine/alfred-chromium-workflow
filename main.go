@@ -28,6 +28,7 @@ func alfredCallback () {
 		case "download":
 			API.FetchDownloadHistory(wf, query)
 		case "login":
+			API.FetchLoginData(wf, query)
 		case "autofill":
 			API.FetchAutofillData(wf, query)
 		case "select-browser":
