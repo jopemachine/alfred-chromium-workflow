@@ -31,6 +31,19 @@ func alfredCallback () {
 			API.FetchLoginData(wf, query)
 		case "autofill":
 			API.FetchAutofillData(wf, query)
+
+		// Tab related features
+		case "listup-tabs":
+			API.ListOpenedTabs(query)
+			return
+		case "close-tab":
+			API.CloseTab(query)
+			return
+		case "focus-tab":
+			API.FocusTab(query)
+			return
+
+		// Setting
 		case "select-browser":
 		}
 
