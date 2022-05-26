@@ -211,6 +211,8 @@ var GetLocaleString = func (unixTime int64) string {
 
 // Used only in fetchBookmark.go of`chf` command
 var ParseUserQuery = func (userQuery string) (input string, options map[string]string) {
+	options = make(map[string]string)
+
 	for _, args := range strings.Split(userQuery, " ") {
 		reg, err := regexp.Compile("--[a-zA-Z\\d]*")
 		CheckError(err)
@@ -288,7 +290,7 @@ var InitBookmarkJsonTraversal = func () {
 		if StringContains(options.Targets, "folder") && jsonObject["type"] == "folder" {
 			result = append(result, BookmarkItem {
 				jsonObject["id"].(string),
-				jsonObject["url"].(string),
+				"",
 				jsonObject["name"].(string),
 				jsonObject["children"].([]interface{}),
 			})

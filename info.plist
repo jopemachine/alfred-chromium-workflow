@@ -1177,7 +1177,7 @@
 				<key>runningsubtext</key>
 				<string>Searching...</string>
 				<key>script</key>
-				<string>./node_modules/.bin/run-node src/fetchBookmark.js '{query}'</string>
+				<string>./alfred-chromium-workflow 'bookmark' '{query}'</string>
 				<key>scriptargtype</key>
 				<integer>0</integer>
 				<key>scriptfile</key>
