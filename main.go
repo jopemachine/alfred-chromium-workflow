@@ -14,7 +14,15 @@ func alfredCallback () {
 	flag.Parse()
 
 	if args := flag.Args(); len(args) > 0 {
-		commandType, query := args[0], args[1]
+		commandType := args[0]
+
+		var query string
+
+		if len(args) > 1 {
+			query = args[1]
+		} else {
+			query = ""
+		}
 
 		switch commandType {
 		case "search-log":
@@ -44,6 +52,9 @@ func alfredCallback () {
 			return
 
 		// Setting
+		case "cache-favicons":
+			API.CacheFavicons()
+			return
 		case "select-browser":
 		}
 

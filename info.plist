@@ -183,19 +183,6 @@
 				<false/>
 			</dict>
 		</array>
-		<key>62828E92-0B01-4AED-BCA4-6F5E19EE8205</key>
-		<array>
-			<dict>
-				<key>destinationuid</key>
-				<string>F0814CD5-3A45-4AA3-8C51-EAC6BC680BD1</string>
-				<key>modifiers</key>
-				<integer>0</integer>
-				<key>modifiersubtext</key>
-				<string></string>
-				<key>vitoclose</key>
-				<false/>
-			</dict>
-		</array>
 		<key>6801DF07-433A-4538-B76F-5B146B1D9A4F</key>
 		<array>
 			<dict>
@@ -531,50 +518,6 @@
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>argumenttype</key>
-				<integer>2</integer>
-				<key>keyword</key>
-				<string>ch &gt; init</string>
-				<key>subtext</key>
-				<string></string>
-				<key>text</key>
-				<string>Init your config file</string>
-				<key>withspace</key>
-				<false/>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.input.keyword</string>
-			<key>uid</key>
-			<string>62828E92-0B01-4AED-BCA4-6F5E19EE8205</string>
-			<key>version</key>
-			<integer>1</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>concurrently</key>
-				<false/>
-				<key>escaping</key>
-				<integer>102</integer>
-				<key>script</key>
-				<string>./node_modules/.bin/run-node src/init.js</string>
-				<key>scriptargtype</key>
-				<integer>1</integer>
-				<key>scriptfile</key>
-				<string></string>
-				<key>type</key>
-				<integer>0</integer>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.action.script</string>
-			<key>uid</key>
-			<string>F0814CD5-3A45-4AA3-8C51-EAC6BC680BD1</string>
-			<key>version</key>
-			<integer>2</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
 				<key>lastpathcomponent</key>
 				<false/>
 				<key>onlyshowifquerypopulated</key>
@@ -601,7 +544,7 @@
 				<key>escaping</key>
 				<integer>102</integer>
 				<key>script</key>
-				<string>./node_modules/.bin/run-node src/cacheFavicons.js '{query}'</string>
+				<string>./alfred-chromium-workflow 'cache-favicons'</string>
 				<key>scriptargtype</key>
 				<integer>0</integer>
 				<key>scriptfile</key>
@@ -685,7 +628,7 @@
 				<key>escaping</key>
 				<integer>68</integer>
 				<key>script</key>
-				<string>./node_modules/.bin/run-node src/clearCache.js</string>
+				<string>rm -rf ./cache</string>
 				<key>scriptargtype</key>
 				<integer>0</integer>
 				<key>scriptfile</key>
@@ -2129,13 +2072,6 @@
 			<key>ypos</key>
 			<integer>2385</integer>
 		</dict>
-		<key>62828E92-0B01-4AED-BCA4-6F5E19EE8205</key>
-		<dict>
-			<key>xpos</key>
-			<integer>740</integer>
-			<key>ypos</key>
-			<integer>10</integer>
-		</dict>
 		<key>66EA1B2E-8FEA-4CC3-8971-5C6AEB28CA68</key>
 		<dict>
 			<key>xpos</key>
@@ -2345,13 +2281,6 @@
 			<integer>490</integer>
 			<key>ypos</key>
 			<integer>265</integer>
-		</dict>
-		<key>F0814CD5-3A45-4AA3-8C51-EAC6BC680BD1</key>
-		<dict>
-			<key>xpos</key>
-			<integer>915</integer>
-			<key>ypos</key>
-			<integer>10</integer>
 		</dict>
 		<key>F39525E6-1E2E-49D6-9C11-CD37000A6A08</key>
 		<dict>
