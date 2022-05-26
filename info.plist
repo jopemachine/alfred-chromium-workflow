@@ -234,29 +234,6 @@
 				<false/>
 			</dict>
 		</array>
-		<key>7B03904B-9062-4AC5-90D6-339ED5BA0920</key>
-		<array>
-			<dict>
-				<key>destinationuid</key>
-				<string>9E0ADA30-D1F3-4FAA-8E16-DEDE8BC8BED0</string>
-				<key>modifiers</key>
-				<integer>0</integer>
-				<key>modifiersubtext</key>
-				<string></string>
-				<key>vitoclose</key>
-				<false/>
-			</dict>
-			<dict>
-				<key>destinationuid</key>
-				<string>D3D332D7-1D12-42C5-A975-0F3679BDAADD</string>
-				<key>modifiers</key>
-				<integer>1048576</integer>
-				<key>modifiersubtext</key>
-				<string></string>
-				<key>vitoclose</key>
-				<false/>
-			</dict>
-		</array>
 		<key>8AD934DC-8F4A-4CD6-A83F-BB96B7AF56AE</key>
 		<array>
 			<dict>
@@ -504,19 +481,6 @@
 				<false/>
 			</dict>
 		</array>
-		<key>FDBF2DF3-5CAA-4DD0-B970-FB2B24431BC7</key>
-		<array>
-			<dict>
-				<key>destinationuid</key>
-				<string>7B03904B-9062-4AC5-90D6-339ED5BA0920</string>
-				<key>modifiers</key>
-				<integer>0</integer>
-				<key>modifiersubtext</key>
-				<string></string>
-				<key>vitoclose</key>
-				<false/>
-			</dict>
-		</array>
 	</dict>
 	<key>createdby</key>
 	<string>jopemachine</string>
@@ -684,7 +648,7 @@
 				<key>runningsubtext</key>
 				<string>Searching...</string>
 				<key>script</key>
-				<string>./alfred-chromium-workflow 'chs' '{query}'</string>
+				<string>./alfred-chromium-workflow 'search-log' '{query}'</string>
 				<key>scriptargtype</key>
 				<integer>0</integer>
 				<key>scriptfile</key>
@@ -1040,55 +1004,6 @@
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>conditions</key>
-				<array>
-					<dict>
-						<key>inputstring</key>
-						<string></string>
-						<key>matchcasesensitive</key>
-						<false/>
-						<key>matchmode</key>
-						<integer>0</integer>
-						<key>matchstring</key>
-						<string>back</string>
-						<key>outputlabel</key>
-						<string></string>
-						<key>uid</key>
-						<string>2CF4A94F-6AA9-4907-8370-95C103009A08</string>
-					</dict>
-				</array>
-				<key>elselabel</key>
-				<string>else</string>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.utility.conditional</string>
-			<key>uid</key>
-			<string>21E308E1-BF41-4D89-9686-F5B82B9D3CC7</string>
-			<key>version</key>
-			<integer>1</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>browser</key>
-				<string></string>
-				<key>spaces</key>
-				<string></string>
-				<key>url</key>
-				<string>{query}</string>
-				<key>utf8</key>
-				<true/>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.action.openurl</string>
-			<key>uid</key>
-			<string>8C75BE8F-2B6B-4BB0-B6A8-A7E32EDE435E</string>
-			<key>version</key>
-			<integer>1</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
 				<key>action</key>
 				<integer>0</integer>
 				<key>argument</key>
@@ -1166,7 +1081,7 @@
 				<key>runningsubtext</key>
 				<string>Searching...</string>
 				<key>script</key>
-				<string>./alfred-chromium-workflow 'chb' '{query}'</string>
+				<string>./alfred-chromium-workflow 'bookmark' '{query}'</string>
 				<key>scriptargtype</key>
 				<integer>0</integer>
 				<key>scriptfile</key>
@@ -1186,6 +1101,55 @@
 			<string>B4863D8C-2137-43E7-A9EF-349A210ED693</string>
 			<key>version</key>
 			<integer>3</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>conditions</key>
+				<array>
+					<dict>
+						<key>inputstring</key>
+						<string></string>
+						<key>matchcasesensitive</key>
+						<false/>
+						<key>matchmode</key>
+						<integer>0</integer>
+						<key>matchstring</key>
+						<string>back</string>
+						<key>outputlabel</key>
+						<string></string>
+						<key>uid</key>
+						<string>2CF4A94F-6AA9-4907-8370-95C103009A08</string>
+					</dict>
+				</array>
+				<key>elselabel</key>
+				<string>else</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.utility.conditional</string>
+			<key>uid</key>
+			<string>21E308E1-BF41-4D89-9686-F5B82B9D3CC7</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>browser</key>
+				<string></string>
+				<key>spaces</key>
+				<string></string>
+				<key>url</key>
+				<string>{query}</string>
+				<key>utf8</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.openurl</string>
+			<key>uid</key>
+			<string>8C75BE8F-2B6B-4BB0-B6A8-A7E32EDE435E</string>
+			<key>version</key>
+			<integer>1</integer>
 		</dict>
 		<dict>
 			<key>config</key>
@@ -1295,7 +1259,7 @@
 				<key>runningsubtext</key>
 				<string>Searching...</string>
 				<key>script</key>
-				<string>./node_modules/.bin/run-node src/fetchBookmarkFolder.js '{query}'</string>
+				<string>./alfred-chromium-workflow 'bookmark-folder' '{query}'</string>
 				<key>scriptargtype</key>
 				<integer>0</integer>
 				<key>scriptfile</key>
@@ -1313,6 +1277,25 @@
 			<string>alfred.workflow.input.scriptfilter</string>
 			<key>uid</key>
 			<string>4313D6C1-93E7-437D-A19E-B3E7132327C3</string>
+			<key>version</key>
+			<integer>3</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>autopaste</key>
+				<false/>
+				<key>clipboardtext</key>
+				<string>{query}</string>
+				<key>ignoredynamicplaceholders</key>
+				<false/>
+				<key>transient</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.clipboard</string>
+			<key>uid</key>
+			<string>90C33A56-1AB6-42C4-A308-95D096B6B40C</string>
 			<key>version</key>
 			<integer>3</integer>
 		</dict>
@@ -1351,126 +1334,6 @@
 			<string>CD3F34CA-7E73-4CED-B206-1097865BF11D</string>
 			<key>version</key>
 			<integer>3</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>autopaste</key>
-				<false/>
-				<key>clipboardtext</key>
-				<string>{query}</string>
-				<key>ignoredynamicplaceholders</key>
-				<false/>
-				<key>transient</key>
-				<false/>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.output.clipboard</string>
-			<key>uid</key>
-			<string>90C33A56-1AB6-42C4-A308-95D096B6B40C</string>
-			<key>version</key>
-			<integer>3</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>alfredfiltersresults</key>
-				<false/>
-				<key>alfredfiltersresultsmatchmode</key>
-				<integer>0</integer>
-				<key>argumenttreatemptyqueryasnil</key>
-				<false/>
-				<key>argumenttrimmode</key>
-				<integer>0</integer>
-				<key>argumenttype</key>
-				<integer>1</integer>
-				<key>escaping</key>
-				<integer>102</integer>
-				<key>keyword</key>
-				<string>chm</string>
-				<key>queuedelaycustom</key>
-				<integer>3</integer>
-				<key>queuedelayimmediatelyinitially</key>
-				<true/>
-				<key>queuedelaymode</key>
-				<integer>0</integer>
-				<key>queuemode</key>
-				<integer>2</integer>
-				<key>runningsubtext</key>
-				<string>Searching...</string>
-				<key>script</key>
-				<string>./node_modules/.bin/run-node src/fetchPlaybackSession.js '{query}'</string>
-				<key>scriptargtype</key>
-				<integer>0</integer>
-				<key>scriptfile</key>
-				<string>index.js</string>
-				<key>subtext</key>
-				<string>Search chrome media history</string>
-				<key>title</key>
-				<string>chm</string>
-				<key>type</key>
-				<integer>0</integer>
-				<key>withspace</key>
-				<true/>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.input.scriptfilter</string>
-			<key>uid</key>
-			<string>7B03904B-9062-4AC5-90D6-339ED5BA0920</string>
-			<key>version</key>
-			<integer>3</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>action</key>
-				<integer>0</integer>
-				<key>argument</key>
-				<integer>3</integer>
-				<key>argumenttext</key>
-				<string>Media History</string>
-				<key>focusedappvariable</key>
-				<false/>
-				<key>focusedappvariablename</key>
-				<string></string>
-				<key>hotkey</key>
-				<integer>0</integer>
-				<key>hotmod</key>
-				<integer>0</integer>
-				<key>hotstring</key>
-				<string></string>
-				<key>leftcursor</key>
-				<false/>
-				<key>modsmode</key>
-				<integer>0</integer>
-				<key>relatedAppsMode</key>
-				<integer>0</integer>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.trigger.hotkey</string>
-			<key>uid</key>
-			<string>FDBF2DF3-5CAA-4DD0-B970-FB2B24431BC7</string>
-			<key>version</key>
-			<integer>2</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>browser</key>
-				<string></string>
-				<key>spaces</key>
-				<string></string>
-				<key>url</key>
-				<string>{query}</string>
-				<key>utf8</key>
-				<true/>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.action.openurl</string>
-			<key>uid</key>
-			<string>9E0ADA30-D1F3-4FAA-8E16-DEDE8BC8BED0</string>
-			<key>version</key>
-			<integer>1</integer>
 		</dict>
 		<dict>
 			<key>config</key>
@@ -1519,7 +1382,7 @@
 				<key>runningsubtext</key>
 				<string>Searching...</string>
 				<key>script</key>
-				<string>./alfred-chromium-workflow 'chh' '{query}'</string>
+				<string>./alfred-chromium-workflow 'visit-history' '{query}'</string>
 				<key>scriptargtype</key>
 				<integer>0</integer>
 				<key>scriptfile</key>
@@ -1572,44 +1435,6 @@
 			<string>4F9A5738-F86E-4275-81C9-16CFC2E465D2</string>
 			<key>version</key>
 			<integer>2</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>autopaste</key>
-				<false/>
-				<key>clipboardtext</key>
-				<string>{query}</string>
-				<key>ignoredynamicplaceholders</key>
-				<false/>
-				<key>transient</key>
-				<false/>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.output.clipboard</string>
-			<key>uid</key>
-			<string>D3D332D7-1D12-42C5-A975-0F3679BDAADD</string>
-			<key>version</key>
-			<integer>3</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>autopaste</key>
-				<false/>
-				<key>clipboardtext</key>
-				<string>{query}</string>
-				<key>ignoredynamicplaceholders</key>
-				<false/>
-				<key>transient</key>
-				<false/>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.output.clipboard</string>
-			<key>uid</key>
-			<string>6978A8C6-7519-4D6C-B9F1-2557598BB599</string>
-			<key>version</key>
-			<integer>3</integer>
 		</dict>
 		<dict>
 			<key>config</key>
@@ -1679,7 +1504,7 @@
 				<key>runningsubtext</key>
 				<string>Searching...</string>
 				<key>script</key>
-				<string>./node_modules/.bin/run-node src/fetchAutofillData.js '{query}'</string>
+				<string>./alfred-chromium-workflow 'autofill' '{query}'</string>
 				<key>scriptargtype</key>
 				<integer>0</integer>
 				<key>scriptfile</key>
@@ -1732,6 +1557,25 @@
 			<string>6801DF07-433A-4538-B76F-5B146B1D9A4F</string>
 			<key>version</key>
 			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>autopaste</key>
+				<false/>
+				<key>clipboardtext</key>
+				<string>{query}</string>
+				<key>ignoredynamicplaceholders</key>
+				<false/>
+				<key>transient</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.clipboard</string>
+			<key>uid</key>
+			<string>6978A8C6-7519-4D6C-B9F1-2557598BB599</string>
+			<key>version</key>
+			<integer>3</integer>
 		</dict>
 		<dict>
 			<key>config</key>
@@ -1813,7 +1657,7 @@
 				<key>runningsubtext</key>
 				<string>Searching...</string>
 				<key>script</key>
-				<string>./node_modules/.bin/run-node src/fetchDownloadHistory.js '{query}'</string>
+				<string>./alfred-chromium-workflow 'download' '{query}'</string>
 				<key>scriptargtype</key>
 				<integer>0</integer>
 				<key>scriptfile</key>
@@ -1917,7 +1761,7 @@
 				<key>runningsubtext</key>
 				<string>Searching...</string>
 				<key>script</key>
-				<string>./node_modules/.bin/run-node src/fetchLoginData.js '{query}' --type=userId</string>
+				<string>./alfred-chromium-workflow 'login' '{query}'</string>
 				<key>scriptargtype</key>
 				<integer>0</integer>
 				<key>scriptfile</key>
@@ -1998,9 +1842,9 @@
 		<key>1199499D-34EF-4323-91D4-F09D5FEF3C6C</key>
 		<dict>
 			<key>xpos</key>
-			<integer>975</integer>
+			<integer>890</integer>
 			<key>ypos</key>
-			<integer>1070</integer>
+			<integer>965</integer>
 		</dict>
 		<key>181306F1-AB65-43C2-BC13-DA02A2F31A94</key>
 		<dict>
@@ -2012,9 +1856,9 @@
 		<key>21E308E1-BF41-4D89-9686-F5B82B9D3CC7</key>
 		<dict>
 			<key>xpos</key>
-			<integer>1370</integer>
+			<integer>1300</integer>
 			<key>ypos</key>
-			<integer>565</integer>
+			<integer>670</integer>
 		</dict>
 		<key>2CD9F1A4-FFBF-43C0-9AED-624340EEB5AA</key>
 		<dict>
@@ -2033,9 +1877,9 @@
 		<key>4313D6C1-93E7-437D-A19E-B3E7132327C3</key>
 		<dict>
 			<key>xpos</key>
-			<integer>980</integer>
+			<integer>915</integer>
 			<key>ypos</key>
-			<integer>645</integer>
+			<integer>755</integer>
 		</dict>
 		<key>46BA0193-61A8-42A6-9B37-E0E3C7633217</key>
 		<dict>
@@ -2075,16 +1919,16 @@
 		<key>5420969F-2679-44EB-8914-2EBC2BE6E6DE</key>
 		<dict>
 			<key>xpos</key>
-			<integer>1135</integer>
+			<integer>1065</integer>
 			<key>ypos</key>
-			<integer>675</integer>
+			<integer>780</integer>
 		</dict>
 		<key>5C9F9B8E-B283-473B-80BB-5788EFEAD8A6</key>
 		<dict>
 			<key>xpos</key>
-			<integer>1460</integer>
+			<integer>1390</integer>
 			<key>ypos</key>
-			<integer>495</integer>
+			<integer>600</integer>
 		</dict>
 		<key>5CEB3BE8-70FC-4703-A208-FCF12E192A8D</key>
 		<dict>
@@ -2110,9 +1954,9 @@
 		<key>6801DF07-433A-4538-B76F-5B146B1D9A4F</key>
 		<dict>
 			<key>xpos</key>
-			<integer>815</integer>
+			<integer>730</integer>
 			<key>ypos</key>
-			<integer>1070</integer>
+			<integer>965</integer>
 		</dict>
 		<key>6978A8C6-7519-4D6C-B9F1-2557598BB599</key>
 		<dict>
@@ -2138,9 +1982,9 @@
 		<key>72EEE61D-7F19-4683-8A14-89B65FA07472</key>
 		<dict>
 			<key>xpos</key>
-			<integer>1300</integer>
+			<integer>1215</integer>
 			<key>ypos</key>
-			<integer>1065</integer>
+			<integer>960</integer>
 		</dict>
 		<key>7737B514-AB8D-488E-B6FE-54227149C557</key>
 		<dict>
@@ -2152,16 +1996,9 @@
 		<key>79ECD8F5-D9A9-4894-A00B-34CEA463ECDC</key>
 		<dict>
 			<key>xpos</key>
-			<integer>1145</integer>
+			<integer>1060</integer>
 			<key>ypos</key>
-			<integer>1195</integer>
-		</dict>
-		<key>7B03904B-9062-4AC5-90D6-339ED5BA0920</key>
-		<dict>
-			<key>xpos</key>
-			<integer>980</integer>
-			<key>ypos</key>
-			<integer>790</integer>
+			<integer>1090</integer>
 		</dict>
 		<key>8AD934DC-8F4A-4CD6-A83F-BB96B7AF56AE</key>
 		<dict>
@@ -2180,9 +2017,9 @@
 		<key>8C75BE8F-2B6B-4BB0-B6A8-A7E32EDE435E</key>
 		<dict>
 			<key>xpos</key>
-			<integer>1460</integer>
+			<integer>1390</integer>
 			<key>ypos</key>
-			<integer>610</integer>
+			<integer>715</integer>
 		</dict>
 		<key>8E263B0F-E587-4B54-985D-F186C0A4C450</key>
 		<dict>
@@ -2233,26 +2070,19 @@
 			<key>ypos</key>
 			<integer>1355</integer>
 		</dict>
-		<key>9E0ADA30-D1F3-4FAA-8E16-DEDE8BC8BED0</key>
-		<dict>
-			<key>xpos</key>
-			<integer>1145</integer>
-			<key>ypos</key>
-			<integer>790</integer>
-		</dict>
 		<key>A0DF88BD-B7DC-46FA-8C18-795233355D02</key>
 		<dict>
 			<key>xpos</key>
-			<integer>825</integer>
+			<integer>755</integer>
 			<key>ypos</key>
-			<integer>645</integer>
+			<integer>750</integer>
 		</dict>
 		<key>A2A97BC2-5E38-4F00-8D0E-1EBC7BA1A3F8</key>
 		<dict>
 			<key>xpos</key>
-			<integer>1205</integer>
+			<integer>1135</integer>
 			<key>ypos</key>
-			<integer>645</integer>
+			<integer>750</integer>
 		</dict>
 		<key>B0212D4D-66F3-4A97-A1DD-E484AF359CC0</key>
 		<dict>
@@ -2285,16 +2115,9 @@
 		<key>CD3F34CA-7E73-4CED-B206-1097865BF11D</key>
 		<dict>
 			<key>xpos</key>
-			<integer>1465</integer>
+			<integer>1395</integer>
 			<key>ypos</key>
-			<integer>725</integer>
-		</dict>
-		<key>D3D332D7-1D12-42C5-A975-0F3679BDAADD</key>
-		<dict>
-			<key>xpos</key>
-			<integer>1145</integer>
-			<key>ypos</key>
-			<integer>925</integer>
+			<integer>830</integer>
 		</dict>
 		<key>D4E5EA55-F7D2-4F82-B4CF-9AD536668877</key>
 		<dict>
@@ -2306,9 +2129,9 @@
 		<key>D876220A-7127-42E0-A7FF-158840C20BB4</key>
 		<dict>
 			<key>xpos</key>
-			<integer>1145</integer>
+			<integer>1060</integer>
 			<key>ypos</key>
-			<integer>1065</integer>
+			<integer>960</integer>
 		</dict>
 		<key>DBEF9EBC-450B-40A2-978F-D8774A2B6AD6</key>
 		<dict>
@@ -2358,13 +2181,6 @@
 			<integer>10</integer>
 			<key>ypos</key>
 			<integer>1195</integer>
-		</dict>
-		<key>FDBF2DF3-5CAA-4DD0-B970-FB2B24431BC7</key>
-		<dict>
-			<key>xpos</key>
-			<integer>825</integer>
-			<key>ypos</key>
-			<integer>790</integer>
 		</dict>
 	</dict>
 	<key>webaddress</key>

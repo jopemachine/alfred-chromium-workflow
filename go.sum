@@ -32,6 +32,8 @@ go.deanishe.net/env v0.5.1/go.mod h1:ihEYfDm0K0hq3f5ACTCQDrMTWxH9fTiA1lh1i0aMqm0
 go.deanishe.net/fuzzy v1.0.0 h1:3Qp6PCX0DLb9z03b5OHwAGsbRSkgJpSLncsiDdXDt4Y=
 go.deanishe.net/fuzzy v1.0.0/go.mod h1:2yEEMfG7jWgT1s5EO0TteVWmx2MXFBRMr5cMm84bQNY=
 golang.org/x/crypto v0.0.0-20190308221718-c2843e01d9a2/go.mod h1:djNgcEr1/C05ACkg1iLfiJU5Ep61QUkGW8qpdssI0+w=
+golang.org/x/exp v0.0.0-20220518171630-0b5c67f07fdf h1:oXVg4h2qJDd9htKxb5SCpFBHLipW6hXmL3qpUixS2jw=
+golang.org/x/exp v0.0.0-20220518171630-0b5c67f07fdf/go.mod h1:yh0Ynu2b5ZUe3MQfp2nM0ecK7wsgouWTDN0FNeJuIys=
 golang.org/x/net v0.0.0-20200202094626-16171245cfb2/go.mod h1:z5CRVTTTmAJ677TzLLGU+0bjPO0LkuOLi4/5GtJWs/s=
 golang.org/x/net v0.0.0-20200324143707-d3edc9973b7e h1:3G+cUijn7XD+S4eJFddp53Pv7+slrESplyjG25HgL+k=
 golang.org/x/net v0.0.0-20200324143707-d3edc9973b7e/go.mod h1:qpuaurCH72eLCgpAm/N6yyVIVM9cpaDIP3A8BGJEC5A=

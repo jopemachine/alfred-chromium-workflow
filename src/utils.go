@@ -11,9 +11,10 @@ import (
 	"math"
 	"errors"
 	"time"
+	"regexp"
 	"encoding/json"
-	"github.com/klauspost/lctime"
 
+	"github.com/klauspost/lctime"
 	_ "github.com/mattn/go-sqlite3"
 	psl "github.com/weppos/publicsuffix-go/publicsuffix"
 	// "github.com/deanishe/awgo"
@@ -141,7 +142,8 @@ var GetLoginDataDB = func () (*sql.DB) {
 	return db
 }
 
-var GetChromeBookmark = func () (bookmarkJson []map[string]interface{}) {
+var GetChromeBookmark = func () map[string]interface{} {
+	var bookmarkJson map[string]interface{}
 	var bookmarkFilePath = GetDBFilePath(Conf.ChromeProfile, "Bookmarks")
 
 	bookmarkData, err := ioutil.ReadFile(bookmarkFilePath)
@@ -149,7 +151,7 @@ var GetChromeBookmark = func () (bookmarkJson []map[string]interface{}) {
 	err = json.Unmarshal(bookmarkData, &bookmarkJson)
 	CheckError(err)
 
-	return
+	return bookmarkJson["roots"].(map[string]interface{})
 }
 
 var ExtractDomainName = func (url string) (domainName string) {
@@ -162,6 +164,10 @@ var ExtractDomainName = func (url string) (domainName string) {
 
 	hostname = strings.Split(hostname, ":")[0]
 	hostname = strings.Split(hostname, "?")[0]
+
+	if !strings.HasPrefix(url, "http") && !strings.HasPrefix(url, "https") {
+		return hostname
+	}
 
 	domainName, err := psl.Domain(hostname)
 	CheckError(err)
@@ -182,4 +188,133 @@ var FileExist = func (filepath string) bool {
 
 var GetLocaleString = func (unixTime int64) string {
 	return lctime.Strftime("%c", time.Unix(unixTime, 0))
+}
+
+// Used only in fetchBookmark.go of`chf` command
+var ParseUserQuery = func (userQuery string) (input string, options map[string]string) {
+	for _, args := range strings.Split(userQuery, " ") {
+		reg, err := regexp.Compile("--[a-zA-Z\\d]*")
+		CheckError(err)
+		argList := strings.Split(args, " ")
+
+		for _, arg := range argList {
+			if reg.MatchString(arg) {
+				key := strings.Split(strings.Split(arg, "--")[1], "=")[0]
+				value := strings.Split(arg, "=")[1]
+				options[key] = value
+			} else {
+				input += (arg + " ")
+			}
+		}
+	}
+
+	if strings.HasSuffix(input, " ") {
+		input = strings.Trim(input, " ")
+	}
+
+	return
+}
+
+// TODO: Replace below function with stdlib's one when it is merged
+// Ref: https://stackoverflow.com/questions/10485743/contains-method-for-a-slice
+func StringContains(slice []string, item string) bool {
+	set := make(map[string]struct{}, len(slice))
+	for _, s := range slice {
+		set[s] = struct{}{}
+	}
+
+	_, ok := set[item]
+	return ok
+}
+
+type BookmarkItem struct {
+	Id string `json:"id"`
+	Url string `json:"url,omitempty"`
+	Name string `json:"name,omitempty"`
+	Children []interface{} `json:"children,omitempty"`
+}
+
+type TraverseBookmarkJsonOption struct {
+	Targets []string
+	Depth int
+}
+
+// InitBookmarkJsonTraversal should be called first before calling this function
+var TraverseBookmarkJSONObject func (item map[string]interface{}, options TraverseBookmarkJsonOption) []BookmarkItem
+var TraverseBookmarkArray func (item []interface{}, options TraverseBookmarkJsonOption) []BookmarkItem
+
+var InitBookmarkJsonTraversal = func () {
+	TraverseBookmarkJSONObject  = func (jsonObject map[string]interface{}, options TraverseBookmarkJsonOption) (result []BookmarkItem) {
+		// Base case
+		if options.Depth <= -1 {
+			return []BookmarkItem{}
+		}
+
+		// Base case
+		if jsonObject["type"] == "url" {
+			if StringContains(options.Targets, "url") {
+				return []BookmarkItem {
+					{
+						jsonObject["id"].(string),
+						jsonObject["url"].(string),
+						jsonObject["name"].(string),
+						nil,
+					},
+				}
+			}
+
+			return []BookmarkItem{}
+		}
+
+		if StringContains(options.Targets, "folder") && jsonObject["type"] == "folder" {
+			result = append(result, BookmarkItem {
+				jsonObject["id"].(string),
+				jsonObject["url"].(string),
+				jsonObject["name"].(string),
+				jsonObject["children"].([]interface{}),
+			})
+
+			childResult := TraverseBookmarkArray (jsonObject["children"].([]interface{}), options)
+			result = append(result, childResult...)
+			return result
+		}
+
+		target := jsonObject
+
+		for _, child := range target {
+			switch child.(type) {
+				case map[string]interface{}:
+					childResult := TraverseBookmarkJSONObject (child.(map[string]interface{}), options)
+					result = append(result, childResult...)
+				case []interface{}:
+					childResult:= TraverseBookmarkArray (child.([]interface{}), options)
+					result = append(result, childResult...)
+			}
+		}
+
+		return result
+	}
+
+	TraverseBookmarkArray  = func (item []interface{}, options TraverseBookmarkJsonOption) []BookmarkItem {
+		// Base case
+		if options.Depth <= -1 {
+			return []BookmarkItem{}
+		}
+
+		target := item
+		result := []BookmarkItem{}
+
+		for _, child := range target {
+			switch child.(type) {
+				case map[string]interface{}:
+					childResult := TraverseBookmarkJSONObject (child.(map[string]interface{}), options)
+					result = append(result, childResult...)
+				case []interface{}:
+					childResult:= TraverseBookmarkArray (child.([]interface{}), options)
+					result = append(result, childResult...)
+			}
+		}
+
+		return result
+	}
 }

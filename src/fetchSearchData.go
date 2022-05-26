@@ -28,9 +28,10 @@ var FetchSearchData = func (wf *aw.Workflow, query string) {
 	rows, err := historyDB.Query(dbQuery)
 	CheckError(err)
 
-	var title string
+	var urlTitle string
 	var url string
-	var lastVisitTime int64
+	var urlLastVisitTime int64
+
 	var itemCount = 0
 	var previousTitle = ""
 
@@ -39,18 +40,18 @@ var FetchSearchData = func (wf *aw.Workflow, query string) {
 			break
 		}
 
-		err := rows.Scan(&url, &lastVisitTime, &title)
+		err := rows.Scan(&url, &urlLastVisitTime, &urlTitle)
 		CheckError(err)
 
-		if previousTitle == title {
+		if previousTitle == urlTitle {
 			continue
 		}
 
 		domainName := ExtractDomainName(url)
-		unixTimestamp := ConvertChromeTimeToUnixTimestamp(lastVisitTime)
+		unixTimestamp := ConvertChromeTimeToUnixTimestamp(urlLastVisitTime)
 		localeTimeStr := GetLocaleString(unixTimestamp)
 
-		item := wf.NewItem(title).
+		item := wf.NewItem(urlTitle).
 			Subtitle(fmt.Sprintf(`From '%s', In '%s'`, domainName, localeTimeStr)).
 			Valid(true).
 			Quicklook(url).
@@ -59,13 +60,13 @@ var FetchSearchData = func (wf *aw.Workflow, query string) {
 			Copytext(url).
 			Largetype(url)
 
-		iconPath := fmt.Sprintf(`cache/%s.png`, domainName)
+		iconPath := fmt.Sprintf(`cache/%s`, domainName)
 
 		if FileExist(iconPath) {
 			item.Icon(&aw.Icon{iconPath, ""})
 		}
 
-		previousTitle = title
+		previousTitle = urlTitle
 		itemCount += 1
 	}
 }

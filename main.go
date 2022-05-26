@@ -17,12 +17,17 @@ func alfredCallback () {
 		commandType, query := args[0], args[1]
 
 		switch commandType {
-		case "chs":
+		case "search-log":
 			API.FetchSearchData(wf, query)
-		case "chh":
+		case "visit-history":
 			API.FetchHistory(wf, query)
-		// case "cha":
-		// case "cha":
+		case "bookmark":
+			API.FetchBookmark(wf, query)
+		case "bookmark-folder":
+		case "download":
+		case "login":
+		case "autofill":
+		case "select-browser":
 		}
 
 		wf.SendFeedback()
