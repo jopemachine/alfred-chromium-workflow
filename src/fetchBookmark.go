@@ -33,10 +33,10 @@ var FetchBookmark = func (wf *aw.Workflow, query string) {
 
 	EnsureDirectoryExist("./cache")
 
-	var url string
 	visitFrequency := make(map[string]int)
 
 	for visitHistories.Next() {
+		var url string
 		err := visitHistories.Scan(&url)
 		CheckError(err)
 
@@ -69,12 +69,12 @@ var FetchBookmark = func (wf *aw.Workflow, query string) {
 		CheckError(err)
 
 		item := wf.NewItem(bookmark.Name).
-			Subtitle(bookmark.Url).
 			Valid(true).
-			Quicklook(url).
-			Arg(url).
-			Copytext(url).
-			Largetype(url)
+			Subtitle(bookmark.Url).
+			Quicklook(bookmark.Url).
+			Arg(bookmark.Url).
+			Copytext(bookmark.Url).
+			Largetype(bookmark.Url)
 
 		if FileExist(iconPath) {
 			item.Icon(&aw.Icon{iconPath, ""})
