@@ -2,6 +2,8 @@ package src
 
 import (
 	"fmt"
+	"sort"
+	"strings"
 
 	"github.com/deanishe/awgo"
 )
@@ -11,6 +13,13 @@ var FetchBookmarkFolder = func (wf *aw.Workflow, query string) {
 	bookmarkRoot := GetChromeBookmark()
 
 	bookmarkFolders := TraverseBookmarkJSONObject(bookmarkRoot, TraverseBookmarkJsonOption{ Targets: []string{"folder"}, Depth: 99 })
+	sort.Slice(bookmarkFolders, func (i, j int) bool {
+		if strings.Compare(bookmarkFolders[i].Name, bookmarkFolders[j].Name) == 1 {
+			return true
+		} else {
+			return false
+		}
+	})
 
 	for _, folder := range bookmarkFolders {
 		folderChildLen := 0
@@ -30,5 +39,7 @@ var FetchBookmarkFolder = func (wf *aw.Workflow, query string) {
 			Var("folder", fmt.Sprintf(`--%s=%s`, "folderId", folder.Id))
 	}
 
-	wf.Filter(query)
+	if query != "" {
+		wf.Filter(query)
+	}
 }

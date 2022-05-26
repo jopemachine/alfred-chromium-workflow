@@ -40,6 +40,4 @@ var FetchAutofillData = func (wf *aw.Workflow, query string) {
 			Largetype(autofillValue).
 			Icon(&aw.Icon{"assets/info.png", ""})
 	}
-
-	wf.Filter(query)
 }
