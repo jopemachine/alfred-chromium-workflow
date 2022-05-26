@@ -13,6 +13,7 @@ import (
 	"time"
 	"regexp"
 	"encoding/json"
+	"net/url"
 
 	"github.com/klauspost/lctime"
 	_ "github.com/mattn/go-sqlite3"
@@ -154,7 +155,27 @@ var GetChromeBookmark = func () map[string]interface{} {
 	return bookmarkJson["roots"].(map[string]interface{})
 }
 
+// Ref: https://golangcode.com/how-to-check-if-a-string-is-a-url/
+// isValidUrl tests a string to determine if it is a well-structured url or not.
+func isValidUrl(toTest string) bool {
+	_, err := url.ParseRequestURI(toTest)
+	if err != nil {
+		return false
+	}
+
+	u, err := url.Parse(toTest)
+	if err != nil || u.Scheme == "" || u.Host == "" {
+		return false
+	}
+
+	return true
+}
+
 var ExtractDomainName = func (url string) (domainName string) {
+	if !isValidUrl(url) {
+		return "unknown"
+	}
+
 	var hostname string
 	if strings.Contains(url, "//") {
 		hostname = strings.Split(url, "/")[2]
@@ -165,12 +186,10 @@ var ExtractDomainName = func (url string) (domainName string) {
 	hostname = strings.Split(hostname, ":")[0]
 	hostname = strings.Split(hostname, "?")[0]
 
-	if !strings.HasPrefix(url, "http") && !strings.HasPrefix(url, "https") {
+	domainName, err := psl.Domain(hostname)
+	if err != nil {
 		return hostname
 	}
-
-	domainName, err := psl.Domain(hostname)
-	CheckError(err)
 
 	return domainName
 }

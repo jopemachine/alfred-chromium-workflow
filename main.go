@@ -25,6 +25,7 @@ func alfredCallback () {
 			API.FetchBookmark(wf, query)
 		case "bookmark-folder":
 		case "download":
+			API.FetchDownloadHistory(wf, query)
 		case "login":
 		case "autofill":
 		case "select-browser":
