@@ -56,14 +56,20 @@ var GetDBFilePath = func (chromeProfilePath string, dbFile string) string {
 }
 
 var HandleUserQuery = func (query string) (titleQuery string, domainQuery string, isDomainSearch bool, artistQuery string, isArtistSearch bool) {
+	titleQuery = ""
+	domainQuery = ""
+	artistQuery = ""
+	isDomainSearch = false
+	isArtistSearch = false
+
 	if strings.Contains(query, "#") || strings.Contains(query, "@") {
 		var words = strings.Split(query, " ")
 
 		for _, word := range words {
-			if strings.HasPrefix(word, "#") {
+			if strings.HasPrefix(word, "#") && len(word) > 1 {
 				isDomainSearch = true
 				domainQuery = word[1: len(word) - 1]
-			} else if strings.HasPrefix(word, "@") {
+			} else if strings.HasPrefix(word, "@") && len(word) > 1 {
 				isArtistSearch = true
 				artistQuery = word[1: len(word) - 1]
 			} else {
