@@ -52,5 +52,7 @@ var FetchDownloadHistory = func (wf *aw.Workflow, query string) {
 		}
 	}
 
-	wf.Filter(query)
+	if query != "" {
+		wf.Filter(query)
+	}
 }

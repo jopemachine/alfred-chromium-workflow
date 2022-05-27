@@ -53,8 +53,6 @@ var FetchHistory = func (wf *aw.Workflow, query string) {
 			Valid(true).
 			Quicklook(url).
 			Arg(url).
-			Var("type", "url").
-			Var("url", url).
 			Copytext(url).
 			Largetype(url)
 

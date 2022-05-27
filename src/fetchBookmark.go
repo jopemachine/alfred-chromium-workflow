@@ -81,5 +81,7 @@ var FetchBookmark = func (wf *aw.Workflow, query string) {
 		}
 	}
 
-	wf.Filter(input)
+	if input != "" {
+		wf.Filter(input)
+	}
 }

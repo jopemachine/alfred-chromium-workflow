@@ -35,7 +35,7 @@ var FetchLoginData = func (wf *aw.Workflow, query string) {
 		iconPath := fmt.Sprintf(`cache/%s`, domainName)
 
 		item := wf.NewItem(userNameValue).
-		Subtitle(fmt.Sprintf(`Group: %s, Used by "%s"`, userNameElement, domainName)).
+			Subtitle(fmt.Sprintf(`Group: %s, Used by "%s"`, userNameElement, domainName)).
 			Valid(true).
 			Copytext(userNameValue).
 			Largetype(userNameValue)
