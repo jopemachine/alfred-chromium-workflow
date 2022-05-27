@@ -38,7 +38,9 @@ func alfredCallback() {
 		case "bookmark-folder":
 			API.FetchBookmarkFolder(wf, query)
 		case "download":
-			API.FetchDownloadHistory(wf, query)
+			API.FetchDownloadHistory(wf, query, false)
+		case "download-show-only-existing":
+			API.FetchDownloadHistory(wf, query, true)
 		case "login":
 			API.FetchLoginData(wf, query)
 		case "autofill":

@@ -72,6 +72,10 @@ Retrieve download histories.
 
 ![](./imgs/chd.png)
 
+### chdc
+
+Retrieve download histories but only shows existing files.
+
 ### chs
 
 Retrieve your search query based on visit histories.
@@ -103,6 +107,8 @@ Search opened tabs and focus, close them.
 ### ch browser
 
 Switch browsers with ease.
+
+This command also requires you to change the browser profile.
 
 ### ch profile
 
@@ -164,13 +170,19 @@ Contributions of any kind are welcome.
 
 ### Add supporting new browser
 
-To add new browser, follow below guide.
+This workflow needs your help to support as many browsers as possible.
 
-1. Check the browser is based on chromium
+To add new browser, follow below guideline.
+
+1. Check the browser is based on Chromium
 
 2. Add new path to `GetDBFilePath` in `src/utils.go`
 
-3. Add the browser's proper Applicatino Name to `getApplicationName` in `src/tabManager.go`
+3. Add the browser's proper Application Name to `getApplicationName` in `src/tabManager.go`
+
+4. Add proper Open URL block of `info.plist` using Alfred
+
+5. Add new browser's item `SelectBrowser` in `src/config.go`
 
 ## Related
 
