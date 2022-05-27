@@ -170,7 +170,7 @@ You can change this value through `ch browser` with ease.
 
 ### ResultCountLimit
 
-Displays as many search results.
+Max number of items to show in Alfred.
 
 ## 🌟 Contribution
 
