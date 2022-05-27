@@ -379,6 +379,19 @@
 				<false/>
 			</dict>
 		</array>
+		<key>94819C43-D1D1-4034-89A5-6CCB613C5D3E</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>CEB1EC8F-32FF-4FAE-A485-766F0A685D3F</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
 		<key>95839E47-2063-4DE6-8D42-FB263B51ECE1</key>
 		<array>
 			<dict>
@@ -422,7 +435,7 @@
 		<array>
 			<dict>
 				<key>destinationuid</key>
-				<string>CEB1EC8F-32FF-4FAE-A485-766F0A685D3F</string>
+				<string>94819C43-D1D1-4034-89A5-6CCB613C5D3E</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -2294,6 +2307,23 @@
 		<dict>
 			<key>config</key>
 			<dict>
+				<key>argument</key>
+				<string></string>
+				<key>passthroughargument</key>
+				<false/>
+				<key>variables</key>
+				<dict/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.utility.argument</string>
+			<key>uid</key>
+			<string>94819C43-D1D1-4034-89A5-6CCB613C5D3E</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
 				<key>lastpathcomponent</key>
 				<false/>
 				<key>onlyshowifquerypopulated</key>
@@ -2618,7 +2648,7 @@
 		<key>3E5E0BC7-301B-4E04-84C3-9218D3D94C4C</key>
 		<dict>
 			<key>xpos</key>
-			<integer>860</integer>
+			<integer>930</integer>
 			<key>ypos</key>
 			<integer>2125</integer>
 		</dict>
@@ -2790,6 +2820,13 @@
 			<key>ypos</key>
 			<integer>220</integer>
 		</dict>
+		<key>94819C43-D1D1-4034-89A5-6CCB613C5D3E</key>
+		<dict>
+			<key>xpos</key>
+			<integer>520</integer>
+			<key>ypos</key>
+			<integer>2155</integer>
+		</dict>
 		<key>95839E47-2063-4DE6-8D42-FB263B51ECE1</key>
 		<dict>
 			<key>xpos</key>
@@ -2898,7 +2935,7 @@
 		<key>CEB1EC8F-32FF-4FAE-A485-766F0A685D3F</key>
 		<dict>
 			<key>xpos</key>
-			<integer>525</integer>
+			<integer>595</integer>
 			<key>ypos</key>
 			<integer>2125</integer>
 		</dict>
@@ -2975,7 +3012,7 @@
 		<key>F55224DE-2D8D-44E0-92AD-A34CDC9FD260</key>
 		<dict>
 			<key>xpos</key>
-			<integer>700</integer>
+			<integer>770</integer>
 			<key>ypos</key>
 			<integer>2125</integer>
 		</dict>
