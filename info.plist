@@ -772,6 +772,25 @@
 		<dict>
 			<key>config</key>
 			<dict>
+				<key>browser</key>
+				<string>com.google.Chrome</string>
+				<key>spaces</key>
+				<string></string>
+				<key>url</key>
+				<string>{query}</string>
+				<key>utf8</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.openurl</string>
+			<key>uid</key>
+			<string>D317DC7C-A9D7-4A26-BBC6-95DA9A05750E</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
 				<key>concurrently</key>
 				<false/>
 				<key>escaping</key>
@@ -791,25 +810,6 @@
 			<string>75715DEA-0806-4F08-9FCF-FEB601A20D6B</string>
 			<key>version</key>
 			<integer>2</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>browser</key>
-				<string>com.google.Chrome</string>
-				<key>spaces</key>
-				<string></string>
-				<key>url</key>
-				<string>{query}</string>
-				<key>utf8</key>
-				<true/>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.action.openurl</string>
-			<key>uid</key>
-			<string>D317DC7C-A9D7-4A26-BBC6-95DA9A05750E</string>
-			<key>version</key>
-			<integer>1</integer>
 		</dict>
 		<dict>
 			<key>config</key>
@@ -1067,6 +1067,25 @@
 		<dict>
 			<key>config</key>
 			<dict>
+				<key>browser</key>
+				<string>com.microsoft.edgemac</string>
+				<key>spaces</key>
+				<string></string>
+				<key>url</key>
+				<string>{query}</string>
+				<key>utf8</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.openurl</string>
+			<key>uid</key>
+			<string>83172FAA-9D67-426D-8467-B9092DC4873E</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
 				<key>alfredfiltersresults</key>
 				<false/>
 				<key>alfredfiltersresultsmatchmode</key>
@@ -1192,25 +1211,6 @@
 			<string>4313D6C1-93E7-437D-A19E-B3E7132327C3</string>
 			<key>version</key>
 			<integer>3</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>browser</key>
-				<string>com.microsoft.edgemac</string>
-				<key>spaces</key>
-				<string></string>
-				<key>url</key>
-				<string>{query}</string>
-				<key>utf8</key>
-				<true/>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.action.openurl</string>
-			<key>uid</key>
-			<string>83172FAA-9D67-426D-8467-B9092DC4873E</string>
-			<key>version</key>
-			<integer>1</integer>
 		</dict>
 		<dict>
 			<key>config</key>
@@ -1531,25 +1531,6 @@
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>autopaste</key>
-				<false/>
-				<key>clipboardtext</key>
-				<string>{query}</string>
-				<key>ignoredynamicplaceholders</key>
-				<false/>
-				<key>transient</key>
-				<false/>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.output.clipboard</string>
-			<key>uid</key>
-			<string>90C33A56-1AB6-42C4-A308-95D096B6B40C</string>
-			<key>version</key>
-			<integer>3</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
 				<key>browser</key>
 				<string></string>
 				<key>spaces</key>
@@ -1565,6 +1546,25 @@
 			<string>4DB58061-0B2D-4534-AEE2-1B860EF71EC5</string>
 			<key>version</key>
 			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>autopaste</key>
+				<false/>
+				<key>clipboardtext</key>
+				<string>{query}</string>
+				<key>ignoredynamicplaceholders</key>
+				<false/>
+				<key>transient</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.clipboard</string>
+			<key>uid</key>
+			<string>90C33A56-1AB6-42C4-A308-95D096B6B40C</string>
+			<key>version</key>
+			<integer>3</integer>
 		</dict>
 		<dict>
 			<key>config</key>
@@ -2419,7 +2419,7 @@
 				<key>lastpathcomponent</key>
 				<false/>
 				<key>onlyshowifquerypopulated</key>
-				<true/>
+				<false/>
 				<key>removeextension</key>
 				<false/>
 				<key>text</key>
@@ -2591,16 +2591,16 @@
 		<key>04B6DA26-87FA-4694-B286-4ECEDDE45220</key>
 		<dict>
 			<key>xpos</key>
-			<integer>695</integer>
+			<integer>690</integer>
 			<key>ypos</key>
-			<integer>2395</integer>
+			<integer>2385</integer>
 		</dict>
 		<key>1068986A-512F-42A6-9AA1-F9AFF3C207AB</key>
 		<dict>
 			<key>xpos</key>
-			<integer>695</integer>
+			<integer>690</integer>
 			<key>ypos</key>
-			<integer>2515</integer>
+			<integer>2505</integer>
 		</dict>
 		<key>1199499D-34EF-4323-91D4-F09D5FEF3C6C</key>
 		<dict>
@@ -2656,7 +2656,7 @@
 			<key>xpos</key>
 			<integer>1065</integer>
 			<key>ypos</key>
-			<integer>390</integer>
+			<integer>360</integer>
 		</dict>
 		<key>4313D6C1-93E7-437D-A19E-B3E7132327C3</key>
 		<dict>
@@ -2684,7 +2684,7 @@
 			<key>xpos</key>
 			<integer>875</integer>
 			<key>ypos</key>
-			<integer>180</integer>
+			<integer>150</integer>
 		</dict>
 		<key>4A98736F-E8B2-45BC-86EE-B6909CCC2B56</key>
 		<dict>
@@ -2698,7 +2698,7 @@
 			<key>xpos</key>
 			<integer>1065</integer>
 			<key>ypos</key>
-			<integer>1020</integer>
+			<integer>990</integer>
 		</dict>
 		<key>4F9A5738-F86E-4275-81C9-16CFC2E465D2</key>
 		<dict>
@@ -2789,21 +2789,21 @@
 			<key>xpos</key>
 			<integer>1065</integer>
 			<key>ypos</key>
-			<integer>520</integer>
+			<integer>490</integer>
 		</dict>
 		<key>83FD56DB-A00B-46E7-9BDB-639CB45842BB</key>
 		<dict>
 			<key>xpos</key>
 			<integer>1065</integer>
 			<key>ypos</key>
-			<integer>270</integer>
+			<integer>240</integer>
 		</dict>
 		<key>87DE6A56-358B-4761-ABDF-345E89076DD8</key>
 		<dict>
 			<key>xpos</key>
 			<integer>1065</integer>
 			<key>ypos</key>
-			<integer>765</integer>
+			<integer>735</integer>
 		</dict>
 		<key>8AD934DC-8F4A-4CD6-A83F-BB96B7AF56AE</key>
 		<dict>
@@ -2866,7 +2866,7 @@
 			<key>xpos</key>
 			<integer>1065</integer>
 			<key>ypos</key>
-			<integer>640</integer>
+			<integer>610</integer>
 		</dict>
 		<key>A0DF88BD-B7DC-46FA-8C18-795233355D02</key>
 		<dict>
@@ -2943,7 +2943,7 @@
 			<key>xpos</key>
 			<integer>1065</integer>
 			<key>ypos</key>
-			<integer>150</integer>
+			<integer>120</integer>
 		</dict>
 		<key>D4E5EA55-F7D2-4F82-B4CF-9AD536668877</key>
 		<dict>
@@ -2971,7 +2971,7 @@
 			<key>xpos</key>
 			<integer>1065</integer>
 			<key>ypos</key>
-			<integer>890</integer>
+			<integer>860</integer>
 		</dict>
 		<key>DBEF9EBC-450B-40A2-978F-D8774A2B6AD6</key>
 		<dict>
@@ -2999,7 +2999,7 @@
 			<key>xpos</key>
 			<integer>690</integer>
 			<key>ypos</key>
-			<integer>2275</integer>
+			<integer>2265</integer>
 		</dict>
 		<key>F1025483-C2CB-4651-866D-D54383C4B47D</key>
 		<dict>
@@ -3040,15 +3040,15 @@
 	<key>variables</key>
 	<dict>
 		<key>BROWSER</key>
-		<string>Naver Whale</string>
+		<string>Epic</string>
 		<key>LOCALE</key>
 		<string>en_US</string>
 		<key>PROFILE</key>
-		<string>Default</string>
+		<string>Profile 3</string>
 		<key>RESULT_COUNT_LIMIT</key>
 		<string>50</string>
 		<key>SWITCHABLE_PROFILES</key>
-		<string>Default,Profile 1,Profile 2,Profile 3</string>
+		<string>Default</string>
 	</dict>
 	<key>variablesdontexport</key>
 	<array/>

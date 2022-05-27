@@ -2,6 +2,7 @@ package src
 
 import (
 	"fmt"
+	"path/filepath"
 	"strings"
 
 	"github.com/deanishe/awgo"
@@ -36,13 +37,21 @@ func addNewBrowserItem(wf *aw.Workflow, browserName string) {
 }
 
 var SelectBrowser = func(wf *aw.Workflow, query string) {
-	addNewBrowserItem(wf, "Chrome")
-	addNewBrowserItem(wf, "Chrome Canary")
-	addNewBrowserItem(wf, "Chromium")
-	addNewBrowserItem(wf, "Edge")
-	addNewBrowserItem(wf, "Brave")
-	addNewBrowserItem(wf, "Naver Whale")
-	addNewBrowserItem(wf, "Epic")
+	browsers := []string {
+		"Chrome",
+		"Chrome Canary",
+		"Chromium",
+		"Edge",
+		"Brave",
+		"Naver Whale",
+		"Epic",
+	}
+
+	for _, browser := range browsers {
+		if CheckBrowserIsInstalled(browser) {
+			addNewBrowserItem(wf, browser)
+		}
+	}
 
 	wf.Filter(query)
 }
@@ -54,7 +63,21 @@ var ChangeBrowser = func(browserName string) {
 }
 
 var SelectProfile = func(wf *aw.Workflow, query string) {
-	for _, profile := range strings.Split(Conf.SwitchableProfiles, ",") {
+	profileRoot := GetProfileRootPath(Conf.Browser)
+	profileFilePaths, err := filepath.Glob(profileRoot + "/" + "Profile *")
+	CheckError(err)
+
+	var profiles []string
+
+	for _, profileFilePath := range profileFilePaths {
+		profileFilePathArr := strings.Split(profileFilePath, "/")
+		profiles = append(profiles, profileFilePathArr[len(profileFilePathArr)-1])
+	}
+
+	possibleProfiles := strings.Split(Conf.SwitchableProfiles, ",")
+	possibleProfiles = append(possibleProfiles, profiles...)
+
+	for _, profile := range possibleProfiles {
 		wf.NewItem(profile).
 			Valid(true).
 			Arg(profile)
@@ -65,7 +88,7 @@ var SelectProfile = func(wf *aw.Workflow, query string) {
 
 var ChangeProfile = func(profileName string) {
 	// Check if the profile folder exist in the browser first
-	if !FileExist(GetDBFilePath(profileName, "History")) {
+	if !FileExist(GetDBFilePath(Conf.Browser, profileName, "History")) {
 		fmt.Print("")
 		return
 	}

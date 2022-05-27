@@ -31,7 +31,7 @@ var FetchAutofillData = func(wf *aw.Workflow, query string) {
 		unixTimestamp := ConvertChromeTimeToUnixTimestamp(createdDate)
 		localeTimeStr := GetLocaleString(unixTimestamp)
 
-		subtitle += fmt.Sprintf(`Label: "%s", Created in %s`, autofillLabel, localeTimeStr)
+		subtitle += fmt.Sprintf(`Label: '%s', Created in '%s'`, autofillLabel, localeTimeStr)
 
 		item := wf.NewItem(autofillValue).
 			Subtitle(subtitle).

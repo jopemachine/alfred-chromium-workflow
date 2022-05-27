@@ -33,34 +33,37 @@ var EnsureDirectoryExist = func(dirPath string) {
 	}
 }
 
-var GetDBFilePath = func(chromeProfilePath string, dbFile string) string {
+var GetProfileRootPath = func(browserName string) string {
 	var targetPath string
-
-	switch Conf.Browser {
-	case "Chrome Canary":
-		targetPath = `/Users/%s/Library/Application Support/Google/Chrome Canary/%s/%s`
-	case "Edge":
-		targetPath = `/Users/%s/Library/Application Support/Microsoft Edge/%s/%s`
-	case "Chromium":
-		// 'Chrome Cloud Enrollment' could be wrong (not sure)
-		targetPath = `/Users/%s/Library/Application Support/Google/Chrome Cloud Enrollment/%s/%s`
-	case "Brave":
-		targetPath = `/Users/%s/Library/Application Support/BraveSoftware/Brave-Browser/%s/%s`
-	case "Chrome":
-		targetPath = `/Users/%s/Library/Application Support/Google/Chrome/%s/%s`
-	case "Naver Whale":
-		targetPath = `/Users/%s/Library/Application Support/Naver/Whale/%s/%s`
-	case "Epic":
-		targetPath = `/Users/%s/Library/Application Support/HiddenReflex/Epic/%s/%s`
-	default:
-		panic("Unsupported browser. Please consider to make a issue to support the browser if the browser is based on Chromium.")
-	}
 
 	user, err := user.Current()
 	CheckError(err)
 	userName := user.Username
 
-	return fmt.Sprintf(targetPath, userName, chromeProfilePath, dbFile)
+	switch browserName {
+	case "Chrome Canary":
+		targetPath = `/Users/%s/Library/Application Support/Google/Chrome Canary`
+	case "Edge":
+		targetPath = `/Users/%s/Library/Application Support/Microsoft Edge`
+	case "Chromium":
+		targetPath = `/Users/%s/Library/Application Support/Google/Chrome Cloud Enrollment`
+	case "Brave":
+		targetPath = `/Users/%s/Library/Application Support/BraveSoftware/Brave-Browser`
+	case "Chrome":
+		targetPath = `/Users/%s/Library/Application Support/Google/Chrome`
+	case "Naver Whale":
+		targetPath = `/Users/%s/Library/Application Support/Naver/Whale`
+	case "Epic":
+		targetPath = `/Users/%s/Library/Application Support/HiddenReflex/Epic`
+	default:
+		panic("Unsupported browser. Please consider to make a issue to support the browser if the browser is based on Chromium.")
+	}
+
+	return fmt.Sprintf(targetPath, userName)
+}
+
+var GetDBFilePath = func(browserName string, chromeProfilePath string, dbFile string) string {
+	return fmt.Sprintf(`%s/%s/%s`, GetProfileRootPath(browserName), chromeProfilePath, dbFile)
 }
 
 var HandleUserQuery = func(query string) (titleQuery string, domainQuery string, isDomainSearch bool, artistQuery string, isArtistSearch bool) {
@@ -122,7 +125,7 @@ func CopyFile(src, dst string) {
 }
 
 var GetHistoryDB = func() *sql.DB {
-	var targetPath = GetDBFilePath(Conf.Profile, "History")
+	var targetPath = GetDBFilePath(Conf.Browser, Conf.Profile, "History")
 	CopyFile(targetPath, CONSTANT.HISTORY_DB)
 	db, err := sql.Open("sqlite3", CONSTANT.HISTORY_DB)
 	CheckError(err)
@@ -131,7 +134,7 @@ var GetHistoryDB = func() *sql.DB {
 }
 
 var GetFaviconDB = func() *sql.DB {
-	var targetPath = GetDBFilePath(Conf.Profile, "Favicons")
+	var targetPath = GetDBFilePath(Conf.Browser, Conf.Profile, "Favicons")
 	CopyFile(targetPath, CONSTANT.FAVICON_DB)
 	db, err := sql.Open("sqlite3", CONSTANT.FAVICON_DB)
 	CheckError(err)
@@ -140,7 +143,7 @@ var GetFaviconDB = func() *sql.DB {
 }
 
 var GetWebDataDB = func() *sql.DB {
-	var targetPath = GetDBFilePath(Conf.Profile, "Web Data")
+	var targetPath = GetDBFilePath(Conf.Browser, Conf.Profile, "Web Data")
 	CopyFile(targetPath, CONSTANT.WEB_DATA_DB)
 	db, err := sql.Open("sqlite3", CONSTANT.WEB_DATA_DB)
 	CheckError(err)
@@ -149,7 +152,7 @@ var GetWebDataDB = func() *sql.DB {
 }
 
 var GetLoginDataDB = func() *sql.DB {
-	var targetPath = GetDBFilePath(Conf.Profile, "Login Data")
+	var targetPath = GetDBFilePath(Conf.Browser, Conf.Profile, "Login Data")
 	CopyFile(targetPath, CONSTANT.LOGIN_DATA_DB)
 	db, err := sql.Open("sqlite3", CONSTANT.LOGIN_DATA_DB)
 	CheckError(err)
@@ -159,7 +162,7 @@ var GetLoginDataDB = func() *sql.DB {
 
 var GetChromeBookmark = func() map[string]interface{} {
 	var bookmarkJson map[string]interface{}
-	var bookmarkFilePath = GetDBFilePath(Conf.Profile, "Bookmarks")
+	var bookmarkFilePath = GetDBFilePath(Conf.Browser, Conf.Profile, "Bookmarks")
 
 	bookmarkData, err := ioutil.ReadFile(bookmarkFilePath)
 	CheckError(err)
@@ -352,4 +355,8 @@ var InitBookmarkJsonTraversal = func() {
 
 		return result
 	}
+}
+
+var CheckBrowserIsInstalled = func(browserName string) bool {
+	return FileExist(GetProfileRootPath(browserName))
 }

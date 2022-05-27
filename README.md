@@ -17,6 +17,8 @@ In addition to resolving these issues, this workflow has following several advan
 
 * Support favicon images in almost all features
 * Support switching browsers, profiles
+* Support opening tab, window directly
+* Support more Chromium based browsers
 * Lightning-fast
 * Provide localized subtitle
 
@@ -182,13 +184,15 @@ To add new browser, follow below guideline.
 
 1. Check the browser is based on Chromium
 
-2. Add new path to `GetDBFilePath` in `src/utils.go`.
+2. Add new path to `GetProfileRootPath` in `src/utils.go`.
 
 3. Add the browser's proper Application Name to `getApplicationName` in `src/tabManager.go`. You can check this value through Applescript Editor's Dictionary.
 
 4. Add proper Open URL block of `info.plist` using Alfred.
 
 5. Add new browser's item `SelectBrowser` in `src/config.go`.
+
+6. Add the browser name to `READMD.md`
 
 ## Related
 
