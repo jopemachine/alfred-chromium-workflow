@@ -126,6 +126,8 @@ Clear favicon cache.
 
 Configure below options through Workflow Environment Variables.
 
+![](./imgs/conf.png)
+
 ### Profile
 
 Browser's profile name.
