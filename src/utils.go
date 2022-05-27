@@ -108,7 +108,7 @@ func CopyFile(src, dst string) {
 }
 
 var GetHistoryDB = func () (*sql.DB) {
-	var targetPath = GetDBFilePath(Conf.ChromeProfile, "History")
+	var targetPath = GetDBFilePath(Conf.Profile, "History")
 	CopyFile(targetPath, CONSTANT.HISTORY_DB)
 	db, err := sql.Open("sqlite3", CONSTANT.HISTORY_DB)
 	CheckError(err)
@@ -117,7 +117,7 @@ var GetHistoryDB = func () (*sql.DB) {
 }
 
 var GetFaviconDB = func () (*sql.DB) {
-	var targetPath = GetDBFilePath(Conf.ChromeProfile, "Favicons")
+	var targetPath = GetDBFilePath(Conf.Profile, "Favicons")
 	CopyFile(targetPath, CONSTANT.FAVICON_DB)
 	db, err := sql.Open("sqlite3", CONSTANT.FAVICON_DB)
 	CheckError(err)
@@ -126,7 +126,7 @@ var GetFaviconDB = func () (*sql.DB) {
 }
 
 var GetWebDataDB = func () (*sql.DB) {
-	var targetPath = GetDBFilePath(Conf.ChromeProfile, "Web Data")
+	var targetPath = GetDBFilePath(Conf.Profile, "Web Data")
 	CopyFile(targetPath, CONSTANT.WEB_DATA_DB)
 	db, err := sql.Open("sqlite3", CONSTANT.WEB_DATA_DB)
 	CheckError(err)
@@ -135,7 +135,7 @@ var GetWebDataDB = func () (*sql.DB) {
 }
 
 var GetLoginDataDB = func () (*sql.DB) {
-	var targetPath = GetDBFilePath(Conf.ChromeProfile, "Login Data")
+	var targetPath = GetDBFilePath(Conf.Profile, "Login Data")
 	CopyFile(targetPath, CONSTANT.LOGIN_DATA_DB)
 	db, err := sql.Open("sqlite3", CONSTANT.LOGIN_DATA_DB)
 	CheckError(err)
@@ -145,7 +145,7 @@ var GetLoginDataDB = func () (*sql.DB) {
 
 var GetChromeBookmark = func () map[string]interface{} {
 	var bookmarkJson map[string]interface{}
-	var bookmarkFilePath = GetDBFilePath(Conf.ChromeProfile, "Bookmarks")
+	var bookmarkFilePath = GetDBFilePath(Conf.Profile, "Bookmarks")
 
 	bookmarkData, err := ioutil.ReadFile(bookmarkFilePath)
 	CheckError(err)
