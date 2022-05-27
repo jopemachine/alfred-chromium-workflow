@@ -20,7 +20,7 @@ var FetchBookmark = func(wf *aw.Workflow, query string) {
 				targetFolder := folder.Children
 				bookmarks = TraverseBookmarkArray(targetFolder, TraverseBookmarkJsonOption{Targets: []string{"url"}, Depth: 1})
 			} else {
-				// TODO Handle error properly
+				panic(fmt.Sprintf("folderId not found: %s", folderId))
 			}
 		}
 	} else {

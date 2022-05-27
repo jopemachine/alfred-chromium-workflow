@@ -43,4 +43,4 @@ func Coverage() error {
 // Clean remove cache files
 func Clean() error { return sh.Run("mage", "-clean") }
 
-func Formatter() error { return sh.Run("gofmt", "-w", "src") }
+func Formatter() error { return sh.Run("gofmt", "-w", "src", "main.go") }
