@@ -46,9 +46,13 @@ Download and open `alfredworkflow` file in the [Release page]().
 
 Retrieve bookmarks.
 
+![](./imgs/chb.png)
+
 ### chf
 
 Retrieve bookmark folders.
+
+![](./imgs/chf.png)
 
 ### chh
 
@@ -60,9 +64,13 @@ Example:
 
 `chh #youtube [some_word_to_search]`
 
+![](./imgs/chh.png)
+
 ### chd
 
 Retrieve download histories.
+
+![](./imgs/chd.png)
 
 ### chs
 
@@ -73,6 +81,8 @@ Append `#` to search word to search only the logs in that `url`.
 Example:
 
 `chs #github [some_word_to_search]`
+
+![](./imgs/chs.png)
 
 ### cha
 

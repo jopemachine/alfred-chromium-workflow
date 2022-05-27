@@ -712,7 +712,7 @@
 				<key>queuemode</key>
 				<integer>1</integer>
 				<key>runningsubtext</key>
-				<string>Searching...</string>
+				<string>Fetching...</string>
 				<key>script</key>
 				<string>./alfred-chromium-workflow 'search-log' '{query}'</string>
 				<key>scriptargtype</key>
@@ -720,7 +720,7 @@
 				<key>scriptfile</key>
 				<string></string>
 				<key>subtext</key>
-				<string>Search Queries</string>
+				<string>Retrieve Queries</string>
 				<key>title</key>
 				<string>chs</string>
 				<key>type</key>
@@ -898,7 +898,7 @@
 				<key>queuemode</key>
 				<integer>2</integer>
 				<key>runningsubtext</key>
-				<string>Searching...</string>
+				<string>Fetching...</string>
 				<key>script</key>
 				<string>./alfred-chromium-workflow 'bookmark' '{query}'</string>
 				<key>scriptargtype</key>
@@ -906,7 +906,7 @@
 				<key>scriptfile</key>
 				<string>index.js</string>
 				<key>subtext</key>
-				<string>Search chrome bookmark</string>
+				<string>Retrieve Bookmarks</string>
 				<key>title</key>
 				<string></string>
 				<key>type</key>
@@ -980,7 +980,7 @@
 				<key>queuemode</key>
 				<integer>2</integer>
 				<key>runningsubtext</key>
-				<string>Searching...</string>
+				<string>Fetching...</string>
 				<key>script</key>
 				<string>./alfred-chromium-workflow 'bookmark-folder' '{query}'</string>
 				<key>scriptargtype</key>
@@ -988,7 +988,7 @@
 				<key>scriptfile</key>
 				<string>index.js</string>
 				<key>subtext</key>
-				<string>Search Bookmark Folders</string>
+				<string>Retrieve Bookmark Folders</string>
 				<key>title</key>
 				<string>chf</string>
 				<key>type</key>
@@ -1084,7 +1084,7 @@
 				<key>queuemode</key>
 				<integer>2</integer>
 				<key>runningsubtext</key>
-				<string>Searching...</string>
+				<string>Fetching...</string>
 				<key>script</key>
 				<string>./alfred-chromium-workflow 'autofill' '{query}'</string>
 				<key>scriptargtype</key>
@@ -1092,7 +1092,7 @@
 				<key>scriptfile</key>
 				<string>index.js</string>
 				<key>subtext</key>
-				<string>Search Autofill Data</string>
+				<string>Retrieve Autofill Data</string>
 				<key>title</key>
 				<string>cha</string>
 				<key>type</key>
@@ -1296,7 +1296,7 @@
 				<key>queuemode</key>
 				<integer>2</integer>
 				<key>runningsubtext</key>
-				<string>Searching...</string>
+				<string>Fetching...</string>
 				<key>script</key>
 				<string>./alfred-chromium-workflow 'bookmark' '{query}'</string>
 				<key>scriptargtype</key>
@@ -1304,7 +1304,7 @@
 				<key>scriptfile</key>
 				<string>index.js</string>
 				<key>subtext</key>
-				<string>Search Bookmarks</string>
+				<string>Retrieve Bookmarks</string>
 				<key>title</key>
 				<string>chb</string>
 				<key>type</key>
@@ -1372,7 +1372,7 @@
 				<key>scriptfile</key>
 				<string>index.js</string>
 				<key>subtext</key>
-				<string>Search Visit History</string>
+				<string>Retrieve Visit History</string>
 				<key>title</key>
 				<string>chh</string>
 				<key>type</key>
@@ -1498,7 +1498,7 @@
 				<key>queuemode</key>
 				<integer>2</integer>
 				<key>runningsubtext</key>
-				<string>Searching...</string>
+				<string>Fetching...</string>
 				<key>script</key>
 				<string>./alfred-chromium-workflow 'download' '{query}'</string>
 				<key>scriptargtype</key>
@@ -1506,7 +1506,7 @@
 				<key>scriptfile</key>
 				<string>index.js</string>
 				<key>subtext</key>
-				<string>Search Download History</string>
+				<string>Retrieve Download History</string>
 				<key>title</key>
 				<string>chd</string>
 				<key>type</key>
@@ -1562,7 +1562,7 @@
 				<key>queuemode</key>
 				<integer>2</integer>
 				<key>runningsubtext</key>
-				<string>Searching...</string>
+				<string>Fetching...</string>
 				<key>script</key>
 				<string>./alfred-chromium-workflow 'login' '{query}'</string>
 				<key>scriptargtype</key>
@@ -1570,7 +1570,7 @@
 				<key>scriptfile</key>
 				<string>index.js</string>
 				<key>subtext</key>
-				<string>Search User Ids</string>
+				<string>Retrieve User Ids</string>
 				<key>title</key>
 				<string>chid</string>
 				<key>type</key>
@@ -1703,7 +1703,7 @@
 				<key>queuemode</key>
 				<integer>1</integer>
 				<key>runningsubtext</key>
-				<string>Loading tabs...</string>
+				<string>Fetching...</string>
 				<key>script</key>
 				<string>./alfred-chromium-workflow 'listup-tabs' '{query}'</string>
 				<key>scriptargtype</key>
@@ -1711,9 +1711,9 @@
 				<key>scriptfile</key>
 				<string></string>
 				<key>subtext</key>
-				<string></string>
-				<key>title</key>
 				<string>List All Tabs</string>
+				<key>title</key>
+				<string>cht</string>
 				<key>type</key>
 				<integer>0</integer>
 				<key>withspace</key>
@@ -2398,7 +2398,7 @@
 		<key>8AD934DC-8F4A-4CD6-A83F-BB96B7AF56AE</key>
 		<dict>
 			<key>xpos</key>
-			<integer>200</integer>
+			<integer>195</integer>
 			<key>ypos</key>
 			<integer>50</integer>
 		</dict>
