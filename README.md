@@ -11,7 +11,7 @@ Alfred workflow for Chromium browsers
 
 This workflow originated from [alfred-chrome-workflow](https://github.com/jopemachine/alfred-chrome-workflow).
 
-Previous workflow has several [npm related installation issue like this](https://github.com/jopemachine/alfred-chrome-workflow/issues/13#issuecomment-1103938917).
+Previous workflow has several [npm related installation issues like this](https://github.com/jopemachine/alfred-chrome-workflow/issues/13#issuecomment-1103938917).
 
 In addition to resolving these issues, this workflow has following several advantages over the previous one.
 
@@ -34,9 +34,9 @@ In addition to resolving these issues, this workflow has following several advan
 
 The prerequisites below are required to use that package.
 
-* [Alfred powerpack](https://www.alfredapp.com/powerpack/)
+* [Alfred Powerpack](https://www.alfredapp.com/powerpack/)
 
-##  🔨 How to install
+## 🔨 How to install
 
 Download and open `alfredworkflow` file in the [Release page]().
 
@@ -120,13 +120,15 @@ You can change this value through `ch > profile` with ease.
 
 ### SwitchableProfiles
 
-List up all switchable profile names here.
+List up your all profile names here.
+
+You can switch your profile through `ch > profle` with this value.
 
 Each profile name should be splited with comma (`,`).
 
 ### Locale
 
-Possible values: Refer to the following page for seeing supported locales.
+Refer to the following page for seeing supported locales.
 
 https://github.com/klauspost/lctime/tree/master/internal/locales
 
@@ -136,13 +138,21 @@ Browser name.
 
 You can change this value through `ch > browser` with ease.
 
-Possible values: `Chrome`, `Chrome Canary`, `Edge`, `Chromium`, `Brave`
+Currently supported browsers are as follows.
+
+* `Chrome`
+* `Chrome Canary`
+* `Chromium`
+* `Edge`
+* `Brave`
 
 ### ResultCountLimit
 
 Displays as many search results.
 
-## Contributes
+## 🌟 Contribution
+
+Contributions of any kind are welcome.
 
 ### Add supporting new browser
 

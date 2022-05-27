@@ -45,9 +45,11 @@ var GetDBFilePath = func(chromeProfilePath string, dbFile string) string {
 		// 'Chrome Cloud Enrollment' could be wrong (not sure)
 		targetPath = `/Users/%s/Library/Application Support/Google/Chrome Cloud Enrollment/%s/%s`
 	case "Brave":
-		targetPath = ``
-	default:
+		targetPath = `/Users/%s/Library/Application Support/BraveSoftware/Brave-Browser/%s/%s`
+	case "Chrome":
 		targetPath = `/Users/%s/Library/Application Support/Google/Chrome/%s/%s`
+	default:
+		panic("Unsupported browser. Please consider to make a issue to support the browser if the browser is based on Chromium.")
 	}
 
 	user, err := user.Current()

@@ -23,7 +23,7 @@ var getApplicationName = func(browserName string) string {
 	case "Chrome Canary":
 		panic("Not implemented yet")
 	default:
-		panic("Unsupported browser. Please make a issue to support the browser if the browser is based on Chromium.")
+		panic("Unsupported browser. Please consider to make a issue to support the browser if the browser is based on Chromium.")
 	}
 }
 

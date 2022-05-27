@@ -1372,7 +1372,7 @@
 				<key>scriptfile</key>
 				<string>index.js</string>
 				<key>subtext</key>
-				<string>Retrieve Visit History</string>
+				<string>Retrieve Visit Histories</string>
 				<key>title</key>
 				<string>chh</string>
 				<key>type</key>
@@ -1506,7 +1506,7 @@
 				<key>scriptfile</key>
 				<string>index.js</string>
 				<key>subtext</key>
-				<string>Retrieve Download History</string>
+				<string>Retrieve Download Histories</string>
 				<key>title</key>
 				<string>chd</string>
 				<key>type</key>
@@ -1908,7 +1908,7 @@
 				<key>queuemode</key>
 				<integer>1</integer>
 				<key>runningsubtext</key>
-				<string></string>
+				<string>Fetching...</string>
 				<key>script</key>
 				<string>./alfred-chromium-workflow 'select-browser' '{query}'</string>
 				<key>scriptargtype</key>
@@ -1978,7 +1978,7 @@
 				<key>queuemode</key>
 				<integer>1</integer>
 				<key>runningsubtext</key>
-				<string></string>
+				<string>Fetching...</string>
 				<key>script</key>
 				<string>./alfred-chromium-workflow 'select-profile' '{query}'</string>
 				<key>scriptargtype</key>
@@ -2574,16 +2574,18 @@
 	<key>variables</key>
 	<dict>
 		<key>BROWSER</key>
-		<string>Chrome</string>
+		<string>Brave</string>
 		<key>LOCALE</key>
 		<string>en_US</string>
 		<key>PROFILE</key>
-		<string>Profile 3</string>
+		<string>Default</string>
 		<key>RESULT_COUNT_LIMIT</key>
 		<string>50</string>
 		<key>SWITCHABLE_PROFILES</key>
-		<string>Profile 1,Profile 2,Profile 3</string>
+		<string>Default,Profile 1,Profile 2,Profile 3</string>
 	</dict>
+	<key>variablesdontexport</key>
+	<array/>
 	<key>version</key>
 	<string></string>
 	<key>webaddress</key>
