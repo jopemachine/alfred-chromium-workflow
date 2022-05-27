@@ -56,6 +56,12 @@ func alfredCallback() {
 			API.CacheFavicons()
 			return
 
+		case "select-profile":
+			API.SelectProfile(wf, query)
+		case "change-profile":
+			API.ChangeProfile(query)
+			return
+
 		case "select-browser":
 			API.SelectBrowser(wf, query)
 		case "change-browser":

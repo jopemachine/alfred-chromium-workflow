@@ -71,6 +71,19 @@
 				<false/>
 			</dict>
 		</array>
+		<key>2A958B0F-FC3C-4909-B21D-127BB5040193</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>6689E2B4-9ED7-4C19-A68F-702131243A46</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
 		<key>4313D6C1-93E7-437D-A19E-B3E7132327C3</key>
 		<array>
 			<dict>
@@ -224,6 +237,19 @@
 			<dict>
 				<key>destinationuid</key>
 				<string>A2A97BC2-5E38-4F00-8D0E-1EBC7BA1A3F8</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>6689E2B4-9ED7-4C19-A68F-702131243A46</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>FA25A968-8378-4B1E-9858-2B0DE0135CD0</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -510,6 +536,19 @@
 			<dict>
 				<key>destinationuid</key>
 				<string>DBEF9EBC-450B-40A2-978F-D8774A2B6AD6</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>FA25A968-8378-4B1E-9858-2B0DE0135CD0</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>E3C9FBA2-B544-4406-8366-B2233E84FCB2</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -949,7 +988,7 @@
 				<key>scriptfile</key>
 				<string>index.js</string>
 				<key>subtext</key>
-				<string>Search chrome bookmark folder</string>
+				<string>Search Bookmark Folders</string>
 				<key>title</key>
 				<string>chf</string>
 				<key>type</key>
@@ -1053,7 +1092,7 @@
 				<key>scriptfile</key>
 				<string>index.js</string>
 				<key>subtext</key>
-				<string>Search chrome autofill data</string>
+				<string>Search Autofill Data</string>
 				<key>title</key>
 				<string>cha</string>
 				<key>type</key>
@@ -1333,7 +1372,7 @@
 				<key>scriptfile</key>
 				<string>index.js</string>
 				<key>subtext</key>
-				<string>Search History</string>
+				<string>Search Visit History</string>
 				<key>title</key>
 				<string>chh</string>
 				<key>type</key>
@@ -1467,7 +1506,7 @@
 				<key>scriptfile</key>
 				<string>index.js</string>
 				<key>subtext</key>
-				<string>Search chrome download history</string>
+				<string>Search Download History</string>
 				<key>title</key>
 				<string>chd</string>
 				<key>type</key>
@@ -1531,7 +1570,7 @@
 				<key>scriptfile</key>
 				<string>index.js</string>
 				<key>subtext</key>
-				<string>Search chrome user id</string>
+				<string>Search User Ids</string>
 				<key>title</key>
 				<string>chid</string>
 				<key>type</key>
@@ -1672,7 +1711,7 @@
 				<key>scriptfile</key>
 				<string></string>
 				<key>subtext</key>
-				<string>Press enter to focus, hold alt to close the tab</string>
+				<string></string>
 				<key>title</key>
 				<string>List All Tabs</string>
 				<key>type</key>
@@ -1904,6 +1943,132 @@
 				<key>text</key>
 				<string></string>
 				<key>title</key>
+				<string>Profile "{query}" set</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.notification</string>
+			<key>uid</key>
+			<string>E3C9FBA2-B544-4406-8366-B2233E84FCB2</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>alfredfiltersresults</key>
+				<false/>
+				<key>alfredfiltersresultsmatchmode</key>
+				<integer>0</integer>
+				<key>argumenttreatemptyqueryasnil</key>
+				<true/>
+				<key>argumenttrimmode</key>
+				<integer>0</integer>
+				<key>argumenttype</key>
+				<integer>1</integer>
+				<key>escaping</key>
+				<integer>102</integer>
+				<key>keyword</key>
+				<string>ch &gt; profile</string>
+				<key>queuedelaycustom</key>
+				<integer>3</integer>
+				<key>queuedelayimmediatelyinitially</key>
+				<true/>
+				<key>queuedelaymode</key>
+				<integer>0</integer>
+				<key>queuemode</key>
+				<integer>1</integer>
+				<key>runningsubtext</key>
+				<string></string>
+				<key>script</key>
+				<string>./alfred-chromium-workflow 'select-profile' '{query}'</string>
+				<key>scriptargtype</key>
+				<integer>0</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>subtext</key>
+				<string>Select and change Profile</string>
+				<key>title</key>
+				<string>ch &gt; profile</string>
+				<key>type</key>
+				<integer>0</integer>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>6689E2B4-9ED7-4C19-A68F-702131243A46</string>
+			<key>version</key>
+			<integer>3</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>action</key>
+				<integer>0</integer>
+				<key>argument</key>
+				<integer>3</integer>
+				<key>argumenttext</key>
+				<string>Select Profile</string>
+				<key>focusedappvariable</key>
+				<false/>
+				<key>focusedappvariablename</key>
+				<string></string>
+				<key>hotkey</key>
+				<integer>0</integer>
+				<key>hotmod</key>
+				<integer>0</integer>
+				<key>hotstring</key>
+				<string></string>
+				<key>leftcursor</key>
+				<false/>
+				<key>modsmode</key>
+				<integer>0</integer>
+				<key>relatedAppsMode</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.trigger.hotkey</string>
+			<key>uid</key>
+			<string>2A958B0F-FC3C-4909-B21D-127BB5040193</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>concurrently</key>
+				<false/>
+				<key>escaping</key>
+				<integer>102</integer>
+				<key>script</key>
+				<string>./alfred-chromium-workflow 'change-profile' '{query}'</string>
+				<key>scriptargtype</key>
+				<integer>0</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>type</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>FA25A968-8378-4B1E-9858-2B0DE0135CD0</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>lastpathcomponent</key>
+				<false/>
+				<key>onlyshowifquerypopulated</key>
+				<true/>
+				<key>removeextension</key>
+				<false/>
+				<key>text</key>
+				<string></string>
+				<key>title</key>
 				<string>Caching completed successfully</string>
 			</dict>
 			<key>type</key>
@@ -1944,7 +2109,7 @@
 				<key>keyword</key>
 				<string>ch &gt; cache</string>
 				<key>subtext</key>
-				<string>Cache favicon images in advance from visit history</string>
+				<string>Cache Favicons</string>
 				<key>text</key>
 				<string>ch &gt; cache</string>
 				<key>withspace</key>
@@ -2009,7 +2174,7 @@
 				<key>keyword</key>
 				<string>ch &gt; clearcache</string>
 				<key>subtext</key>
-				<string>Clean favicon cache</string>
+				<string>Clear favicon cache</string>
 				<key>text</key>
 				<string>ch &gt; clearcache</string>
 				<key>withspace</key>
@@ -2055,19 +2220,26 @@
 			<key>ypos</key>
 			<integer>265</integer>
 		</dict>
+		<key>2A958B0F-FC3C-4909-B21D-127BB5040193</key>
+		<dict>
+			<key>xpos</key>
+			<integer>40</integer>
+			<key>ypos</key>
+			<integer>1955</integer>
+		</dict>
 		<key>2CD9F1A4-FFBF-43C0-9AED-624340EEB5AA</key>
 		<dict>
 			<key>xpos</key>
 			<integer>370</integer>
 			<key>ypos</key>
-			<integer>2110</integer>
+			<integer>2220</integer>
 		</dict>
 		<key>2CFE27F5-A63E-4ACC-BE5F-8FB3519E9972</key>
 		<dict>
 			<key>xpos</key>
 			<integer>370</integer>
 			<key>ypos</key>
-			<integer>1975</integer>
+			<integer>2085</integer>
 		</dict>
 		<key>32E62E1E-C16F-4781-B2E3-4625B0184935</key>
 		<dict>
@@ -2123,7 +2295,7 @@
 			<key>xpos</key>
 			<integer>40</integer>
 			<key>ypos</key>
-			<integer>2110</integer>
+			<integer>2220</integer>
 		</dict>
 		<key>4DB58061-0B2D-4534-AEE2-1B860EF71EC5</key>
 		<dict>
@@ -2159,6 +2331,13 @@
 			<integer>375</integer>
 			<key>ypos</key>
 			<integer>1580</integer>
+		</dict>
+		<key>6689E2B4-9ED7-4C19-A68F-702131243A46</key>
+		<dict>
+			<key>xpos</key>
+			<integer>205</integer>
+			<key>ypos</key>
+			<integer>1955</integer>
 		</dict>
 		<key>6801DF07-433A-4538-B76F-5B146B1D9A4F</key>
 		<dict>
@@ -2249,14 +2428,14 @@
 			<key>xpos</key>
 			<integer>35</integer>
 			<key>ypos</key>
-			<integer>1975</integer>
+			<integer>2085</integer>
 		</dict>
 		<key>960F5BA1-9E36-41E7-8C42-DAC1F7A265C1</key>
 		<dict>
 			<key>xpos</key>
 			<integer>210</integer>
 			<key>ypos</key>
-			<integer>1975</integer>
+			<integer>2085</integer>
 		</dict>
 		<key>9D817542-BF4C-46FA-9C74-6D7756BB86A9</key>
 		<dict>
@@ -2298,7 +2477,7 @@
 			<key>xpos</key>
 			<integer>210</integer>
 			<key>ypos</key>
-			<integer>2110</integer>
+			<integer>2220</integer>
 		</dict>
 		<key>B4863D8C-2137-43E7-A9EF-349A210ED693</key>
 		<dict>
@@ -2363,12 +2542,26 @@
 			<key>ypos</key>
 			<integer>1455</integer>
 		</dict>
+		<key>E3C9FBA2-B544-4406-8366-B2233E84FCB2</key>
+		<dict>
+			<key>xpos</key>
+			<integer>530</integer>
+			<key>ypos</key>
+			<integer>1955</integer>
+		</dict>
 		<key>F3B05156-E3D0-4FE9-A221-1B84FA8ACFCB</key>
 		<dict>
 			<key>xpos</key>
 			<integer>400</integer>
 			<key>ypos</key>
 			<integer>180</integer>
+		</dict>
+		<key>FA25A968-8378-4B1E-9858-2B0DE0135CD0</key>
+		<dict>
+			<key>xpos</key>
+			<integer>380</integer>
+			<key>ypos</key>
+			<integer>1955</integer>
 		</dict>
 		<key>FB888326-8BEC-4DAE-BE47-69F473BD604C</key>
 		<dict>
@@ -2382,17 +2575,15 @@
 	<dict>
 		<key>BROWSER</key>
 		<string>Chrome</string>
-		<key>EXCLUDE_DOMAINS</key>
-		<string></string>
 		<key>LOCALE</key>
 		<string>en_US</string>
 		<key>PROFILE</key>
 		<string>Profile 3</string>
 		<key>RESULT_LIMIT_COUNT</key>
 		<string>50</string>
+		<key>SWITCHABLE_PROFILES</key>
+		<string>Profile 1,Profile 2,Profile 3</string>
 	</dict>
-	<key>variablesdontexport</key>
-	<array/>
 	<key>version</key>
 	<string></string>
 	<key>webaddress</key>
