@@ -186,6 +186,18 @@
 			</dict>
 			<dict>
 				<key>destinationuid</key>
+				<string>D9347EBB-8677-40B3-81C1-478ED5AD7A13</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>sourceoutputuid</key>
+				<string>8F136A9C-846B-4B4B-B91B-BEAD47366700</string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
 				<string>4DB58061-0B2D-4534-AEE2-1B860EF71EC5</string>
 				<key>modifiers</key>
 				<integer>0</integer>
@@ -888,6 +900,20 @@
 						<key>uid</key>
 						<string>1C5C4596-705F-4F88-8D2C-E63E39354CF4</string>
 					</dict>
+					<dict>
+						<key>inputstring</key>
+						<string>{var:BROWSER}</string>
+						<key>matchcasesensitive</key>
+						<false/>
+						<key>matchmode</key>
+						<integer>0</integer>
+						<key>matchstring</key>
+						<string>epic</string>
+						<key>outputlabel</key>
+						<string>epic</string>
+						<key>uid</key>
+						<string>8F136A9C-846B-4B4B-B91B-BEAD47366700</string>
+					</dict>
 				</array>
 				<key>elselabel</key>
 				<string>else</string>
@@ -1405,7 +1431,7 @@
 			<key>config</key>
 			<dict>
 				<key>browser</key>
-				<string></string>
+				<string>com.hiddenreflex.Epic</string>
 				<key>spaces</key>
 				<string></string>
 				<key>url</key>
@@ -1416,7 +1442,7 @@
 			<key>type</key>
 			<string>alfred.workflow.action.openurl</string>
 			<key>uid</key>
-			<string>4DB58061-0B2D-4534-AEE2-1B860EF71EC5</string>
+			<string>D9347EBB-8677-40B3-81C1-478ED5AD7A13</string>
 			<key>version</key>
 			<integer>1</integer>
 		</dict>
@@ -1520,6 +1546,25 @@
 			<string>90C33A56-1AB6-42C4-A308-95D096B6B40C</string>
 			<key>version</key>
 			<integer>3</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>browser</key>
+				<string></string>
+				<key>spaces</key>
+				<string></string>
+				<key>url</key>
+				<string>{query}</string>
+				<key>utf8</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.openurl</string>
+			<key>uid</key>
+			<string>4DB58061-0B2D-4534-AEE2-1B860EF71EC5</string>
+			<key>version</key>
+			<integer>1</integer>
 		</dict>
 		<dict>
 			<key>config</key>
@@ -2653,7 +2698,7 @@
 			<key>xpos</key>
 			<integer>1065</integer>
 			<key>ypos</key>
-			<integer>890</integer>
+			<integer>1020</integer>
 		</dict>
 		<key>4F9A5738-F86E-4275-81C9-16CFC2E465D2</key>
 		<dict>
@@ -2920,6 +2965,13 @@
 			<integer>365</integer>
 			<key>ypos</key>
 			<integer>665</integer>
+		</dict>
+		<key>D9347EBB-8677-40B3-81C1-478ED5AD7A13</key>
+		<dict>
+			<key>xpos</key>
+			<integer>1065</integer>
+			<key>ypos</key>
+			<integer>890</integer>
 		</dict>
 		<key>DBEF9EBC-450B-40A2-978F-D8774A2B6AD6</key>
 		<dict>

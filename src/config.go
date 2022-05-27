@@ -42,6 +42,7 @@ var SelectBrowser = func(wf *aw.Workflow, query string) {
 	addNewBrowserItem(wf, "Edge")
 	addNewBrowserItem(wf, "Brave")
 	addNewBrowserItem(wf, "Naver Whale")
+	addNewBrowserItem(wf, "Epic")
 
 	wf.Filter(query)
 }

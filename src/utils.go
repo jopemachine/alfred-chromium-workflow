@@ -50,6 +50,8 @@ var GetDBFilePath = func(chromeProfilePath string, dbFile string) string {
 		targetPath = `/Users/%s/Library/Application Support/Google/Chrome/%s/%s`
 	case "Naver Whale":
 		targetPath = `/Users/%s/Library/Application Support/Naver/Whale/%s/%s`
+	case "Epic":
+		targetPath = `/Users/%s/Library/Application Support/HiddenReflex/Epic/%s/%s`
 	default:
 		panic("Unsupported browser. Please consider to make a issue to support the browser if the browser is based on Chromium.")
 	}
