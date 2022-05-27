@@ -85,7 +85,7 @@ func alfredCallback() {
 
 func init() {
 	repoUrl := "jopemachine/alfred-chromium-workflow"
-	wf = aw.New(update.GitHub(repoUrl), aw.HelpURL(repoUrl + "/issues"), aw.MaxResults(200))
+	wf = aw.New(update.GitHub(repoUrl), aw.HelpURL(repoUrl+"/issues"), aw.MaxResults(200))
 }
 
 func main() {

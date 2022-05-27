@@ -126,7 +126,7 @@ var getNewTabScript = func() string {
 
 	return fmt.Sprintf(`
 	tell application "%s"
-		 activate
+		activate
 		tell front window to make new tab at after (get active tab)
 	end tell
 	`, browserName)
