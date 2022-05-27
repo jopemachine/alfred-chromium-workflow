@@ -1,5 +1,6 @@
 package src
 
+// Implement tab, window related features using JXA, Applescript.
 // Ref: https://github.com/bit2pixel/chrome-control
 
 import (
@@ -98,8 +99,8 @@ var getFocusTabScript = func() string {
 
 	function focusTab(winIdx, tabIdx) {
 		browser.windows[winIdx].visible = true
-		browser.windows[winIdx].activeTabIndex = tabIdx + 1 // Focus on tab
-		browser.windows[winIdx].index = 1 // Focus on this specific browser window
+		browser.windows[winIdx].activeTabIndex = tabIdx + 1
+		browser.windows[winIdx].index = 1
 		browser.activate()
 	}
 

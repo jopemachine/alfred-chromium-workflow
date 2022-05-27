@@ -39,16 +39,17 @@ var FetchDownloadHistory = func(wf *aw.Workflow, query string) {
 		unixTimestamp := ConvertChromeTimeToUnixTimestamp(downloadedStartTime)
 		localeTimeStr := GetLocaleString(unixTimestamp)
 
-		subtitle += fmt.Sprintf(` Downloaded in %s, From '%s'`, localeTimeStr, domainName)
+		subtitle += fmt.Sprintf(` Downloaded In '%s', From '%s'`, localeTimeStr, domainName)
 
 		item := wf.NewItem(fileName).
 			Subtitle(subtitle).
 			Valid(true).
+			Arg(downloadedFilePath).
 			Quicklook(downloadedFilePath).
 			Copytext(downloadedFilePath).
 			Largetype(downloadedFilePath)
 
-		iconPath := fmt.Sprintf(`cache/%s`, domainName)
+		iconPath := fmt.Sprintf(`cache/%s.png`, domainName)
 
 		if FileExist(iconPath) {
 			item.Icon(&aw.Icon{iconPath, ""})

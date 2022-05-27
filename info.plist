@@ -929,7 +929,7 @@
 				<key>autopaste</key>
 				<false/>
 				<key>clipboardtext</key>
-				<string>{var:url}</string>
+				<string>{query}</string>
 				<key>ignoredynamicplaceholders</key>
 				<false/>
 				<key>transient</key>
@@ -1131,6 +1131,11 @@
 				<integer>0</integer>
 				<key>withspace</key>
 				<true/>
+			</dict>
+			<key>inboundconfig</key>
+			<dict>
+				<key>externalid</key>
+				<string>chf</string>
 			</dict>
 			<key>type</key>
 			<string>alfred.workflow.input.scriptfilter</string>

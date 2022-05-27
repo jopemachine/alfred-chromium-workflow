@@ -32,10 +32,17 @@ var FetchLoginData = func(wf *aw.Workflow, query string) {
 		CheckError(err)
 
 		domainName := ExtractDomainName(originUrl)
-		iconPath := fmt.Sprintf(`cache/%s`, domainName)
+		iconPath := fmt.Sprintf(`cache/%s.png`, domainName)
+
+		var subtitle string
+		if userNameElement != "" {
+			subtitle = fmt.Sprintf(`Used by "%s", Group: %s`, userNameElement, domainName)
+		} else {
+			subtitle = fmt.Sprintf(`Used by "%s"`, domainName)
+		}
 
 		item := wf.NewItem(userNameValue).
-			Subtitle(fmt.Sprintf(`Group: %s, Used by "%s"`, userNameElement, domainName)).
+			Subtitle(subtitle).
 			Valid(true).
 			Copytext(userNameValue).
 			Largetype(userNameValue)
