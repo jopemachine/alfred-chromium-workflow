@@ -92,19 +92,19 @@ Retrieve autofill data.
 
 Retrieve login data (including email).
 
-### ch > browser 
+### ch browser
 
 Switch browsers with ease.
 
-### ch > profile
+### ch profile
 
 Switch profiles with ease.
 
-### ch > cache
+### ch cache
 
 Cache favicon images from your visit history in advance.
 
-### ch > clearcache
+### ch clearcache
 
 Clear favicon cache.
 
@@ -116,13 +116,13 @@ Configure below options through Workflow Environment Variables.
 
 Browser's profile name.
 
-You can change this value through `ch > profile` with ease.
+You can change this value through `ch profile` with ease.
 
 ### SwitchableProfiles
 
 List up your all profile names here.
 
-You can switch your profile through `ch > profle` with this value.
+You can switch your profile through `ch profile` with this value.
 
 Each profile name should be splited with comma (`,`).
 
@@ -136,7 +136,7 @@ https://github.com/klauspost/lctime/tree/master/internal/locales
 
 Browser name.
 
-You can change this value through `ch > browser` with ease.
+You can change this value through `ch browser` with ease.
 
 Currently supported browsers are as follows.
 

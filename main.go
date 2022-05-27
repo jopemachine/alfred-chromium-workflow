@@ -4,6 +4,7 @@ import (
 	"flag"
 
 	"github.com/deanishe/awgo"
+	"github.com/deanishe/awgo/update"
 	API "github.com/jopemachine/alfred-chromium-workflow/src"
 	"github.com/klauspost/lctime"
 )
@@ -23,6 +24,8 @@ func alfredCallback() {
 		} else {
 			query = ""
 		}
+
+		API.ShowUpdateStatus(wf, query)
 
 		switch commandType {
 		case "search-log":
@@ -76,7 +79,8 @@ func alfredCallback() {
 }
 
 func init() {
-	wf = aw.New()
+	repoUrl := "jopemachine/alfred-chromium-workflow"
+	wf = aw.New(update.GitHub(repoUrl), aw.HelpURL(repoUrl + "/issues"), aw.MaxResults(200))
 }
 
 func main() {

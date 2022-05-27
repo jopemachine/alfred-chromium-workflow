@@ -1898,7 +1898,7 @@
 				<key>escaping</key>
 				<integer>102</integer>
 				<key>keyword</key>
-				<string>ch &gt; browser</string>
+				<string>ch browser</string>
 				<key>queuedelaycustom</key>
 				<integer>3</integer>
 				<key>queuedelayimmediatelyinitially</key>
@@ -1918,7 +1918,7 @@
 				<key>subtext</key>
 				<string>Select and change Browser</string>
 				<key>title</key>
-				<string>ch &gt; browser</string>
+				<string>ch browser</string>
 				<key>type</key>
 				<integer>0</integer>
 				<key>withspace</key>
@@ -1968,7 +1968,7 @@
 				<key>escaping</key>
 				<integer>102</integer>
 				<key>keyword</key>
-				<string>ch &gt; profile</string>
+				<string>ch profile</string>
 				<key>queuedelaycustom</key>
 				<integer>3</integer>
 				<key>queuedelayimmediatelyinitially</key>
@@ -1988,7 +1988,7 @@
 				<key>subtext</key>
 				<string>Select and change Profile</string>
 				<key>title</key>
-				<string>ch &gt; profile</string>
+				<string>ch profile</string>
 				<key>type</key>
 				<integer>0</integer>
 				<key>withspace</key>
@@ -2107,11 +2107,11 @@
 				<key>argumenttype</key>
 				<integer>2</integer>
 				<key>keyword</key>
-				<string>ch &gt; cache</string>
+				<string>ch cache</string>
 				<key>subtext</key>
 				<string>Cache Favicons</string>
 				<key>text</key>
-				<string>ch &gt; cache</string>
+				<string>ch cache</string>
 				<key>withspace</key>
 				<false/>
 			</dict>
@@ -2172,11 +2172,11 @@
 				<key>argumenttype</key>
 				<integer>2</integer>
 				<key>keyword</key>
-				<string>ch &gt; clearcache</string>
+				<string>ch clearcache</string>
 				<key>subtext</key>
 				<string>Clear favicon cache</string>
 				<key>text</key>
-				<string>ch &gt; clearcache</string>
+				<string>ch clearcache</string>
 				<key>withspace</key>
 				<false/>
 			</dict>
@@ -2189,7 +2189,7 @@
 		</dict>
 	</array>
 	<key>readme</key>
-	<string></string>
+	<string>Chromium based browser workflow for Alfred 4</string>
 	<key>uidata</key>
 	<dict>
 		<key>1199499D-34EF-4323-91D4-F09D5FEF3C6C</key>
@@ -2574,20 +2574,18 @@
 	<key>variables</key>
 	<dict>
 		<key>BROWSER</key>
-		<string>Brave</string>
+		<string>Chrome</string>
 		<key>LOCALE</key>
 		<string>en_US</string>
 		<key>PROFILE</key>
-		<string>Default</string>
+		<string>Profile 3</string>
 		<key>RESULT_COUNT_LIMIT</key>
 		<string>50</string>
 		<key>SWITCHABLE_PROFILES</key>
 		<string>Default,Profile 1,Profile 2,Profile 3</string>
 	</dict>
-	<key>variablesdontexport</key>
-	<array/>
 	<key>version</key>
-	<string></string>
+	<string>0.0.1</string>
 	<key>webaddress</key>
 	<string></string>
 </dict>
