@@ -25,6 +25,9 @@ var FetchDownloadHistory = func(wf *aw.Workflow, query string) {
 		fileNameArr := strings.Split(downloadedFilePath, "/")
 		fileName := fileNameArr[len(fileNameArr)-1]
 		domainName := ExtractDomainName(downloadedFileFrom)
+		if fileName == "" {
+			continue
+		}
 
 		var subtitle string
 		if FileExist(downloadedFilePath) {

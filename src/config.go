@@ -12,7 +12,7 @@ type WorkflowConfig struct {
 	Locale             string
 	Profile            string
 	SwitchableProfiles string
-	ResultCountLimit   uint8
+	ResultCountLimit   int
 }
 
 var wf *aw.Workflow

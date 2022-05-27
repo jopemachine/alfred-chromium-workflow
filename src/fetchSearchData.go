@@ -31,7 +31,7 @@ var FetchSearchData = func(wf *aw.Workflow, query string) {
 	var previousTitle = ""
 
 	for rows.Next() {
-		if itemCount >= int(Conf.ResultCountLimit) {
+		if itemCount >= Conf.ResultCountLimit {
 			break
 		}
 

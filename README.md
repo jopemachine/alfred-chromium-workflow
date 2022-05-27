@@ -10,7 +10,9 @@ Alfred workflow for Chromium browsers
 ## Why?
 
 This workflow originated from [alfred-chrome-workflow](https://github.com/jopemachine/alfred-chrome-workflow).
-I rewrote the workflow to resolve several [npm related installation issue](https://github.com/jopemachine/alfred-chrome-workflow/issues/13#issuecomment-1103938917).
+
+Previous workflow has several [npm related installation issue like this](https://github.com/jopemachine/alfred-chrome-workflow/issues/13#issuecomment-1103938917).
+
 In addition to resolving these issues, this workflow has following several advantages over the previous one.
 
 * Support favicon images in almost all features
@@ -141,6 +143,12 @@ To add new browser, follow below guide.
 2. Add new path to `GetDBFilePath` in `src/utils.go`
 
 3. Add the browser's proper Applicatino Name to `getApplicationName` in `src/tabManager.go`
+
+## Related
+
+You may also consider below workflows interesting.
+
+- [chrome-control](https://github.com/bit2pixel/chrome-control): A JXA script and an Alfred Workflow for controlling Google Chrome
 
 ## License
 
