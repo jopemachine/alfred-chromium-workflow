@@ -44,6 +44,8 @@ var GetDBFilePath = func(chromeProfilePath string, dbFile string) string {
 	case "Chromium":
 		// 'Chrome Cloud Enrollment' could be wrong (not sure)
 		targetPath = `/Users/%s/Library/Application Support/Google/Chrome Cloud Enrollment/%s/%s`
+	case "Brave":
+		targetPath = ``
 	default:
 		targetPath = `/Users/%s/Library/Application Support/Google/Chrome/%s/%s`
 	}

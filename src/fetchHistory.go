@@ -29,7 +29,7 @@ var FetchHistory = func(wf *aw.Workflow, query string) {
 	var previousTitle = ""
 
 	for rows.Next() {
-		if itemCount >= int(Conf.ResultLimitCount) {
+		if itemCount >= int(Conf.ResultCountLimit) {
 			break
 		}
 
