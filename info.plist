@@ -3040,7 +3040,7 @@
 	<key>variables</key>
 	<dict>
 		<key>BROWSER</key>
-		<string>Epic</string>
+		<string>Chrome</string>
 		<key>LOCALE</key>
 		<string>en_US</string>
 		<key>PROFILE</key>

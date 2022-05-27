@@ -150,9 +150,9 @@ You can change this value through `ch profile` with ease.
 
 ### SwitchableProfiles
 
-List up your all profile names here.
+List up your custom profile names here.
 
-You can switch your profile through `ch profile` with this value.
+You can switch your profile through `ch profile` with `Profile {number}` and these values.
 
 Each profile name should be splited with comma (`,`).
 

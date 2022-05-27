@@ -37,7 +37,7 @@ func addNewBrowserItem(wf *aw.Workflow, browserName string) {
 }
 
 var SelectBrowser = func(wf *aw.Workflow, query string) {
-	browsers := []string {
+	browsers := []string{
 		"Chrome",
 		"Chrome Canary",
 		"Chromium",
@@ -88,7 +88,7 @@ var SelectProfile = func(wf *aw.Workflow, query string) {
 
 var ChangeProfile = func(profileName string) {
 	// Check if the profile folder exist in the browser first
-	if !FileExist(GetDBFilePath(Conf.Browser, profileName, "History")) {
+	if !FileExist(GetProfileRootPath(Conf.Browser)) {
 		fmt.Print("")
 		return
 	}
