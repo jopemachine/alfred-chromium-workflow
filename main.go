@@ -28,6 +28,7 @@ func alfredCallback() {
 		API.ShowUpdateStatus(wf, query)
 
 		switch commandType {
+		// Fetch data
 		case "search-log":
 			API.FetchSearchData(wf, query)
 		case "visit-history":
@@ -43,7 +44,7 @@ func alfredCallback() {
 		case "autofill":
 			API.FetchAutofillData(wf, query)
 
-		// Tab related features
+		// Tab, window related features
 		case "listup-tabs":
 			API.ListOpenedTabs(query)
 			return
@@ -53,18 +54,22 @@ func alfredCallback() {
 		case "focus-tab":
 			API.FocusTab(query)
 			return
+		case "new-window":
+			API.OpenNewWindow()
+			return
+		case "new-tab":
+			API.OpenNewTab()
+			return
 
-		// Setting
+		// Change setting
 		case "cache-favicons":
 			API.CacheFavicons()
 			return
-
 		case "select-profile":
 			API.SelectProfile(wf, query)
 		case "change-profile":
 			API.ChangeProfile(query)
 			return
-
 		case "select-browser":
 			API.SelectBrowser(wf, query)
 		case "change-browser":

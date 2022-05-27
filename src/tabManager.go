@@ -16,11 +16,11 @@ var getApplicationName = func(browserName string) string {
 		return "Microsoft Edge"
 	case "Chrome":
 		return "Google Chrome"
+	case "Chrome Canary":
+		return "Google Chrome Canary"
 	case "Brave":
 		fallthrough
 	case "Chromium":
-		fallthrough
-	case "Chrome Canary":
 		panic("Not implemented yet")
 	default:
 		panic("Unsupported browser. Please consider to make a issue to support the browser if the browser is based on Chromium.")
@@ -109,6 +109,29 @@ var getFocusTabScript = func() string {
 	`, browserName)
 }
 
+var getNewWindowScript = func() string {
+	browserName := getApplicationName(Conf.Browser)
+
+	return fmt.Sprintf(`
+	tell application "%s"
+		make new window
+		tell application "System Events" to set frontmost of process "%s" to true
+		activate
+	end tell
+	`, browserName, browserName)
+}
+
+var getNewTabScript = func() string {
+	browserName := getApplicationName(Conf.Browser)
+
+	return fmt.Sprintf(`
+	tell application "%s"
+		 activate
+		tell front window to make new tab at after (get active tab)
+	end tell
+	`, browserName)
+}
+
 var ListOpenedTabs = func(query string) {
 	stdout, err := util.RunJS(getListUpTabScript(), query)
 	CheckError(err)
@@ -141,5 +164,15 @@ var CloseTab = func(query string) {
 var FocusTab = func(query string) {
 	argv := strings.Split(query, ",")
 	_, err := util.RunJS(getFocusTabScript(), argv...)
+	CheckError(err)
+}
+
+var OpenNewTab = func() {
+	_, err := util.RunAS(getNewTabScript())
+	CheckError(err)
+}
+
+var OpenNewWindow = func() {
+	_, err := util.RunAS(getNewWindowScript())
 	CheckError(err)
 }

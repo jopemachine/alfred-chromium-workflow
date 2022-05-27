@@ -92,6 +92,14 @@ Retrieve autofill data.
 
 Retrieve login data (including email).
 
+### cho
+
+Open New Tab or Window.
+
+### cht
+
+Search opened tabs and focus, close them.
+
 ### ch browser
 
 Switch browsers with ease.
