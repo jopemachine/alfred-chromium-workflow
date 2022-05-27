@@ -15,6 +15,7 @@ var (
 		"c":     Coverage,
 		"t":     Test,
 		"l":     Lint,
+		"f":     Formatter,
 	}
 
 	test = sh.RunCmd("go", "test", "-v")
@@ -41,3 +42,5 @@ func Coverage() error {
 
 // Clean remove cache files
 func Clean() error { return sh.Run("mage", "-clean") }
+
+func Formatter() error { return sh.Run("gofmt", "-w", "src") }

@@ -7,10 +7,10 @@ import (
 )
 
 type WorkflowConfig struct {
-	Browser string
-	Locale string
-	Profile string
-	ExcludeDomains []string
+	Browser          string
+	Locale           string
+	Profile          string
+	ExcludeDomains   []string
 	ResultLimitCount uint8
 }
 
@@ -20,7 +20,7 @@ var Conf = &WorkflowConfig{}
 
 var ConfigAPI *aw.Config
 
-var ImportConfig = func () {
+var ImportConfig = func() {
 	ConfigAPI = aw.NewConfig()
 
 	if err := ConfigAPI.To(Conf); err != nil {
@@ -28,13 +28,13 @@ var ImportConfig = func () {
 	}
 }
 
-func addNewBrowserItem (wf *aw.Workflow, browserName string) {
+func addNewBrowserItem(wf *aw.Workflow, browserName string) {
 	wf.NewItem(browserName).
 		Valid(true).
 		Arg(browserName)
 }
 
-var SelectBrowser = func (wf *aw.Workflow, query string) {
+var SelectBrowser = func(wf *aw.Workflow, query string) {
 	addNewBrowserItem(wf, "Chrome")
 	addNewBrowserItem(wf, "Chromium")
 	addNewBrowserItem(wf, "Brave")
@@ -42,7 +42,7 @@ var SelectBrowser = func (wf *aw.Workflow, query string) {
 	wf.Filter(query)
 }
 
-var ChangeBrowser = func (browserName string) {
+var ChangeBrowser = func(browserName string) {
 	err := ConfigAPI.Set("BROWSER", browserName, true).Do()
 	CheckError(err)
 	fmt.Print(browserName)

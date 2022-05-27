@@ -7,8 +7,8 @@ import (
 	"github.com/deanishe/awgo"
 )
 
-var FetchSearchData = func (wf *aw.Workflow, query string) {
-	titleQuery, domainQuery, isDomainSearch, _, _:= HandleUserQuery(query)
+var FetchSearchData = func(wf *aw.Workflow, query string) {
+	titleQuery, domainQuery, isDomainSearch, _, _ := HandleUserQuery(query)
 
 	var dbQuery = fmt.Sprintf(`
 		SELECT urls.url, urls.last_visit_time, keyword_search_terms.term
@@ -70,4 +70,3 @@ var FetchSearchData = func (wf *aw.Workflow, query string) {
 		itemCount += 1
 	}
 }
-

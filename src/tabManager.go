@@ -3,31 +3,31 @@ package src
 // Ref: https://github.com/bit2pixel/chrome-control
 
 import (
+	"encoding/json"
 	"fmt"
 	"strings"
-	"encoding/json"
 
 	"github.com/deanishe/awgo/util"
 )
 
-var getApplicationName = func (browserName string) string {
+var getApplicationName = func(browserName string) string {
 	switch browserName {
-		case "Edge":
-			return "Microsoft Edge"
-		case "Chrome":
-			return "Google Chrome"
-		case "Brave":
-			fallthrough
-		case "Chromium":
-			fallthrough
-		case "Chrome Canary":
-			panic("Not implemented yet")
-		default:
-			panic("Unsupported browser. Please make a issue to support the browser if the browser is based on Chromium.")
+	case "Edge":
+		return "Microsoft Edge"
+	case "Chrome":
+		return "Google Chrome"
+	case "Brave":
+		fallthrough
+	case "Chromium":
+		fallthrough
+	case "Chrome Canary":
+		panic("Not implemented yet")
+	default:
+		panic("Unsupported browser. Please make a issue to support the browser if the browser is based on Chromium.")
 	}
 }
 
-var getListUpTabScript = func () string {
+var getListUpTabScript = func() string {
 	browserName := getApplicationName(Conf.Browser)
 
 	return fmt.Sprintf(`
@@ -71,7 +71,7 @@ var getListUpTabScript = func () string {
 	`, browserName)
 }
 
-var getCloseTabScript = func () string {
+var getCloseTabScript = func() string {
 	browserName := getApplicationName(Conf.Browser)
 
 	return fmt.Sprintf(`
@@ -89,7 +89,7 @@ var getCloseTabScript = func () string {
 	`, browserName)
 }
 
-var getFocusTabScript = func () string {
+var getFocusTabScript = func() string {
 	browserName := getApplicationName(Conf.Browser)
 
 	return fmt.Sprintf(`
@@ -109,7 +109,7 @@ var getFocusTabScript = func () string {
 	`, browserName)
 }
 
-var ListOpenedTabs = func (query string) {
+var ListOpenedTabs = func(query string) {
 	stdout, err := util.RunJS(getListUpTabScript(), query)
 	CheckError(err)
 
@@ -123,7 +123,7 @@ var ListOpenedTabs = func (query string) {
 		iconPath := fmt.Sprintf(`cache/%s.png`, domainName)
 
 		if FileExist(iconPath) {
-			item.(map[string]interface{})["icon"] = map[string]string { "path": iconPath }
+			item.(map[string]interface{})["icon"] = map[string]string{"path": iconPath}
 		}
 	}
 
@@ -132,13 +132,13 @@ var ListOpenedTabs = func (query string) {
 	fmt.Print(string(result))
 }
 
-var CloseTab = func (query string) {
+var CloseTab = func(query string) {
 	argv := strings.Split(query, ",")
 	_, err := util.RunJS(getCloseTabScript(), argv...)
 	CheckError(err)
 }
 
-var FocusTab = func (query string) {
+var FocusTab = func(query string) {
 	argv := strings.Split(query, ",")
 	_, err := util.RunJS(getFocusTabScript(), argv...)
 	CheckError(err)

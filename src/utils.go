@@ -2,18 +2,18 @@ package src
 
 import (
 	"database/sql"
+	"encoding/json"
+	"errors"
 	"fmt"
 	"io"
 	"io/ioutil"
+	"math"
+	"net/url"
 	"os"
 	"os/user"
-	"strings"
-	"math"
-	"errors"
-	"time"
 	"regexp"
-	"encoding/json"
-	"net/url"
+	"strings"
+	"time"
 
 	"github.com/klauspost/lctime"
 	_ "github.com/mattn/go-sqlite3"
@@ -21,31 +21,31 @@ import (
 	// "github.com/deanishe/awgo"
 )
 
-var CheckError = func (err error) {
+var CheckError = func(err error) {
 	if err != nil {
 		panic(err)
 	}
 }
 
-var EnsureDirectoryExist = func (dirPath string) {
+var EnsureDirectoryExist = func(dirPath string) {
 	if !FileExist(dirPath) {
 		os.Mkdir(dirPath, 0777)
 	}
 }
 
-var GetDBFilePath = func (chromeProfilePath string, dbFile string) string {
+var GetDBFilePath = func(chromeProfilePath string, dbFile string) string {
 	var targetPath string
 
 	switch Conf.Browser {
-		case "Chrome Canary":
-			targetPath = `/Users/%s/Library/Application Support/Google/Chrome Canary/%s/%s`
-		case "Edge":
-			targetPath = `/Users/%s/Library/Application Support/Microsoft Edge/%s/%s`
-		case "Chromium":
-			// 'Chrome Cloud Enrollment' could be wrong (not sure)
-			targetPath = `/Users/%s/Library/Application Support/Google/Chrome Cloud Enrollment/%s/%s`
-		default:
-			targetPath = `/Users/%s/Library/Application Support/Google/Chrome/%s/%s`
+	case "Chrome Canary":
+		targetPath = `/Users/%s/Library/Application Support/Google/Chrome Canary/%s/%s`
+	case "Edge":
+		targetPath = `/Users/%s/Library/Application Support/Microsoft Edge/%s/%s`
+	case "Chromium":
+		// 'Chrome Cloud Enrollment' could be wrong (not sure)
+		targetPath = `/Users/%s/Library/Application Support/Google/Chrome Cloud Enrollment/%s/%s`
+	default:
+		targetPath = `/Users/%s/Library/Application Support/Google/Chrome/%s/%s`
 	}
 
 	user, err := user.Current()
@@ -55,7 +55,7 @@ var GetDBFilePath = func (chromeProfilePath string, dbFile string) string {
 	return fmt.Sprintf(targetPath, userName, chromeProfilePath, dbFile)
 }
 
-var HandleUserQuery = func (query string) (titleQuery string, domainQuery string, isDomainSearch bool, artistQuery string, isArtistSearch bool) {
+var HandleUserQuery = func(query string) (titleQuery string, domainQuery string, isDomainSearch bool, artistQuery string, isArtistSearch bool) {
 	titleQuery = ""
 	domainQuery = ""
 	artistQuery = ""
@@ -68,10 +68,10 @@ var HandleUserQuery = func (query string) (titleQuery string, domainQuery string
 		for _, word := range words {
 			if strings.HasPrefix(word, "#") && len(word) > 1 {
 				isDomainSearch = true
-				domainQuery = word[1: len(word) - 1]
+				domainQuery = word[1 : len(word)-1]
 			} else if strings.HasPrefix(word, "@") && len(word) > 1 {
 				isArtistSearch = true
-				artistQuery = word[1: len(word) - 1]
+				artistQuery = word[1 : len(word)-1]
 			} else {
 				// TODO: Refactor below logic using `strings.Join`
 				if titleQuery == "" {
@@ -113,7 +113,7 @@ func CopyFile(src, dst string) {
 	}
 }
 
-var GetHistoryDB = func () (*sql.DB) {
+var GetHistoryDB = func() *sql.DB {
 	var targetPath = GetDBFilePath(Conf.Profile, "History")
 	CopyFile(targetPath, CONSTANT.HISTORY_DB)
 	db, err := sql.Open("sqlite3", CONSTANT.HISTORY_DB)
@@ -122,7 +122,7 @@ var GetHistoryDB = func () (*sql.DB) {
 	return db
 }
 
-var GetFaviconDB = func () (*sql.DB) {
+var GetFaviconDB = func() *sql.DB {
 	var targetPath = GetDBFilePath(Conf.Profile, "Favicons")
 	CopyFile(targetPath, CONSTANT.FAVICON_DB)
 	db, err := sql.Open("sqlite3", CONSTANT.FAVICON_DB)
@@ -131,7 +131,7 @@ var GetFaviconDB = func () (*sql.DB) {
 	return db
 }
 
-var GetWebDataDB = func () (*sql.DB) {
+var GetWebDataDB = func() *sql.DB {
 	var targetPath = GetDBFilePath(Conf.Profile, "Web Data")
 	CopyFile(targetPath, CONSTANT.WEB_DATA_DB)
 	db, err := sql.Open("sqlite3", CONSTANT.WEB_DATA_DB)
@@ -140,7 +140,7 @@ var GetWebDataDB = func () (*sql.DB) {
 	return db
 }
 
-var GetLoginDataDB = func () (*sql.DB) {
+var GetLoginDataDB = func() *sql.DB {
 	var targetPath = GetDBFilePath(Conf.Profile, "Login Data")
 	CopyFile(targetPath, CONSTANT.LOGIN_DATA_DB)
 	db, err := sql.Open("sqlite3", CONSTANT.LOGIN_DATA_DB)
@@ -149,7 +149,7 @@ var GetLoginDataDB = func () (*sql.DB) {
 	return db
 }
 
-var GetChromeBookmark = func () map[string]interface{} {
+var GetChromeBookmark = func() map[string]interface{} {
 	var bookmarkJson map[string]interface{}
 	var bookmarkFilePath = GetDBFilePath(Conf.Profile, "Bookmarks")
 
@@ -177,7 +177,7 @@ func isValidUrl(toTest string) bool {
 	return true
 }
 
-var ExtractDomainName = func (url string) (domainName string) {
+var ExtractDomainName = func(url string) (domainName string) {
 	if !isValidUrl(url) {
 		return "unknown"
 	}
@@ -200,23 +200,23 @@ var ExtractDomainName = func (url string) (domainName string) {
 	return domainName
 }
 
-var ConvertChromeTimeToUnixTimestamp = func (time int64) int64 {
-	return int64((math.Floor(((float64(time) / 1000000)) - 11644473600)) * 1000)
+var ConvertChromeTimeToUnixTimestamp = func(time int64) int64 {
+	return int64((math.Floor((float64(time) / 1000000) - 11644473600)) * 1000)
 }
 
-var FileExist = func (filepath string) bool {
+var FileExist = func(filepath string) bool {
 	if _, err := os.Stat(filepath); errors.Is(err, os.ErrNotExist) {
 		return false
 	}
 	return true
 }
 
-var GetLocaleString = func (unixTime int64) string {
+var GetLocaleString = func(unixTime int64) string {
 	return lctime.Strftime("%c", time.Unix(unixTime, 0))
 }
 
 // Used only in fetchBookmark.go of`chf` command
-var ParseUserQuery = func (userQuery string) (input string, options map[string]string) {
+var ParseUserQuery = func(userQuery string) (input string, options map[string]string) {
 	options = make(map[string]string)
 
 	for _, args := range strings.Split(userQuery, " ") {
@@ -255,23 +255,23 @@ func StringContains(slice []string, item string) bool {
 }
 
 type BookmarkItem struct {
-	Id string `json:"id"`
-	Url string `json:"url,omitempty"`
-	Name string `json:"name,omitempty"`
+	Id       string        `json:"id"`
+	Url      string        `json:"url,omitempty"`
+	Name     string        `json:"name,omitempty"`
 	Children []interface{} `json:"children,omitempty"`
 }
 
 type TraverseBookmarkJsonOption struct {
 	Targets []string
-	Depth int
+	Depth   int
 }
 
 // InitBookmarkJsonTraversal should be called first before calling this function
-var TraverseBookmarkJSONObject func (item map[string]interface{}, options TraverseBookmarkJsonOption) []BookmarkItem
-var TraverseBookmarkArray func (item []interface{}, options TraverseBookmarkJsonOption) []BookmarkItem
+var TraverseBookmarkJSONObject func(item map[string]interface{}, options TraverseBookmarkJsonOption) []BookmarkItem
+var TraverseBookmarkArray func(item []interface{}, options TraverseBookmarkJsonOption) []BookmarkItem
 
-var InitBookmarkJsonTraversal = func () {
-	TraverseBookmarkJSONObject  = func (jsonObject map[string]interface{}, options TraverseBookmarkJsonOption) (result []BookmarkItem) {
+var InitBookmarkJsonTraversal = func() {
+	TraverseBookmarkJSONObject = func(jsonObject map[string]interface{}, options TraverseBookmarkJsonOption) (result []BookmarkItem) {
 		// Base case
 		if options.Depth <= -1 {
 			return []BookmarkItem{}
@@ -280,7 +280,7 @@ var InitBookmarkJsonTraversal = func () {
 		// Base case
 		if jsonObject["type"] == "url" {
 			if StringContains(options.Targets, "url") {
-				return []BookmarkItem {
+				return []BookmarkItem{
 					{
 						jsonObject["id"].(string),
 						jsonObject["url"].(string),
@@ -294,14 +294,14 @@ var InitBookmarkJsonTraversal = func () {
 		}
 
 		if StringContains(options.Targets, "folder") && jsonObject["type"] == "folder" {
-			result = append(result, BookmarkItem {
+			result = append(result, BookmarkItem{
 				jsonObject["id"].(string),
 				"",
 				jsonObject["name"].(string),
 				jsonObject["children"].([]interface{}),
 			})
 
-			childResult := TraverseBookmarkArray (jsonObject["children"].([]interface{}), options)
+			childResult := TraverseBookmarkArray(jsonObject["children"].([]interface{}), options)
 			result = append(result, childResult...)
 			return result
 		}
@@ -310,19 +310,19 @@ var InitBookmarkJsonTraversal = func () {
 
 		for _, child := range target {
 			switch child.(type) {
-				case map[string]interface{}:
-					childResult := TraverseBookmarkJSONObject (child.(map[string]interface{}), options)
-					result = append(result, childResult...)
-				case []interface{}:
-					childResult:= TraverseBookmarkArray (child.([]interface{}), options)
-					result = append(result, childResult...)
+			case map[string]interface{}:
+				childResult := TraverseBookmarkJSONObject(child.(map[string]interface{}), options)
+				result = append(result, childResult...)
+			case []interface{}:
+				childResult := TraverseBookmarkArray(child.([]interface{}), options)
+				result = append(result, childResult...)
 			}
 		}
 
 		return result
 	}
 
-	TraverseBookmarkArray  = func (item []interface{}, options TraverseBookmarkJsonOption) []BookmarkItem {
+	TraverseBookmarkArray = func(item []interface{}, options TraverseBookmarkJsonOption) []BookmarkItem {
 		// Base case
 		if options.Depth <= -1 {
 			return []BookmarkItem{}
@@ -333,12 +333,12 @@ var InitBookmarkJsonTraversal = func () {
 
 		for _, child := range target {
 			switch child.(type) {
-				case map[string]interface{}:
-					childResult := TraverseBookmarkJSONObject (child.(map[string]interface{}), options)
-					result = append(result, childResult...)
-				case []interface{}:
-					childResult:= TraverseBookmarkArray (child.([]interface{}), options)
-					result = append(result, childResult...)
+			case map[string]interface{}:
+				childResult := TraverseBookmarkJSONObject(child.(map[string]interface{}), options)
+				result = append(result, childResult...)
+			case []interface{}:
+				childResult := TraverseBookmarkArray(child.([]interface{}), options)
+				result = append(result, childResult...)
 			}
 		}
 

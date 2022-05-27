@@ -5,7 +5,7 @@ import (
 	"github.com/deanishe/awgo"
 )
 
-var FetchAutofillData = func (wf *aw.Workflow, query string) {
+var FetchAutofillData = func(wf *aw.Workflow, query string) {
 	var dbQuery = fmt.Sprintf(`
 		SELECT value, name, date_created, count
 			FROM autofill

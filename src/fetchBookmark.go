@@ -2,29 +2,29 @@ package src
 
 import (
 	"fmt"
-	"sort"
 	"github.com/deanishe/awgo"
+	"sort"
 )
 
-var FetchBookmark = func (wf *aw.Workflow, query string) {
+var FetchBookmark = func(wf *aw.Workflow, query string) {
 	InitBookmarkJsonTraversal()
 	bookmarkRoot := GetChromeBookmark()
 	input, options := ParseUserQuery(query)
 	var bookmarks []BookmarkItem
 
 	if folderId, ok := options["folderId"]; ok {
-		folders := TraverseBookmarkJSONObject(bookmarkRoot, TraverseBookmarkJsonOption{ Targets: []string{"folder"}, Depth: 99 })
+		folders := TraverseBookmarkJSONObject(bookmarkRoot, TraverseBookmarkJsonOption{Targets: []string{"folder"}, Depth: 99})
 
 		for _, folder := range folders {
 			if folder.Id == folderId {
 				targetFolder := folder.Children
-				bookmarks = TraverseBookmarkArray(targetFolder, TraverseBookmarkJsonOption { Targets: []string{"url"}, Depth: 1 })
+				bookmarks = TraverseBookmarkArray(targetFolder, TraverseBookmarkJsonOption{Targets: []string{"url"}, Depth: 1})
 			} else {
 				// TODO Handle error properly
 			}
 		}
 	} else {
-		bookmarks = TraverseBookmarkJSONObject(bookmarkRoot, TraverseBookmarkJsonOption{ Targets: []string{"url"}, Depth: 99 })
+		bookmarks = TraverseBookmarkJSONObject(bookmarkRoot, TraverseBookmarkJsonOption{Targets: []string{"url"}, Depth: 99})
 	}
 
 	historyDB := GetHistoryDB()
@@ -43,9 +43,9 @@ var FetchBookmark = func (wf *aw.Workflow, query string) {
 		visitFrequency[url] += 1
 	}
 
-	sort.Slice(bookmarks, func (i, j int) bool {
-		ithFreq:= visitFrequency[bookmarks[i].Url]
-		jthFreq:= visitFrequency[bookmarks[j].Url]
+	sort.Slice(bookmarks, func(i, j int) bool {
+		ithFreq := visitFrequency[bookmarks[i].Url]
+		jthFreq := visitFrequency[bookmarks[j].Url]
 
 		if ithFreq > 0 && jthFreq > 0 {
 			if ithFreq > jthFreq {

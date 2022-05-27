@@ -6,7 +6,7 @@ import (
 	"github.com/deanishe/awgo"
 )
 
-var FetchLoginData = func (wf *aw.Workflow, query string) {
+var FetchLoginData = func(wf *aw.Workflow, query string) {
 	var dbQuery = fmt.Sprintf(`
 		SELECT username_element, username_value, origin_url
 			FROM logins

@@ -2,11 +2,11 @@ package src
 
 import (
 	"fmt"
-	"strings"
 	"github.com/deanishe/awgo"
+	"strings"
 )
 
-var FetchDownloadHistory = func (wf *aw.Workflow, query string) {
+var FetchDownloadHistory = func(wf *aw.Workflow, query string) {
 	var dbQuery = `SELECT current_path, referrer, total_bytes, start_time FROM downloads ORDER BY start_time DESC`
 
 	historyDB := GetHistoryDB()
@@ -23,7 +23,7 @@ var FetchDownloadHistory = func (wf *aw.Workflow, query string) {
 		CheckError(err)
 
 		fileNameArr := strings.Split(downloadedFilePath, "/")
-		fileName := fileNameArr[len(fileNameArr) - 1]
+		fileName := fileNameArr[len(fileNameArr)-1]
 		domainName := ExtractDomainName(downloadedFileFrom)
 
 		var subtitle string

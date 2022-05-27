@@ -2,11 +2,11 @@ package src
 
 import (
 	"fmt"
-	"os"
 	"io/ioutil"
+	"os"
 )
 
-var CacheFavicons = func () {
+var CacheFavicons = func() {
 	historyDB := GetHistoryDB()
 	GetFaviconDB()
 
@@ -48,4 +48,3 @@ var CacheFavicons = func () {
 	// To send success alert
 	fmt.Println(" ")
 }
-
