@@ -17,11 +17,11 @@ var FetchBookmark = func(wf *aw.Workflow, query string) {
 
 		for _, folder := range folders {
 			if folder.Id == folderId {
-				targetFolder := folder.Children
-				bookmarks = TraverseBookmarkArray(targetFolder, TraverseBookmarkJsonOption{Targets: []string{"url"}, Depth: 1})
-			} else {
-				panic(fmt.Sprintf("folderId not found: %s", folderId))
+				bookmarks = TraverseBookmarkArray(folder.Children, TraverseBookmarkJsonOption{Targets: []string{"url"}, Depth: 1})
 			}
+		}
+		if bookmarks == nil {
+			panic(fmt.Sprintf("folderId not found: %s", folderId))
 		}
 	} else {
 		bookmarks = TraverseBookmarkJSONObject(bookmarkRoot, TraverseBookmarkJsonOption{Targets: []string{"url"}, Depth: 99})
