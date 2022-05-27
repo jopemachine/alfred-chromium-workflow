@@ -201,7 +201,7 @@ var ExtractDomainName = func(url string) (domainName string) {
 }
 
 var ConvertChromeTimeToUnixTimestamp = func(time int64) int64 {
-	return int64((math.Floor((float64(time) / 1000000) - 11644473600)) * 1000)
+	return int64((math.Floor((float64(time) / 1000000) - 11644473600)))
 }
 
 var FileExist = func(filepath string) bool {
