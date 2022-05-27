@@ -24,7 +24,7 @@ var getApplicationName = func(browserName string) string {
 	case "Chromium":
 		return "Chromium"
 	case "Naver Whale":
-		return "네이버 웨일"
+		return "Whale"
 	default:
 		panic("Unsupported browser. Please consider to make a issue to support the browser if the browser is based on Chromium.")
 	}
@@ -172,7 +172,10 @@ var FocusTab = func(query string) {
 
 var OpenNewTab = func() {
 	_, err := util.RunAS(getNewTabScript())
-	CheckError(err)
+	// Open New Window instead
+	if err != nil {
+		OpenNewWindow()
+	}
 }
 
 var OpenNewWindow = func() {
