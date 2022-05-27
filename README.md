@@ -1,10 +1,8 @@
 <h1 align="center">
-  <a href="https://www.npmjs.com/package/alfred-chromium-workflow">
-		Alfred-chromium-workflow<br>
+	Alfred-chromium-workflow<br>
 	<img src="https://img.shields.io/badge/Alfred-4-blueviolet">
 	<img src="https://img.shields.io/github/downloads/jopemachine/alfred-chromium-workflow/total.svg">
 	<img src="https://img.shields.io/github/license/jopemachine/alfred-chromium-workflow.svg" alt="License">
-  </a>
 </h1>
 
 Alfred workflow for Chromium browsers
@@ -23,29 +21,17 @@ Alfred workflow for Chromium browsers
 
 * 📄 *Search Visit History `(chh)`*
 
-![](./imgs/chh.png)
-
 * 🔖 *Search Bookmark, bookmark folders `(chb, chf)`*
-
-![](./imgs/chb.png)
 
 * 📁 *Search Bookmark folder `(chf)`*
 
-![](./imgs/chf.png)
-
 * 📜 *Search Search query history `(chs)`*
-
-![](./imgs/chs.png)
 
 * 🔎 *Search Download logs `(chd)`*
 
-![](./imgs/chd.png)
-
 * 📒 *Search and Copy Your Autofill data `(cha)`*
 
-![](./imgs/cha.png)
-
-* *Search Your Opened Tabs and Focus or Close Them `(cht)`*
+* 📎 *Search Your Opened Tabs and Focus or Close Them `(cht)`*
 
 ## 📌 Prerequisite
 
@@ -61,7 +47,7 @@ Download and open `alfredworkflow` file in the [Release page]().
 
 ### chb
 
-Search bookmark.
+Search bookmarks.
 
 ### chf
 
@@ -69,7 +55,7 @@ Search bookmark folders.
 
 ### chh
 
-Search visit history.
+Search visit histories.
 
 You can append `#` to search word to search only the logs in that `url`.
 
@@ -79,11 +65,11 @@ Example:
 
 ### chd
 
-Search download history.
+Search download histories.
 
 ### chs
 
-Search your query based on visit history.
+Search your query based on visit histories.
 
 You can append `#` to search word to search only the logs in that `url`.
 
@@ -101,11 +87,11 @@ Search chrome's login data (including email).
 
 ### ch > browser 
 
-You can switch browsers with this command with ease
+Switch browsers with ease.
 
 ### ch > profile
 
-You can switch profiles with this command with ease
+Switch profiles with ease.
 
 ### ch > cache
 
@@ -117,19 +103,19 @@ Clear favicon cache.
 
 ## 🔖 Options
 
-You can configure below options through Workflow Environment Variables.
+Configure below options through Workflow Environment Variables.
 
 ### Profile
 
 Type: `string`
 
-Your browser's profile name.
+Browser's profile name.
 
 ### SwitchableProfiles
 
 Type: `string`
 
-All switchable profiles.
+List up all switchable profile names here.
 
 Each profile name should be splited with comma (`,`).
 
@@ -148,14 +134,6 @@ Type: `string (enum)`
 Select the browser to which you want the workflow to the workflow.
 
 Possible values: `Chrome`, `Chrome Canary`, `Edge`, `Chromium`, `Brave`
-
-### ExcludeDomains
-
-Type: `string[]`
-
-You can exclude specific domains in your result. 
-
-This is not applied to `chb`.
 
 ### ResultLimit
 
