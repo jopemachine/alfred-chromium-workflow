@@ -12,16 +12,18 @@ import (
 
 var getApplicationName = func (browserName string) string {
 	switch browserName {
-	case "Edge":
-		return "Microsoft Edge"
-	case "Chromium":
-		return "Google Chrome"
-	case "Chrome":
-		fallthrough
-	case "Chrome Canary":
-		return "Google Chrome"
-	default:
-		panic("Unsupported browser. Please make a issue to support the browser if the browser is based on Chromium.")
+		case "Edge":
+			return "Microsoft Edge"
+		case "Chrome":
+			return "Google Chrome"
+		case "Brave":
+			fallthrough
+		case "Chromium":
+			fallthrough
+		case "Chrome Canary":
+			panic("Not implemented yet")
+		default:
+			panic("Unsupported browser. Please make a issue to support the browser if the browser is based on Chromium.")
 	}
 }
 

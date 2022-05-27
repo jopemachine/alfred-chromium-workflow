@@ -33,11 +33,13 @@ var FetchAutofillData = func (wf *aw.Workflow, query string) {
 
 		subtitle += fmt.Sprintf(`Label: "%s", Created in %s`, autofillLabel, localeTimeStr)
 
-		wf.NewItem(autofillValue).
+		item := wf.NewItem(autofillValue).
 			Subtitle(subtitle).
 			Valid(true).
 			Copytext(autofillValue).
 			Largetype(autofillValue).
 			Icon(&aw.Icon{"assets/info.png", ""})
+
+		item.Cmd().Subtitle("Press Enter to copy this url to clipboard")
 	}
 }

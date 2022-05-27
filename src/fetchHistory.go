@@ -56,6 +56,8 @@ var FetchHistory = func (wf *aw.Workflow, query string) {
 			Copytext(url).
 			Largetype(url)
 
+		item.Cmd().Subtitle("Press Enter to copy this url to clipboard")
+
 		iconPath := fmt.Sprintf(`cache/%s.png`, domainName)
 
 		if FileExist(iconPath) {
