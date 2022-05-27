@@ -36,6 +36,16 @@ The prerequisites below are required to use that package.
 
 * [Alfred Powerpack](https://www.alfredapp.com/powerpack/)
 
+## 🎯 Supported Browsers
+
+Currently supported browsers are as follows.
+
+* `Chrome`
+* `Chrome Canary`
+* `Chromium`
+* `Edge`
+* `Brave`
+
 ## 🔨 How to install
 
 Download and open `alfredworkflow` file in the [Release page]().
@@ -154,14 +164,6 @@ Browser name.
 
 You can change this value through `ch browser` with ease.
 
-Currently supported browsers are as follows.
-
-* `Chrome`
-* `Chrome Canary`
-* `Chromium`
-* `Edge`
-* `Brave`
-
 ### ResultCountLimit
 
 Displays as many search results.
@@ -178,13 +180,13 @@ To add new browser, follow below guideline.
 
 1. Check the browser is based on Chromium
 
-2. Add new path to `GetDBFilePath` in `src/utils.go`
+2. Add new path to `GetDBFilePath` in `src/utils.go`.
 
-3. Add the browser's proper Application Name to `getApplicationName` in `src/tabManager.go`
+3. Add the browser's proper Application Name to `getApplicationName` in `src/tabManager.go`. You can check this value through Applescript Editor's Dictionary.
 
-4. Add proper Open URL block of `info.plist` using Alfred
+4. Add proper Open URL block of `info.plist` using Alfred.
 
-5. Add new browser's item `SelectBrowser` in `src/config.go`
+5. Add new browser's item `SelectBrowser` in `src/config.go`.
 
 ## Related
 

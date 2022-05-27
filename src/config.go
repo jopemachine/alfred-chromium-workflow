@@ -62,6 +62,12 @@ var SelectProfile = func(wf *aw.Workflow, query string) {
 }
 
 var ChangeProfile = func(profileName string) {
+	// Check if the profile folder exist in the browser first
+	if !FileExist(GetDBFilePath(profileName, "History")) {
+		fmt.Print("")
+		return
+	}
+
 	err := ConfigAPI.Set("PROFILE", profileName, true).Do()
 	CheckError(err)
 	fmt.Print(profileName)
