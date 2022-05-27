@@ -174,6 +174,18 @@
 			</dict>
 			<dict>
 				<key>destinationuid</key>
+				<string>87DE6A56-358B-4761-ABDF-345E89076DD8</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>sourceoutputuid</key>
+				<string>1C5C4596-705F-4F88-8D2C-E63E39354CF4</string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
 				<string>4DB58061-0B2D-4534-AEE2-1B860EF71EC5</string>
 				<key>modifiers</key>
 				<integer>0</integer>
@@ -862,6 +874,20 @@
 						<key>uid</key>
 						<string>1FEE8989-A44A-4C00-8565-F7C5FFBF15BF</string>
 					</dict>
+					<dict>
+						<key>inputstring</key>
+						<string>{var:BROWSER}</string>
+						<key>matchcasesensitive</key>
+						<false/>
+						<key>matchmode</key>
+						<integer>0</integer>
+						<key>matchstring</key>
+						<string>naver whale</string>
+						<key>outputlabel</key>
+						<string>naver whale</string>
+						<key>uid</key>
+						<string>1C5C4596-705F-4F88-8D2C-E63E39354CF4</string>
+					</dict>
 				</array>
 				<key>elselabel</key>
 				<string>else</string>
@@ -1320,7 +1346,7 @@
 			<key>config</key>
 			<dict>
 				<key>browser</key>
-				<string></string>
+				<string>com.naver.Whale</string>
 				<key>spaces</key>
 				<string></string>
 				<key>url</key>
@@ -1331,7 +1357,7 @@
 			<key>type</key>
 			<string>alfred.workflow.action.openurl</string>
 			<key>uid</key>
-			<string>4DB58061-0B2D-4534-AEE2-1B860EF71EC5</string>
+			<string>87DE6A56-358B-4761-ABDF-345E89076DD8</string>
 			<key>version</key>
 			<integer>1</integer>
 		</dict>
@@ -1372,6 +1398,25 @@
 			<string>alfred.workflow.output.dispatchkeycombo</string>
 			<key>uid</key>
 			<string>72EEE61D-7F19-4683-8A14-89B65FA07472</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>browser</key>
+				<string></string>
+				<key>spaces</key>
+				<string></string>
+				<key>url</key>
+				<string>{query}</string>
+				<key>utf8</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.openurl</string>
+			<key>uid</key>
+			<string>4DB58061-0B2D-4534-AEE2-1B860EF71EC5</string>
 			<key>version</key>
 			<integer>1</integer>
 		</dict>
@@ -2608,7 +2653,7 @@
 			<key>xpos</key>
 			<integer>1065</integer>
 			<key>ypos</key>
-			<integer>760</integer>
+			<integer>890</integer>
 		</dict>
 		<key>4F9A5738-F86E-4275-81C9-16CFC2E465D2</key>
 		<dict>
@@ -2707,6 +2752,13 @@
 			<integer>1065</integer>
 			<key>ypos</key>
 			<integer>270</integer>
+		</dict>
+		<key>87DE6A56-358B-4761-ABDF-345E89076DD8</key>
+		<dict>
+			<key>xpos</key>
+			<integer>1065</integer>
+			<key>ypos</key>
+			<integer>765</integer>
 		</dict>
 		<key>8AD934DC-8F4A-4CD6-A83F-BB96B7AF56AE</key>
 		<dict>
@@ -2936,7 +2988,7 @@
 	<key>variables</key>
 	<dict>
 		<key>BROWSER</key>
-		<string>Brave</string>
+		<string>Naver Whale</string>
 		<key>LOCALE</key>
 		<string>en_US</string>
 		<key>PROFILE</key>

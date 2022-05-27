@@ -23,6 +23,8 @@ var getApplicationName = func(browserName string) string {
 		return "Brave Browser"
 	case "Chromium":
 		return "Chromium"
+	case "Naver Whale":
+		return "네이버 웨일"
 	default:
 		panic("Unsupported browser. Please consider to make a issue to support the browser if the browser is based on Chromium.")
 	}

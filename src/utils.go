@@ -48,6 +48,8 @@ var GetDBFilePath = func(chromeProfilePath string, dbFile string) string {
 		targetPath = `/Users/%s/Library/Application Support/BraveSoftware/Brave-Browser/%s/%s`
 	case "Chrome":
 		targetPath = `/Users/%s/Library/Application Support/Google/Chrome/%s/%s`
+	case "Naver Whale":
+		targetPath = `/Users/%s/Library/Application Support/Naver/Whale/%s/%s`
 	default:
 		panic("Unsupported browser. Please consider to make a issue to support the browser if the browser is based on Chromium.")
 	}

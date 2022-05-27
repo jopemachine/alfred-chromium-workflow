@@ -45,6 +45,7 @@ Currently supported browsers are as follows.
 * `Chromium`
 * `Edge`
 * `Brave`
+* `Naver Whale`
 
 ## 🔨 How to install
 
