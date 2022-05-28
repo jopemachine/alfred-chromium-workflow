@@ -34,8 +34,9 @@ func ShowUpdateStatus(wf *aw.Workflow, query string) {
 
 	if wf.UpdateAvailable() {
 		wf.Configure(aw.SuppressUIDs(true))
-		log.Println("Update available!")
-		wf.NewItem("An update is available!").
+		log.Println("Workflow update available!")
+
+		wf.NewItem("Workflow update available!").
 			Subtitle("⇥ or ↩ to install update").
 			Valid(false).
 			Autocomplete("workflow:update").

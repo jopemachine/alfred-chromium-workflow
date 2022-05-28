@@ -2932,7 +2932,7 @@
 		<key>LOCALE</key>
 		<string>en_US</string>
 		<key>PROFILE</key>
-		<string>Profile 3</string>
+		<string>Default</string>
 		<key>RESULT_COUNT_LIMIT</key>
 		<string>50</string>
 		<key>SWITCHABLE_PROFILES</key>
@@ -2941,7 +2941,7 @@
 	<key>variablesdontexport</key>
 	<array/>
 	<key>version</key>
-	<string>0.0.3</string>
+	<string>0.0.4</string>
 	<key>webaddress</key>
 	<string>https://github.com/jopemachine/alfred-chromium-workflow</string>
 </dict>

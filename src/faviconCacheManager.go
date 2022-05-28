@@ -4,6 +4,7 @@ import (
 	"fmt"
 	"io/ioutil"
 	"os"
+	"path/filepath"
 
 	"github.com/deanishe/awgo"
 )
@@ -11,8 +12,9 @@ import (
 var CacheFavicons = func(wf *aw.Workflow) {
 	historyDB := GetHistoryDB(wf)
 	GetFaviconDB(wf)
+	faviconDBFilePath := filepath.Join(GetTempDataPath(wf), CONSTANT.FAVICON_DB)
 
-	attachStmt, err := historyDB.Prepare(fmt.Sprintf(`ATTACH DATABASE './%s' AS favicons`, CONSTANT.FAVICON_DB))
+	attachStmt, err := historyDB.Prepare(fmt.Sprintf(`ATTACH DATABASE '%s' AS favicons`, faviconDBFilePath))
 	attachStmt.Exec()
 
 	dbQuery := `
