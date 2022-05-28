@@ -1,0 +1,21 @@
+name: Release Tag
+on:
+  push:
+    branches:
+      - master
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: Extract version info
+      run: echo ::set-output name=version::$(echo '${{ github.event.commits[0].message }}' | egrep -o '[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}')
+      id: extract_version_name
+
+    - name: Create Release
+      uses: actions/create-release@v1
+      env:
+        GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
+      with:
+        tag_name: ${{ steps.extract_version_name.outputs.version }}
+        release_name: ${{ steps.extract_version_name.outputs.version }}
