@@ -41,6 +41,6 @@ var FetchAutofillData = func(wf *aw.Workflow, query string) {
 			Autocomplete(autofillValue).
 			Icon(&aw.Icon{"assets/info.png", ""})
 
-		item.Cmd().Subtitle("Press Enter to copy this url to clipboard")
+		item.Cmd().Subtitle("Press Enter to paste this value directly")
 	}
 }

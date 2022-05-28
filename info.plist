@@ -2420,7 +2420,7 @@
 				<key>text</key>
 				<string></string>
 				<key>title</key>
-				<string>Caching completed successfully</string>
+				<string>Manual caching completed successfully</string>
 			</dict>
 			<key>type</key>
 			<string>alfred.workflow.output.notification</string>
@@ -2941,7 +2941,7 @@
 	<key>variablesdontexport</key>
 	<array/>
 	<key>version</key>
-	<string>0.0.7</string>
+	<string>0.0.8</string>
 	<key>webaddress</key>
 	<string>https://github.com/jopemachine/alfred-chromium-workflow</string>
 </dict>

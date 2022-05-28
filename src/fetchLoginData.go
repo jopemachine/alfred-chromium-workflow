@@ -48,6 +48,8 @@ var FetchLoginData = func(wf *aw.Workflow, query string) {
 			Copytext(userNameValue).
 			Largetype(userNameValue)
 
+		item.Cmd().Subtitle("Press Enter to paste this value directly")
+
 		if FileExist(iconPath) {
 			item.Icon(&aw.Icon{iconPath, ""})
 		}
