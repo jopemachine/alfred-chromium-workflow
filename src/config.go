@@ -99,9 +99,11 @@ var ChangeProfile = func(profileName string) {
 }
 
 var GetFaviconDirectoryPath = func(wf *aw.Workflow) string {
-	return wf.Cache.Dir
+	faviconCache := aw.NewCache(filepath.Join(wf.Cache.Dir, "favicon"))
+	return faviconCache.Dir
 }
 
 var GetTempDataPath = func(wf *aw.Workflow) string {
-	return wf.Cache.Dir
+	temp := aw.NewCache(filepath.Join(wf.Data.Dir, "temp"))
+	return temp.Dir
 }

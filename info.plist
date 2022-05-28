@@ -2542,7 +2542,7 @@
 		<key>2CFE27F5-A63E-4ACC-BE5F-8FB3519E9972</key>
 		<dict>
 			<key>xpos</key>
-			<integer>365</integer>
+			<integer>375</integer>
 			<key>ypos</key>
 			<integer>2415</integer>
 		</dict>
@@ -2941,7 +2941,7 @@
 	<key>variablesdontexport</key>
 	<array/>
 	<key>version</key>
-	<string>0.0.5</string>
+	<string>0.0.6</string>
 	<key>webaddress</key>
 	<string>https://github.com/jopemachine/alfred-chromium-workflow</string>
 </dict>

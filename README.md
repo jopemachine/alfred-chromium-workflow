@@ -132,6 +132,8 @@ Switch profiles with ease.
 
 Cache favicon images from your visit history in advance.
 
+You probably not need this because caching runs in background automatically.
+
 ## 🔖 Options
 
 Configure below options through Workflow Environment Variables.

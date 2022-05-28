@@ -36,9 +36,9 @@ var FetchLoginData = func(wf *aw.Workflow, query string) {
 
 		var subtitle string
 		if userNameElement != "" {
-			subtitle = fmt.Sprintf(`Used by "%s", Group: %s`, userNameElement, domainName)
+			subtitle = fmt.Sprintf(`Used by '%s', Group: %s`, userNameElement, domainName)
 		} else {
-			subtitle = fmt.Sprintf(`Used by "%s"`, domainName)
+			subtitle = fmt.Sprintf(`Used by '%s'`, domainName)
 		}
 
 		item := wf.NewItem(userNameValue).

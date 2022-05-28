@@ -26,6 +26,7 @@ func alfredCallback() {
 		}
 
 		API.ShowUpdateStatus(wf, query)
+		API.EnsureFaviconCacheUptodated(wf)
 
 		switch commandType {
 		// Fetch data
@@ -67,6 +68,7 @@ func alfredCallback() {
 		case "cache-favicons":
 			API.CacheFavicons(wf)
 			return
+
 		case "select-profile":
 			API.SelectProfile(wf, query)
 		case "change-profile":
