@@ -11,15 +11,15 @@ import (
 	"net/url"
 	"os"
 	"os/user"
+	"path/filepath"
 	"regexp"
 	"strings"
 	"time"
-	"path/filepath"
 
+	"github.com/deanishe/awgo"
 	"github.com/klauspost/lctime"
 	_ "github.com/mattn/go-sqlite3"
 	psl "github.com/weppos/publicsuffix-go/publicsuffix"
-	"github.com/deanishe/awgo"
 )
 
 var CheckError = func(err error) {
