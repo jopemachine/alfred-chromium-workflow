@@ -58,7 +58,7 @@ var FetchHistory = func(wf *aw.Workflow, query string) {
 
 		item.Cmd().Subtitle("Press Enter to copy this url to clipboard")
 
-		iconPath := fmt.Sprintf(GetFaviconDirectoryPath(wf), domainName)
+		iconPath := fmt.Sprintf(`%s/%s.png`, GetFaviconDirectoryPath(wf), domainName)
 
 		if FileExist(iconPath) {
 			item.Icon(&aw.Icon{iconPath, ""})

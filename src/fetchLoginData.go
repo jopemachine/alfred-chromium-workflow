@@ -25,14 +25,14 @@ var FetchLoginData = func(wf *aw.Workflow, query string) {
 
 	for rows.Next() {
 		err := rows.Scan(&userNameElement, &userNameValue, &originUrl)
+		CheckError(err)
+
 		if userNameValue == "" {
 			continue
 		}
 
-		CheckError(err)
-
 		domainName := ExtractDomainName(originUrl)
-		iconPath := fmt.Sprintf(GetFaviconDirectoryPath(wf), domainName)
+		iconPath := fmt.Sprintf(`%s/%s.png`, GetFaviconDirectoryPath(wf), domainName)
 
 		var subtitle string
 		if userNameElement != "" {

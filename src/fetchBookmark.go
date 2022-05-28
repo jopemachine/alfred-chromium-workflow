@@ -62,8 +62,7 @@ var FetchBookmark = func(wf *aw.Workflow, query string) {
 
 	for _, bookmark := range bookmarks {
 		domainName := ExtractDomainName(bookmark.Url)
-
-		iconPath := fmt.Sprintf(GetFaviconDirectoryPath(wf), domainName)
+		iconPath := fmt.Sprintf(`%s/%s.png`, GetFaviconDirectoryPath(wf), domainName)
 		CheckError(err)
 
 		item := wf.NewItem(bookmark.Name).

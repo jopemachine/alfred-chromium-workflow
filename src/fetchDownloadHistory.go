@@ -24,7 +24,6 @@ var FetchDownloadHistory = func(wf *aw.Workflow, query string, showOnlyExistingF
 
 		fileNameArr := strings.Split(downloadedFilePath, "/")
 		fileName := fileNameArr[len(fileNameArr)-1]
-		domainName := ExtractDomainName(downloadedFileFrom)
 		if fileName == "" {
 			continue
 		}
@@ -39,6 +38,7 @@ var FetchDownloadHistory = func(wf *aw.Workflow, query string, showOnlyExistingF
 			subtitle = "[✖]"
 		}
 
+		domainName := ExtractDomainName(downloadedFileFrom)
 		unixTimestamp := ConvertChromeTimeToUnixTimestamp(downloadedStartTime)
 		localeTimeStr := GetLocaleString(unixTimestamp)
 
@@ -52,7 +52,7 @@ var FetchDownloadHistory = func(wf *aw.Workflow, query string, showOnlyExistingF
 			Copytext(downloadedFilePath).
 			Largetype(downloadedFilePath)
 
-		iconPath := fmt.Sprintf(GetFaviconDirectoryPath(wf), domainName)
+		iconPath := fmt.Sprintf(`%s/%s.png`, GetFaviconDirectoryPath(wf), domainName)
 
 		if FileExist(iconPath) {
 			item.Icon(&aw.Icon{iconPath, ""})

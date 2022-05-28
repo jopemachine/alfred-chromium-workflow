@@ -10,7 +10,6 @@ import (
 	aw "github.com/deanishe/awgo"
 )
 
-// doUpdate checks for a newer version of the workflow.
 func doUpdate() error {
 	log.Println("Checking for update...")
 	return wf.CheckForUpdate()

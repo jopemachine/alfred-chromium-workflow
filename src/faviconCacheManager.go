@@ -5,19 +5,22 @@ import (
 	"io/ioutil"
 	"os"
 	"os/exec"
-	"time"
 	"path/filepath"
+	"time"
 
 	"github.com/deanishe/awgo"
 )
 
-var IsFaviconCacheExpired = func (wf *aw.Workflow) bool {
+var IsFaviconCacheExpired = func(wf *aw.Workflow) bool {
 	faviconCacheDir := GetFaviconDirectoryPath(wf)
 	fileInfo, err := os.Stat(faviconCacheDir)
 	CheckError(err)
 
-	return time.Since(fileInfo.ModTime()) > time.Minute
-	// return time.Since(fileInfo.ModTime()) > time.Hour * 24 * 7
+	// For test
+	// return time.Since(fileInfo.ModTime()) > time.Minute
+
+	// Update favicon every three days
+	return time.Since(fileInfo.ModTime()) > time.Hour*24*3
 }
 
 var CacheFavicons = func(wf *aw.Workflow) {
@@ -51,26 +54,30 @@ var CacheFavicons = func(wf *aw.Workflow) {
 		CheckError(err)
 
 		domainName := ExtractDomainName(url)
-		iconPath := fmt.Sprintf(GetFaviconDirectoryPath(wf), domainName)
+		iconPath := fmt.Sprintf(`%s/%s.png`, GetFaviconDirectoryPath(wf), domainName)
 
 		if !FileExist(iconPath) {
 			ioutil.WriteFile(iconPath, []byte(faviconBitmapData), os.FileMode(0777))
 		}
 	}
 
+	// Change folder's atime and mtime both to currenttime even if nothing changed
+	currenttime := time.Now().Local()
+	err = os.Chtimes(GetFaviconDirectoryPath(wf), currenttime, currenttime)
+	CheckError(err)
+
 	// To send success alert
 	fmt.Println(" ")
 }
 
-var EnsureFaviconCacheUptodated = func (wf *aw.Workflow) {
+var EnsureFaviconCacheUptodated = func(wf *aw.Workflow) {
 	faviconCacheDir := GetFaviconDirectoryPath(wf)
 
 	// To avoid refreshing cache delay result, run the task in background when update the favicons
-	if !FileExist(faviconCacheDir) {
+	if isEmpty, err := IsEmptyDirectory(faviconCacheDir); isEmpty || err != nil {
 		CacheFavicons(wf)
 	} else if IsFaviconCacheExpired(wf) {
-		cmd := exec.Command("./alfred-chromium-workflow", "cache-favicons")
+		cmd := exec.Command(os.Args[0], "cache-favicons")
 		wf.RunInBackground("favicon-cache", cmd)
 	}
 }
-
