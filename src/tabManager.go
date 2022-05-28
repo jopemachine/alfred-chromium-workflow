@@ -7,6 +7,7 @@ import (
 	"encoding/json"
 	"fmt"
 	"strings"
+	"sort"
 
 	"github.com/deanishe/awgo"
 	"github.com/deanishe/awgo/util"
@@ -145,16 +146,25 @@ var ListOpenedTabs = func(wf *aw.Workflow, query string) {
 	var serializedStdout map[string]interface{}
 	err = json.Unmarshal([]byte(stdout), &serializedStdout)
 	CheckError(err)
+	items := serializedStdout["items"].([]interface{})
 
-	for _, item := range serializedStdout["items"].([]interface{}) {
+	for _, item := range items {
 		url := item.(map[string]interface{})["url"].(string)
 		domainName := ExtractDomainName(url)
 		iconPath := fmt.Sprintf(`%s/%s.png`, GetFaviconDirectoryPath(wf), domainName)
 
 		if FileExist(iconPath) {
 			item.(map[string]interface{})["icon"] = map[string]string{"path": iconPath}
+			item.(map[string]interface{})["domain"] = domainName
 		}
 	}
+
+	sort.Slice(items, func (i, j int) bool {
+		ithDomainName := items[i].(map[string]interface{})["domain"].(string)
+		jthDomainName := items[j].(map[string]interface{})["domain"].(string)
+
+		return ithDomainName > jthDomainName
+	})
 
 	result, err := json.Marshal(serializedStdout)
 	CheckError(err)
