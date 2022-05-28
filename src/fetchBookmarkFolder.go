@@ -35,6 +35,7 @@ var FetchBookmarkFolder = func(wf *aw.Workflow, query string) {
 			Valid(true).
 			Subtitle(fmt.Sprintf(`%d items included`, folderChildLen)).
 			Arg(folder.Id).
+			Autocomplete(folder.Name).
 			Icon(&aw.Icon{"assets/folder.png", ""}).
 			Var("folder", fmt.Sprintf(`--%s=%s`, "folderId", folder.Id))
 	}

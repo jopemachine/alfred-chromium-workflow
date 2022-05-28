@@ -71,6 +71,7 @@ var FetchBookmark = func(wf *aw.Workflow, query string) {
 			Quicklook(bookmark.Url).
 			Arg(bookmark.Url).
 			Copytext(bookmark.Url).
+			Autocomplete(bookmark.Name).
 			Largetype(bookmark.Url)
 
 		if FileExist(iconPath) {

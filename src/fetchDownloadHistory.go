@@ -49,6 +49,7 @@ var FetchDownloadHistory = func(wf *aw.Workflow, query string, showOnlyExistingF
 			Valid(true).
 			Arg(downloadedFilePath).
 			Quicklook(downloadedFilePath).
+			Autocomplete(fileName).
 			Copytext(downloadedFilePath).
 			Largetype(downloadedFilePath)
 

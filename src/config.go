@@ -33,7 +33,8 @@ var ImportConfig = func() {
 func addNewBrowserItem(wf *aw.Workflow, browserName string) {
 	wf.NewItem(browserName).
 		Valid(true).
-		Arg(browserName)
+		Arg(browserName).
+		Autocomplete(browserName)
 }
 
 var SelectBrowser = func(wf *aw.Workflow, query string) {
@@ -80,7 +81,8 @@ var SelectProfile = func(wf *aw.Workflow, query string) {
 	for _, profile := range possibleProfiles {
 		wf.NewItem(profile).
 			Valid(true).
-			Arg(profile)
+			Arg(profile).
+			Autocomplete(profile)
 	}
 
 	wf.Filter(query)

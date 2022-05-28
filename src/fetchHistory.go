@@ -52,6 +52,7 @@ var FetchHistory = func(wf *aw.Workflow, query string) {
 			Subtitle(fmt.Sprintf(`From '%s', In '%s'`, domainName, localeTimeStr)).
 			Valid(true).
 			Quicklook(url).
+			Autocomplete(urlTitle).
 			Arg(url).
 			Copytext(url).
 			Largetype(url)
