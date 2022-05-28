@@ -19,3 +19,12 @@ jobs:
       with:
         tag_name: ${{ steps.extract_version_name.outputs.version }}
         release_name: ${{ steps.extract_version_name.outputs.version }}
+
+    - name: Upload files to a GitHub release
+      uses: svenstaro/upload-release-action@2.2.1
+      with:
+        repo_token: ${{ secrets.GH_TOKEN }}
+        file: alfred-chromium-workflow.alfredworkflow
+        asset_name: alfred-chromium-workflow.alfredworkflow
+        tag: ${{ steps.extract_version_name.outputs.version }}
+        overwrite: true
