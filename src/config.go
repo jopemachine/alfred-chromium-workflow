@@ -97,3 +97,11 @@ var ChangeProfile = func(profileName string) {
 	CheckError(err)
 	fmt.Print(profileName)
 }
+
+var GetFaviconDirectoryPath = func(wf *aw.Workflow) string {
+	return wf.Cache.Dir
+}
+
+var GetTempDataPath = func(wf *aw.Workflow) string {
+	return wf.Cache.Dir
+}

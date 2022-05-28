@@ -132,10 +132,6 @@ Switch profiles with ease.
 
 Cache favicon images from your visit history in advance.
 
-### ch clearcache
-
-Clear favicon cache.
-
 ## 🔖 Options
 
 Configure below options through Workflow Environment Variables.

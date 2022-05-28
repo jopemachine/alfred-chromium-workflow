@@ -14,7 +14,7 @@ var FetchLoginData = func(wf *aw.Workflow, query string) {
 			ORDER BY date_last_used
 	`, query, query, query)
 
-	loginDataDB := GetLoginDataDB()
+	loginDataDB := GetLoginDataDB(wf)
 
 	rows, err := loginDataDB.Query(dbQuery)
 	CheckError(err)
@@ -32,7 +32,7 @@ var FetchLoginData = func(wf *aw.Workflow, query string) {
 		CheckError(err)
 
 		domainName := ExtractDomainName(originUrl)
-		iconPath := fmt.Sprintf(`cache/%s.png`, domainName)
+		iconPath := fmt.Sprintf(GetFaviconDirectoryPath(wf), domainName)
 
 		var subtitle string
 		if userNameElement != "" {

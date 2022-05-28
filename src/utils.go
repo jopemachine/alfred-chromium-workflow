@@ -14,22 +14,17 @@ import (
 	"regexp"
 	"strings"
 	"time"
+	"path/filepath"
 
 	"github.com/klauspost/lctime"
 	_ "github.com/mattn/go-sqlite3"
 	psl "github.com/weppos/publicsuffix-go/publicsuffix"
-	// "github.com/deanishe/awgo"
+	"github.com/deanishe/awgo"
 )
 
 var CheckError = func(err error) {
 	if err != nil {
 		panic(err)
-	}
-}
-
-var EnsureDirectoryExist = func(dirPath string) {
-	if !FileExist(dirPath) {
-		os.Mkdir(dirPath, 0777)
 	}
 }
 
@@ -124,37 +119,41 @@ func CopyFile(src, dst string) {
 	}
 }
 
-var GetHistoryDB = func() *sql.DB {
+var GetHistoryDB = func(wf *aw.Workflow) *sql.DB {
 	var targetPath = GetDBFilePath(Conf.Browser, Conf.Profile, "History")
-	CopyFile(targetPath, CONSTANT.HISTORY_DB)
-	db, err := sql.Open("sqlite3", CONSTANT.HISTORY_DB)
+	dest := filepath.Join(GetTempDataPath(wf), CONSTANT.HISTORY_DB)
+	CopyFile(targetPath, dest)
+	db, err := sql.Open("sqlite3", dest)
 	CheckError(err)
 
 	return db
 }
 
-var GetFaviconDB = func() *sql.DB {
+var GetFaviconDB = func(wf *aw.Workflow) *sql.DB {
 	var targetPath = GetDBFilePath(Conf.Browser, Conf.Profile, "Favicons")
-	CopyFile(targetPath, CONSTANT.FAVICON_DB)
-	db, err := sql.Open("sqlite3", CONSTANT.FAVICON_DB)
+	dest := filepath.Join(GetTempDataPath(wf), CONSTANT.FAVICON_DB)
+	CopyFile(targetPath, dest)
+	db, err := sql.Open("sqlite3", dest)
 	CheckError(err)
 
 	return db
 }
 
-var GetWebDataDB = func() *sql.DB {
+var GetWebDataDB = func(wf *aw.Workflow) *sql.DB {
 	var targetPath = GetDBFilePath(Conf.Browser, Conf.Profile, "Web Data")
-	CopyFile(targetPath, CONSTANT.WEB_DATA_DB)
-	db, err := sql.Open("sqlite3", CONSTANT.WEB_DATA_DB)
+	dest := filepath.Join(GetTempDataPath(wf), CONSTANT.WEB_DATA_DB)
+	CopyFile(targetPath, dest)
+	db, err := sql.Open("sqlite3", dest)
 	CheckError(err)
 
 	return db
 }
 
-var GetLoginDataDB = func() *sql.DB {
+var GetLoginDataDB = func(wf *aw.Workflow) *sql.DB {
 	var targetPath = GetDBFilePath(Conf.Browser, Conf.Profile, "Login Data")
-	CopyFile(targetPath, CONSTANT.LOGIN_DATA_DB)
-	db, err := sql.Open("sqlite3", CONSTANT.LOGIN_DATA_DB)
+	dest := filepath.Join(GetTempDataPath(wf), CONSTANT.WEB_DATA_DB)
+	CopyFile(targetPath, dest)
+	db, err := sql.Open("sqlite3", dest)
 	CheckError(err)
 
 	return db

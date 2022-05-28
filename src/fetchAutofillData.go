@@ -13,7 +13,7 @@ var FetchAutofillData = func(wf *aw.Workflow, query string) {
 			ORDER BY count DESC
 	`, query, query)
 
-	webDataDB := GetWebDataDB()
+	webDataDB := GetWebDataDB(wf)
 	rows, err := webDataDB.Query(dbQuery)
 	CheckError(err)
 

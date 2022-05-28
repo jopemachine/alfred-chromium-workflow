@@ -8,6 +8,7 @@ import (
 	"fmt"
 	"strings"
 
+	"github.com/deanishe/awgo"
 	"github.com/deanishe/awgo/util"
 )
 
@@ -137,7 +138,7 @@ var getNewTabScript = func() string {
 	`, browserName)
 }
 
-var ListOpenedTabs = func(query string) {
+var ListOpenedTabs = func(wf *aw.Workflow, query string) {
 	stdout, err := util.RunJS(getListUpTabScript(), query)
 	CheckError(err)
 
@@ -148,7 +149,7 @@ var ListOpenedTabs = func(query string) {
 	for _, item := range serializedStdout["items"].([]interface{}) {
 		url := item.(map[string]interface{})["url"].(string)
 		domainName := ExtractDomainName(url)
-		iconPath := fmt.Sprintf(`cache/%s.png`, domainName)
+		iconPath := fmt.Sprintf(GetFaviconDirectoryPath(wf), domainName)
 
 		if FileExist(iconPath) {
 			item.(map[string]interface{})["icon"] = map[string]string{"path": iconPath}

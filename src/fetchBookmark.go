@@ -27,11 +27,9 @@ var FetchBookmark = func(wf *aw.Workflow, query string) {
 		bookmarks = TraverseBookmarkJSONObject(bookmarkRoot, TraverseBookmarkJsonOption{Targets: []string{"url"}, Depth: 99})
 	}
 
-	historyDB := GetHistoryDB()
+	historyDB := GetHistoryDB(wf)
 	visitHistories, err := historyDB.Query("SELECT url FROM urls")
 	CheckError(err)
-
-	EnsureDirectoryExist("./cache")
 
 	visitFrequency := make(map[string]int)
 
@@ -65,7 +63,7 @@ var FetchBookmark = func(wf *aw.Workflow, query string) {
 	for _, bookmark := range bookmarks {
 		domainName := ExtractDomainName(bookmark.Url)
 
-		iconPath := fmt.Sprintf(`cache/%s.png`, domainName)
+		iconPath := fmt.Sprintf(GetFaviconDirectoryPath(wf), domainName)
 		CheckError(err)
 
 		item := wf.NewItem(bookmark.Name).

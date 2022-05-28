@@ -207,19 +207,6 @@
 				<false/>
 			</dict>
 		</array>
-		<key>4A98736F-E8B2-45BC-86EE-B6909CCC2B56</key>
-		<array>
-			<dict>
-				<key>destinationuid</key>
-				<string>B428C623-CA7D-42D7-93C2-ABB9CE09B786</string>
-				<key>modifiers</key>
-				<integer>0</integer>
-				<key>modifiersubtext</key>
-				<string></string>
-				<key>vitoclose</key>
-				<false/>
-			</dict>
-		</array>
 		<key>4F9A5738-F86E-4275-81C9-16CFC2E465D2</key>
 		<array>
 			<dict>
@@ -508,19 +495,6 @@
 			<dict>
 				<key>destinationuid</key>
 				<string>BC44B6B4-D69C-407B-A21C-DA2873E5F91D</string>
-				<key>modifiers</key>
-				<integer>0</integer>
-				<key>modifiersubtext</key>
-				<string></string>
-				<key>vitoclose</key>
-				<false/>
-			</dict>
-		</array>
-		<key>B428C623-CA7D-42D7-93C2-ABB9CE09B786</key>
-		<array>
-			<dict>
-				<key>destinationuid</key>
-				<string>2CD9F1A4-FFBF-43C0-9AED-624340EEB5AA</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -2518,71 +2492,6 @@
 			<key>version</key>
 			<integer>1</integer>
 		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>lastpathcomponent</key>
-				<false/>
-				<key>onlyshowifquerypopulated</key>
-				<false/>
-				<key>removeextension</key>
-				<false/>
-				<key>text</key>
-				<string></string>
-				<key>title</key>
-				<string>Cache cleared</string>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.output.notification</string>
-			<key>uid</key>
-			<string>2CD9F1A4-FFBF-43C0-9AED-624340EEB5AA</string>
-			<key>version</key>
-			<integer>1</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>concurrently</key>
-				<false/>
-				<key>escaping</key>
-				<integer>100</integer>
-				<key>script</key>
-				<string>rm -rf ./cache</string>
-				<key>scriptargtype</key>
-				<integer>0</integer>
-				<key>scriptfile</key>
-				<string></string>
-				<key>type</key>
-				<integer>0</integer>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.action.script</string>
-			<key>uid</key>
-			<string>B428C623-CA7D-42D7-93C2-ABB9CE09B786</string>
-			<key>version</key>
-			<integer>2</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>argumenttype</key>
-				<integer>2</integer>
-				<key>keyword</key>
-				<string>ch clearcache</string>
-				<key>subtext</key>
-				<string>Clear favicon cache</string>
-				<key>text</key>
-				<string>ch clearcache</string>
-				<key>withspace</key>
-				<false/>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.input.keyword</string>
-			<key>uid</key>
-			<string>4A98736F-E8B2-45BC-86EE-B6909CCC2B56</string>
-			<key>version</key>
-			<integer>1</integer>
-		</dict>
 	</array>
 	<key>readme</key>
 	<string>Chromium based browser workflow for Alfred 4</string>
@@ -2629,13 +2538,6 @@
 			<integer>35</integer>
 			<key>ypos</key>
 			<integer>2275</integer>
-		</dict>
-		<key>2CD9F1A4-FFBF-43C0-9AED-624340EEB5AA</key>
-		<dict>
-			<key>xpos</key>
-			<integer>365</integer>
-			<key>ypos</key>
-			<integer>2550</integer>
 		</dict>
 		<key>2CFE27F5-A63E-4ACC-BE5F-8FB3519E9972</key>
 		<dict>
@@ -2685,13 +2587,6 @@
 			<integer>875</integer>
 			<key>ypos</key>
 			<integer>150</integer>
-		</dict>
-		<key>4A98736F-E8B2-45BC-86EE-B6909CCC2B56</key>
-		<dict>
-			<key>xpos</key>
-			<integer>35</integer>
-			<key>ypos</key>
-			<integer>2550</integer>
 		</dict>
 		<key>4DB58061-0B2D-4534-AEE2-1B860EF71EC5</key>
 		<dict>
@@ -2889,13 +2784,6 @@
 			<key>ypos</key>
 			<integer>1500</integer>
 		</dict>
-		<key>B428C623-CA7D-42D7-93C2-ABB9CE09B786</key>
-		<dict>
-			<key>xpos</key>
-			<integer>205</integer>
-			<key>ypos</key>
-			<integer>2550</integer>
-		</dict>
 		<key>B4863D8C-2137-43E7-A9EF-349A210ED693</key>
 		<dict>
 			<key>xpos</key>
@@ -3044,7 +2932,7 @@
 		<key>LOCALE</key>
 		<string>en_US</string>
 		<key>PROFILE</key>
-		<string>Default</string>
+		<string>Profile 3</string>
 		<key>RESULT_COUNT_LIMIT</key>
 		<string>50</string>
 		<key>SWITCHABLE_PROFILES</key>

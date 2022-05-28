@@ -15,7 +15,7 @@ var FetchHistory = func(wf *aw.Workflow, query string) {
 		ORDER BY last_visit_time DESC
 	`, titleQuery)
 
-	historyDB := GetHistoryDB()
+	historyDB := GetHistoryDB(wf)
 
 	rows, err := historyDB.Query(dbQuery)
 	CheckError(err)
@@ -58,7 +58,7 @@ var FetchHistory = func(wf *aw.Workflow, query string) {
 
 		item.Cmd().Subtitle("Press Enter to copy this url to clipboard")
 
-		iconPath := fmt.Sprintf(`cache/%s.png`, domainName)
+		iconPath := fmt.Sprintf(GetFaviconDirectoryPath(wf), domainName)
 
 		if FileExist(iconPath) {
 			item.Icon(&aw.Icon{iconPath, ""})

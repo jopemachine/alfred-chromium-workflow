@@ -9,7 +9,7 @@ import (
 var FetchDownloadHistory = func(wf *aw.Workflow, query string, showOnlyExistingFiles bool) {
 	var dbQuery = `SELECT current_path, referrer, total_bytes, start_time FROM downloads ORDER BY start_time DESC`
 
-	historyDB := GetHistoryDB()
+	historyDB := GetHistoryDB(wf)
 	rows, err := historyDB.Query(dbQuery)
 	CheckError(err)
 
@@ -52,7 +52,7 @@ var FetchDownloadHistory = func(wf *aw.Workflow, query string, showOnlyExistingF
 			Copytext(downloadedFilePath).
 			Largetype(downloadedFilePath)
 
-		iconPath := fmt.Sprintf(`cache/%s.png`, domainName)
+		iconPath := fmt.Sprintf(GetFaviconDirectoryPath(wf), domainName)
 
 		if FileExist(iconPath) {
 			item.Icon(&aw.Icon{iconPath, ""})

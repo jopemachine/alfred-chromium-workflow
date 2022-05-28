@@ -48,7 +48,7 @@ func alfredCallback() {
 
 		// Tab, window related features
 		case "listup-tabs":
-			API.ListOpenedTabs(query)
+			API.ListOpenedTabs(wf, query)
 			return
 		case "close-tab":
 			API.CloseTab(query)
@@ -65,7 +65,7 @@ func alfredCallback() {
 
 		// Change setting
 		case "cache-favicons":
-			API.CacheFavicons()
+			API.CacheFavicons(wf)
 			return
 		case "select-profile":
 			API.SelectProfile(wf, query)

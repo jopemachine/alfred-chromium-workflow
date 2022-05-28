@@ -4,11 +4,13 @@ import (
 	"fmt"
 	"io/ioutil"
 	"os"
+
+	"github.com/deanishe/awgo"
 )
 
-var CacheFavicons = func() {
-	historyDB := GetHistoryDB()
-	GetFaviconDB()
+var CacheFavicons = func(wf *aw.Workflow) {
+	historyDB := GetHistoryDB(wf)
+	GetFaviconDB(wf)
 
 	attachStmt, err := historyDB.Prepare(fmt.Sprintf(`ATTACH DATABASE './%s' AS favicons`, CONSTANT.FAVICON_DB))
 	attachStmt.Exec()
@@ -27,8 +29,6 @@ var CacheFavicons = func() {
 	rows, err := historyDB.Query(dbQuery)
 	CheckError(err)
 
-	EnsureDirectoryExist("cache")
-
 	var url string
 	var faviconBitmapData string
 	var faviconLastUpdated string
@@ -38,7 +38,7 @@ var CacheFavicons = func() {
 		CheckError(err)
 
 		domainName := ExtractDomainName(url)
-		iconPath := fmt.Sprintf(`cache/%s.png`, domainName)
+		iconPath := fmt.Sprintf(GetFaviconDirectoryPath(wf), domainName)
 
 		if !FileExist(iconPath) {
 			ioutil.WriteFile(iconPath, []byte(faviconBitmapData), os.FileMode(0777))
