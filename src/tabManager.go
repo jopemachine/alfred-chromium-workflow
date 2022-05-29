@@ -6,8 +6,8 @@ package src
 import (
 	"encoding/json"
 	"fmt"
-	"strings"
 	"sort"
+	"strings"
 
 	"github.com/deanishe/awgo"
 	"github.com/deanishe/awgo/util"
@@ -155,7 +155,7 @@ var ListOpenedTabs = func(wf *aw.Workflow, query string) {
 		}
 	}
 
-	sort.Slice(items, func (i, j int) bool {
+	sort.Slice(items, func(i, j int) bool {
 		ithDomainName := items[i].(map[string]interface{})["domain"].(string)
 		jthDomainName := items[j].(map[string]interface{})["domain"].(string)
 

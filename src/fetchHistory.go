@@ -7,7 +7,7 @@ import (
 )
 
 var FetchHistory = func(wf *aw.Workflow, query string) {
-	titleQuery, domainQuery, isDomainSearch, _, _ := HandleUserQuery(query)
+	titleQuery, domainQuery, isDomainSearch := ParseUserQuery(query)
 
 	var dbQuery = fmt.Sprintf(`
 		SELECT urls.id, urls.title, urls.url, urls.last_visit_time FROM urls

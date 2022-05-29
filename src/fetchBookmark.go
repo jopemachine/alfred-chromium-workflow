@@ -9,10 +9,10 @@ import (
 var FetchBookmark = func(wf *aw.Workflow, query string) {
 	InitBookmarkJsonTraversal()
 	bookmarkRoot := GetChromeBookmark()
-	input, options := ParseUserQuery(query)
+	input, flags := ParseQueryFlags(query)
 	var bookmarks []BookmarkItem
 
-	if folderId, ok := options["folderId"]; ok {
+	if folderId, ok := flags["folderId"]; ok {
 		folders := TraverseBookmarkJSONObject(bookmarkRoot, TraverseBookmarkJsonOption{Targets: []string{"folder"}, Depth: 99})
 
 		for _, folder := range folders {

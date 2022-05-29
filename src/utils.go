@@ -61,23 +61,28 @@ var GetDBFilePath = func(browserName string, chromeProfilePath string, dbFile st
 	return fmt.Sprintf(`%s/%s/%s`, GetProfileRootPath(browserName), chromeProfilePath, dbFile)
 }
 
-var HandleUserQuery = func(query string) (titleQuery string, domainQuery string, isDomainSearch bool, artistQuery string, isArtistSearch bool) {
+// Used in `chs`, `chh`
+var ParseUserQuery = func(query string) (titleQuery string, domainQuery string, isDomainSearch bool) {
 	titleQuery = ""
 	domainQuery = ""
-	artistQuery = ""
 	isDomainSearch = false
-	isArtistSearch = false
+
+	// Useless since `chm` not implemented
+	// artistQuery = ""
+	// isArtistSearch = false
 
 	if strings.Contains(query, "#") || strings.Contains(query, "@") {
 		var words = strings.Split(query, " ")
 
 		for _, word := range words {
+			// else if strings.HasPrefix(word, "@") && len(word) > 1 {
+			// 	isArtistSearch = true
+			// 	artistQuery = word[1 : len(word)-1]
+			// }
+
 			if strings.HasPrefix(word, "#") && len(word) > 1 {
 				isDomainSearch = true
 				domainQuery = word[1 : len(word)-1]
-			} else if strings.HasPrefix(word, "@") && len(word) > 1 {
-				isArtistSearch = true
-				artistQuery = word[1 : len(word)-1]
 			} else {
 				// TODO: Refactor below logic using `strings.Join`
 				if titleQuery == "" {
@@ -226,7 +231,7 @@ var GetLocaleString = func(unixTime int64) string {
 }
 
 // Used only in fetchBookmark.go of`chf` command
-var ParseUserQuery = func(userQuery string) (input string, options map[string]string) {
+var ParseQueryFlags = func(userQuery string) (input string, options map[string]string) {
 	options = make(map[string]string)
 
 	for _, args := range strings.Split(userQuery, " ") {

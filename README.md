@@ -141,7 +141,7 @@ Switch profiles with ease.
 
 Cache favicon images from your visit history in advance.
 
-You probably not need this because caching runs in background automatically.
+You don't need this command since caching runs automatically every three days in background.
 
 ## 🔖 Options
 

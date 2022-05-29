@@ -8,7 +8,7 @@ import (
 )
 
 var FetchSearchData = func(wf *aw.Workflow, query string) {
-	titleQuery, domainQuery, isDomainSearch, _, _ := HandleUserQuery(query)
+	titleQuery, domainQuery, isDomainSearch := ParseUserQuery(query)
 
 	var dbQuery = fmt.Sprintf(`
 		SELECT urls.url, urls.last_visit_time, keyword_search_terms.term
