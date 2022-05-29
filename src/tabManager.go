@@ -151,11 +151,11 @@ var ListOpenedTabs = func(wf *aw.Workflow, query string) {
 	for _, item := range items {
 		url := item.(map[string]interface{})["url"].(string)
 		domainName := ExtractDomainName(url)
-		iconPath := fmt.Sprintf(`%s/%s.png`, GetFaviconDirectoryPath(wf), domainName)
+		item.(map[string]interface{})["domain"] = domainName
 
+		iconPath := fmt.Sprintf(`%s/%s.png`, GetFaviconDirectoryPath(wf), domainName)
 		if FileExist(iconPath) {
 			item.(map[string]interface{})["icon"] = map[string]string{"path": iconPath}
-			item.(map[string]interface{})["domain"] = domainName
 		}
 	}
 

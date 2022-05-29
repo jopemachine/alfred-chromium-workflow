@@ -16,6 +16,7 @@ var (
 		"t":     Test,
 		"l":     Lint,
 		"f":     Formatter,
+		"b":     Builder,
 	}
 
 	test = sh.RunCmd("go", "test", "-v")
@@ -44,3 +45,5 @@ func Coverage() error {
 func Clean() error { return sh.Run("mage", "-clean") }
 
 func Formatter() error { return sh.Run("gofmt", "-w", "src", "main.go") }
+
+func Builder() error { return sh.Run("go", "build", ".") }
