@@ -11,9 +11,9 @@ Alfred workflow for Chromium browsers
 
 This workflow originated from [alfred-chrome-workflow](https://github.com/jopemachine/alfred-chrome-workflow).
 
-Previous workflow has several [installation issues like this](https://github.com/jopemachine/alfred-chrome-workflow/issues/13#issuecomment-1103938917).
+The previous workflow has several [installation issues like this](https://github.com/jopemachine/alfred-chrome-workflow/issues/13#issuecomment-1103938917).
 
-In addition to resolving installation issues, this workflow has following several advantages over the previous one.
+In addition to resolving installation issues, this workflow provides several following benefits over the previous one.
 
 * Support favicon images in almost all features
 * Support switching browsers, profiles with ease
@@ -54,7 +54,7 @@ You can switch the browser with `ch browser`.
 
 ## 🔨 How to install
 
-Download and double click the `.alfredworkflow` file in the [Release page](https://github.com/jopemachine/alfred-chromium-workflow/releases).
+Download and double click the `.alfredworkflow` file on the [Release page](https://github.com/jopemachine/alfred-chromium-workflow/releases).
 
 ## 📗 Usage
 
@@ -78,7 +78,7 @@ Append word starting with `#` to retrieve only the logs in that domain.
  
 Example:
 
-`chh #github [some_word_to_search]`
+`chh #github [foo bar]`
 
 ![](./imgs/chh.png)
 
@@ -100,7 +100,7 @@ Append word starting with `#` to retrieve only the logs in that domain.
 
 Example:
 
-`chs #github [some_word_to_search]`
+`chs #github [foo bar]`
 
 ![](./imgs/chs.png)
 
@@ -142,11 +142,13 @@ This command also let you change the browser profile after changing the browser.
 
 Switch profiles with ease.
 
+Tip: You can check what is your Browser's profile's name in `chrome://version`.
+
 ### ch cache
 
 Cache favicon images based on your visit histories.
 
-You don't need this command since caching runs automatically every three days in background.
+You don't need this command since caching runs automatically every three days in the background.
 
 ## 🔖 Options
 
@@ -166,11 +168,15 @@ Instead, you can change this value through `ch profile` with ease.
 
 List up your custom profile names if there are.
 
+This could be useful when you have profiles in customized locations.
+
 You can switch your profile through `ch profile` with `Profile {number}`, `Default` and these values.
 
 Each profile name should be splited with comma (`,`).
 
 ### Locale
+
+This is used to provide localized subtitles.
 
 Refer to the following page for seeing supported locales.
 
@@ -188,6 +194,8 @@ Instead, you can change this value through `ch browser` with ease.
 
 Max number of items to show in Alfred.
 
+But the maximum count limit is limited to `200` regardless of its value to prevent truncating json string.
+
 ## 🌟 Contribution
 
 Contributions of any kind are welcome.
@@ -196,7 +204,7 @@ Contributions of any kind are welcome.
 
 This workflow needs help to support as many browsers as possible.
 
-To add new browser, follow below guideline.
+To add new browser, please follow below guideline.
 
 1. Check the browser is based on `Chromium`.
 2. Add new path to `GetProfileRootPath` in `src/utils.go`.
