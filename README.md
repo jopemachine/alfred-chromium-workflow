@@ -23,13 +23,12 @@ In addition to resolving installation issues, this workflow has following severa
 
 ## 🌈 Features
 
-* 📄 *Search Visit History*
-* 🔖 *Search Bookmark, bookmark folders*
-* 📁 *Search Bookmark folder*
-* 📜 *Search Search query history*
-* 🔎 *Search Download logs*
-* 📒 *Search and Copy Your Autofill data*
-* 📎 *Search Your Opened Tabs and Focus or Close Them*
+* 📄 *Search visit histories*
+* 🔖 *Search bookmark, bookmark folders*
+* 📜 *Search search histories*
+* 🔎 *Search download logs*
+* 📒 *Search and copy your autofill data*
+* 📎 *Search your opened tabs and focus, close them*
 
 ## 📌 Prerequisite
 
@@ -55,7 +54,7 @@ You can switch the browser with `ch browser`.
 
 ## 🔨 How to install
 
-Download and open `alfredworkflow` file in the [Release page](https://github.com/jopemachine/alfred-chromium-workflow/releases).
+Download and double click the `.alfredworkflow` file in the [Release page](https://github.com/jopemachine/alfred-chromium-workflow/releases).
 
 ## 📗 Usage
 
@@ -75,11 +74,11 @@ Retrieve bookmark folders.
 
 Retrieve visit histories.
 
-Append `#` to search word to search only the logs in that `url`.
+Append word starting with `#` to retrieve only the logs in that domain.
  
 Example:
 
-`chh #youtube [some_word_to_search]`
+`chh #github [some_word_to_search]`
 
 ![](./imgs/chh.png)
 
@@ -91,13 +90,13 @@ Retrieve download histories.
 
 ### chdc
 
-Retrieve download histories but only shows existing files.
+Retrieve download histories but only show existing files.
 
 ### chs
 
-Retrieve your search query based on visit histories.
+Retrieve your search histories.
 
-Append `#` to search word to search only the logs in that `url`.
+Append word starting with `#` to retrieve only the logs in that domain.
 
 Example:
 
@@ -109,17 +108,21 @@ Example:
 
 Retrieve autofill data.
 
+Press enter with option key to paste the value directly.
+
 ### chid
 
-Retrieve login data (including email).
+Retrieve login data (like email).
+
+Press enter with option key to paste the value directly.
 
 ### cho
 
-Open new window through selected profiles.
+Open new window through selected profile.
 
-If you change your profile, other commands try to work with previous profile.
+If you change your profile through `ch profile`, other commands try to work with the previously opened window.
 
-This command would be useful in such case.
+This command would be useful in such a case.
 
 Open new window with changed profile before the command.
 
@@ -127,11 +130,13 @@ Open new window with changed profile before the command.
 
 Search opened tabs and focus, close them.
 
+Tabs are sorted by their domain.
+
 ### ch browser
 
 Switch browsers with ease.
 
-This command also requires you to change the browser profile.
+This command also let you change the browser profile after changing the browser.
 
 ### ch profile
 
@@ -139,13 +144,13 @@ Switch profiles with ease.
 
 ### ch cache
 
-Cache favicon images from your visit history in advance.
+Cache favicon images based on your visit histories.
 
 You don't need this command since caching runs automatically every three days in background.
 
 ## 🔖 Options
 
-Configure below options through Workflow Environment Variables.
+Configure below options through `Workflow Environment Variables`.
 
 ![](./imgs/conf.png)
 
@@ -189,7 +194,7 @@ Contributions of any kind are welcome.
 
 ### Add supporting new browser
 
-This workflow needs your help to support as many browsers as possible.
+This workflow needs help to support as many browsers as possible.
 
 To add new browser, follow below guideline.
 
