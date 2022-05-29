@@ -55,7 +55,7 @@ You can switch the browser with `ch browser`.
 
 ## 🔨 How to install
 
-Download and open `alfredworkflow` file in the [Release page]().
+Download and open `alfredworkflow` file in the [Release page](https://github.com/jopemachine/alfred-chromium-workflow/releases).
 
 ## 📗 Usage
 
