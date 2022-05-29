@@ -120,12 +120,8 @@ var getNewWindowScript = func() string {
 	browserName := getApplicationName(Conf.Browser)
 
 	return fmt.Sprintf(`
-	tell application "%s"
-		make new window
-		tell application "System Events" to set frontmost of process "%s" to true
-		activate
-	end tell
-	`, browserName, browserName)
+	do shell script "open -na '%s' --args --profile-directory='%s'"
+	`, browserName, Conf.Profile)
 }
 
 var getNewTabScript = func() string {

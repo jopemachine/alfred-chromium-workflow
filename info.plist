@@ -622,9 +622,9 @@
 				<key>destinationuid</key>
 				<string>75715DEA-0806-4F08-9FCF-FEB601A20D6B</string>
 				<key>modifiers</key>
-				<integer>524288</integer>
+				<integer>1048576</integer>
 				<key>modifiersubtext</key>
-				<string>Open Tab from New Window</string>
+				<string>Open New Tab</string>
 				<key>vitoclose</key>
 				<false/>
 			</dict>
@@ -674,7 +674,7 @@
 				<key>escaping</key>
 				<integer>102</integer>
 				<key>script</key>
-				<string>./alfred-chromium-workflow 'new-tab'</string>
+				<string>./alfred-chromium-workflow 'new-window'</string>
 				<key>scriptargtype</key>
 				<integer>0</integer>
 				<key>scriptfile</key>
@@ -697,7 +697,7 @@
 				<key>keyword</key>
 				<string>cho</string>
 				<key>subtext</key>
-				<string>Open New Tab</string>
+				<string>Open New Window Through Selected Profile</string>
 				<key>text</key>
 				<string>cho</string>
 				<key>withspace</key>
@@ -718,7 +718,7 @@
 				<key>argument</key>
 				<integer>3</integer>
 				<key>argumenttext</key>
-				<string>Open new tab</string>
+				<string>Open new window through selected profile</string>
 				<key>focusedappvariable</key>
 				<false/>
 				<key>focusedappvariablename</key>
@@ -770,7 +770,7 @@
 				<key>escaping</key>
 				<integer>102</integer>
 				<key>script</key>
-				<string>./alfred-chromium-workflow 'new-window'</string>
+				<string>./alfred-chromium-workflow 'new-tab'</string>
 				<key>scriptargtype</key>
 				<integer>0</integer>
 				<key>scriptfile</key>
@@ -2928,11 +2928,11 @@
 	<key>variables</key>
 	<dict>
 		<key>BROWSER</key>
-		<string>Chrome</string>
+		<string>Chromium</string>
 		<key>LOCALE</key>
 		<string>en_US</string>
 		<key>PROFILE</key>
-		<string>Default</string>
+		<string>Profile 3</string>
 		<key>RESULT_COUNT_LIMIT</key>
 		<string>50</string>
 		<key>SWITCHABLE_PROFILES</key>

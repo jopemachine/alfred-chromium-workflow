@@ -16,8 +16,7 @@ Previous workflow has several [npm related installation issues like this](https:
 In addition to resolving these issues, this workflow has following several advantages over the previous one.
 
 * Support favicon images in almost all features
-* Support switching browsers, profiles
-* Support opening tab, window directly
+* Support switching browsers, profiles with ease
 * Support more Chromium based browsers
 * Lightning-fast
 * Provide localized subtitle
@@ -112,7 +111,13 @@ Retrieve login data (including email).
 
 ### cho
 
-Open New Tab or Window.
+Open new window through selected profiles.
+
+If you change your profile, other commands try to work with previous profile.
+
+This command would be useful in such case.
+
+Open new window with changed profile before the command.
 
 ### cht
 

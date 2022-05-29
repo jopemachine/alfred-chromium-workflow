@@ -34,6 +34,7 @@ func addNewBrowserItem(wf *aw.Workflow, browserName string) {
 	wf.NewItem(browserName).
 		Valid(true).
 		Arg(browserName).
+		Icon(&aw.Icon{fmt.Sprintf(`assets/browser-icons/%s.png`, browserName), ""}).
 		Autocomplete(browserName)
 }
 
@@ -60,6 +61,10 @@ var SelectBrowser = func(wf *aw.Workflow, query string) {
 var ChangeBrowser = func(browserName string) {
 	err := ConfigAPI.Set("BROWSER", browserName, true).Do()
 	CheckError(err)
+
+	// Change workflow's default icon
+	CopyFile(fmt.Sprintf("assets/browser-icons/%s.png", browserName), "icon.png")
+
 	fmt.Print(browserName)
 }
 
