@@ -2928,18 +2928,16 @@
 	<key>variables</key>
 	<dict>
 		<key>BROWSER</key>
-		<string>Chromium</string>
+		<string>Chrome</string>
 		<key>LOCALE</key>
 		<string>en_US</string>
 		<key>PROFILE</key>
-		<string>Profile 3</string>
+		<string>Default</string>
 		<key>RESULT_COUNT_LIMIT</key>
 		<string>50</string>
 		<key>SWITCHABLE_PROFILES</key>
-		<string>Default</string>
+		<string></string>
 	</dict>
-	<key>variablesdontexport</key>
-	<array/>
 	<key>version</key>
 	<string>0.0.8</string>
 	<key>webaddress</key>

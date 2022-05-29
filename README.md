@@ -49,6 +49,10 @@ Currently supported browsers are as follows.
 * `Naver Whale`
 * `Epic`
 
+This workflow assumes your browser is `Chrome` at default.
+
+You can switch the browser with `ch browser`.
+
 ## 🔨 How to install
 
 Download and open `alfredworkflow` file in the [Release page]().
@@ -153,9 +157,9 @@ You can change this value through `ch profile` with ease.
 
 ### SwitchableProfiles
 
-List up your custom profile names here.
+List up your custom profile names if there are.
 
-You can switch your profile through `ch profile` with `Profile {number}` and these values.
+You can switch your profile through `ch profile` with `Profile {number}`, `Default` and these values.
 
 Each profile name should be splited with comma (`,`).
 
@@ -185,17 +189,13 @@ This workflow needs your help to support as many browsers as possible.
 
 To add new browser, follow below guideline.
 
-1. Check the browser is based on Chromium
-
+1. Check the browser is based on `Chromium`.
 2. Add new path to `GetProfileRootPath` in `src/utils.go`.
-
 3. Add the browser's proper Application Name to `getApplicationName` in `src/tabManager.go`. You can check this value through Applescript Editor's Dictionary.
-
-4. Add proper Open URL block of `info.plist` using Alfred.
-
+4. Add proper `Open URL` block of `info.plist` using Alfred.
 5. Add new browser's item `SelectBrowser` in `src/config.go`.
-
-6. Add the browser name to `READMD.md`
+6. Add the browser name to `READMD.md`.
+7. Add the browser's icon to `assets/browser-icons`.
 
 ## Related
 

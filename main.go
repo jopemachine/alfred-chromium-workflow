@@ -83,7 +83,7 @@ func alfredCallback() {
 
 		wf.SendFeedback()
 	} else {
-		panic("Improper arguments")
+		panic("Invalid argument values.")
 	}
 }
 

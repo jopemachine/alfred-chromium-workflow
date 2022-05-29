@@ -71,6 +71,9 @@ var ChangeBrowser = func(browserName string) {
 var SelectProfile = func(wf *aw.Workflow, query string) {
 	profileRoot := GetProfileRootPath(Conf.Browser)
 	profileFilePaths, err := filepath.Glob(profileRoot + "/" + "Profile *")
+	defaultProfileFilePath, err := filepath.Glob(profileRoot + "/" + "Default")
+
+	profileFilePaths = append(profileFilePaths, defaultProfileFilePath...)
 	CheckError(err)
 
 	var profiles []string
