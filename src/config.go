@@ -12,7 +12,7 @@ type WorkflowConfig struct {
 	Browser            string
 	Locale             string
 	Profile            string
-	SwitchableProfiles string
+	CustomizedProfiles string
 	ResultCountLimit   int
 }
 
@@ -71,10 +71,11 @@ var ChangeBrowser = func(browserName string) {
 var SelectProfile = func(wf *aw.Workflow, query string) {
 	profileRoot := GetProfileRootPath(Conf.Browser)
 	profileFilePaths, err := filepath.Glob(profileRoot + "/" + "Profile *")
+	CheckError(err)
 	defaultProfileFilePath, err := filepath.Glob(profileRoot + "/" + "Default")
+	CheckError(err)
 
 	profileFilePaths = append(profileFilePaths, defaultProfileFilePath...)
-	CheckError(err)
 
 	var profiles []string
 
@@ -83,7 +84,7 @@ var SelectProfile = func(wf *aw.Workflow, query string) {
 		profiles = append(profiles, profileFilePathArr[len(profileFilePathArr)-1])
 	}
 
-	possibleProfiles := strings.Split(Conf.SwitchableProfiles, ",")
+	possibleProfiles := strings.Split(Conf.CustomizedProfiles, ",")
 	possibleProfiles = append(possibleProfiles, profiles...)
 
 	for _, profile := range possibleProfiles {

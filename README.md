@@ -11,9 +11,9 @@ Alfred workflow for Chromium browsers
 
 This workflow originated from [alfred-chrome-workflow](https://github.com/jopemachine/alfred-chrome-workflow).
 
-Previous workflow has several [npm related installation issues like this](https://github.com/jopemachine/alfred-chrome-workflow/issues/13#issuecomment-1103938917).
+Previous workflow has several [installation issues like this](https://github.com/jopemachine/alfred-chrome-workflow/issues/13#issuecomment-1103938917).
 
-In addition to resolving these issues, this workflow has following several advantages over the previous one.
+In addition to resolving installation issues, this workflow has following several advantages over the previous one.
 
 * Support favicon images in almost all features
 * Support switching browsers, profiles with ease
@@ -153,9 +153,11 @@ Configure below options through Workflow Environment Variables.
 
 Browser's profile name.
 
-You can change this value through `ch profile` with ease.
+You don't need to change this value manually.
 
-### SwitchableProfiles
+Instead, you can change this value through `ch profile` with ease.
+
+### CustomizedProfiles
 
 List up your custom profile names if there are.
 
@@ -173,7 +175,9 @@ https://github.com/klauspost/lctime/tree/master/internal/locales
 
 Browser name.
 
-You can change this value through `ch browser` with ease.
+You don't need to change this value manually.
+
+Instead, you can change this value through `ch browser` with ease.
 
 ### ResultCountLimit
 
