@@ -31,7 +31,13 @@ var ImportConfig = func() {
 }
 
 func addNewBrowserItem(wf *aw.Workflow, browserName string) {
-	wf.NewItem(browserName).
+	title := browserName
+
+	if browserName == Conf.Browser {
+		title = "[✔] " + title
+	}
+
+	wf.NewItem(title).
 		Valid(true).
 		Arg(browserName).
 		Icon(&aw.Icon{fmt.Sprintf(`assets/browser-icons/%s.png`, browserName), ""}).
@@ -55,7 +61,9 @@ var SelectBrowser = func(wf *aw.Workflow, query string) {
 		}
 	}
 
-	wf.Filter(query)
+	if query != "" {
+		wf.Filter(query)
+	}
 }
 
 var ChangeBrowser = func(browserName string) {
@@ -75,7 +83,7 @@ var SelectProfile = func(wf *aw.Workflow, query string) {
 	defaultProfileFilePath, err := filepath.Glob(profileRoot + "/" + "Default")
 	CheckError(err)
 
-	profileFilePaths = append(profileFilePaths, defaultProfileFilePath...)
+	profileFilePaths = append(defaultProfileFilePath, profileFilePaths...)
 
 	var profiles []string
 
@@ -88,13 +96,18 @@ var SelectProfile = func(wf *aw.Workflow, query string) {
 	possibleProfiles = append(possibleProfiles, profiles...)
 
 	for _, profile := range possibleProfiles {
+		if Conf.Profile == profile {
+			profile = "[✔] " + profile
+		}
 		wf.NewItem(profile).
 			Valid(true).
 			Arg(profile).
 			Autocomplete(profile)
 	}
 
-	wf.Filter(query)
+	if query != "" {
+		wf.Filter(query)
+	}
 }
 
 var ChangeProfile = func(profileName string) {

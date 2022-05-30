@@ -56,6 +56,8 @@ You can switch the browser with `ch browser`.
 
 Download and double click the `.alfredworkflow` file on the [Release page](https://github.com/jopemachine/alfred-chromium-workflow/releases).
 
+Note that if your browser is not the default browser (`Chrome`), you need to switch your browser through `ch browser` first.
+
 ## 📗 Usage
 
 ### chb
