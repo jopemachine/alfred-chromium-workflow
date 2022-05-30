@@ -7,6 +7,7 @@ import (
 	"os/exec"
 	"path/filepath"
 	"time"
+	"log"
 
 	"github.com/deanishe/awgo"
 )
@@ -75,6 +76,11 @@ var EnsureFaviconCacheUptodated = func(wf *aw.Workflow) {
 
 	// To avoid refreshing cache delay result, run the task in background when update the favicons
 	if isEmpty, err := IsEmptyDirectory(faviconCacheDir); isEmpty || err != nil {
+		defer func() {
+			err := recover()
+			log.Println("Error occurs in caching favicon: ", err)
+		}()
+
 		CacheFavicons(wf)
 	} else if IsFaviconCacheExpired(wf) {
 		cmd := exec.Command(os.Args[0], "cache-favicons")
