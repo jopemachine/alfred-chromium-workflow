@@ -66,7 +66,7 @@ func alfredCallback() {
 		// Change setting
 		case "helper":
 			API.RunWorkflowHelper(wf, query)
-		case "update":
+		case "update-workflow":
 			API.UpdateWorkflow(wf)
 			return
 		case "cache-favicons":

@@ -604,6 +604,8 @@
 				<false/>
 			</dict>
 		</array>
+		<key>D068509A-57C0-49F6-A3E8-755CAC86FE03</key>
+		<array/>
 		<key>D6CE5A20-6FEC-4501-AB09-D19853D3AFC7</key>
 		<array>
 			<dict>
@@ -2442,6 +2444,25 @@
 		<dict>
 			<key>config</key>
 			<dict>
+				<key>browser</key>
+				<string></string>
+				<key>spaces</key>
+				<string></string>
+				<key>url</key>
+				<string>{var:url}</string>
+				<key>utf8</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.openurl</string>
+			<key>uid</key>
+			<string>2BB77A73-CDB6-43D2-AA7F-C2ECBA2648C3</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
 				<key>lastpathcomponent</key>
 				<false/>
 				<key>onlyshowifquerypopulated</key>
@@ -2463,19 +2484,58 @@
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>browser</key>
+				<key>conditions</key>
+				<array>
+					<dict>
+						<key>inputstring</key>
+						<string>{var:url}</string>
+						<key>matchcasesensitive</key>
+						<false/>
+						<key>matchmode</key>
+						<integer>1</integer>
+						<key>matchstring</key>
+						<string></string>
+						<key>outputlabel</key>
+						<string>Open Browser</string>
+						<key>uid</key>
+						<string>3DD87DB0-67EE-4F7F-BC65-8598FC366EB7</string>
+					</dict>
+					<dict>
+						<key>inputstring</key>
+						<string>{var:cacheFavicons}</string>
+						<key>matchcasesensitive</key>
+						<false/>
+						<key>matchmode</key>
+						<integer>1</integer>
+						<key>matchstring</key>
+						<string></string>
+						<key>outputlabel</key>
+						<string>Cache favicon manually</string>
+						<key>uid</key>
+						<string>6570ABE4-C32F-4322-ADD7-A1171FB1F7D7</string>
+					</dict>
+					<dict>
+						<key>inputstring</key>
+						<string>{var:update}</string>
+						<key>matchcasesensitive</key>
+						<false/>
+						<key>matchmode</key>
+						<integer>1</integer>
+						<key>matchstring</key>
+						<string></string>
+						<key>outputlabel</key>
+						<string>Update workflow</string>
+						<key>uid</key>
+						<string>68D1FEA8-513B-4B1D-8AED-16DEDF2FD6F3</string>
+					</dict>
+				</array>
+				<key>elselabel</key>
 				<string></string>
-				<key>spaces</key>
-				<string></string>
-				<key>url</key>
-				<string>{var:url}</string>
-				<key>utf8</key>
-				<true/>
 			</dict>
 			<key>type</key>
-			<string>alfred.workflow.action.openurl</string>
+			<string>alfred.workflow.utility.conditional</string>
 			<key>uid</key>
-			<string>2BB77A73-CDB6-43D2-AA7F-C2ECBA2648C3</string>
+			<string>5ADA32AC-FEB2-42C7-9B76-742D2F6400FB</string>
 			<key>version</key>
 			<integer>1</integer>
 		</dict>
@@ -2495,7 +2555,7 @@
 				<key>escaping</key>
 				<integer>102</integer>
 				<key>keyword</key>
-				<string>ch setting</string>
+				<string>ch helper</string>
 				<key>queuedelaycustom</key>
 				<integer>3</integer>
 				<key>queuedelayimmediatelyinitially</key>
@@ -2513,9 +2573,9 @@
 				<key>scriptfile</key>
 				<string></string>
 				<key>subtext</key>
-				<string>View, change alfred-chromium-workflow's setting</string>
+				<string>View and edit workflow's setting</string>
 				<key>title</key>
-				<string>ch setting</string>
+				<string>ch helper</string>
 				<key>type</key>
 				<integer>0</integer>
 				<key>withspace</key>
@@ -2560,64 +2620,6 @@
 			<string>8C824C8A-B0A1-476A-8A20-4CBB425E9285</string>
 			<key>version</key>
 			<integer>2</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>conditions</key>
-				<array>
-					<dict>
-						<key>inputstring</key>
-						<string>{var:url}</string>
-						<key>matchcasesensitive</key>
-						<false/>
-						<key>matchmode</key>
-						<integer>1</integer>
-						<key>matchstring</key>
-						<string></string>
-						<key>outputlabel</key>
-						<string>Open Browser</string>
-						<key>uid</key>
-						<string>3DD87DB0-67EE-4F7F-BC65-8598FC366EB7</string>
-					</dict>
-					<dict>
-						<key>inputstring</key>
-						<string>{var:cache-favicon}</string>
-						<key>matchcasesensitive</key>
-						<false/>
-						<key>matchmode</key>
-						<integer>1</integer>
-						<key>matchstring</key>
-						<string></string>
-						<key>outputlabel</key>
-						<string>Cache favicon manually</string>
-						<key>uid</key>
-						<string>6570ABE4-C32F-4322-ADD7-A1171FB1F7D7</string>
-					</dict>
-					<dict>
-						<key>inputstring</key>
-						<string>{var:update}</string>
-						<key>matchcasesensitive</key>
-						<false/>
-						<key>matchmode</key>
-						<integer>1</integer>
-						<key>matchstring</key>
-						<string></string>
-						<key>outputlabel</key>
-						<string>Update workflow</string>
-						<key>uid</key>
-						<string>68D1FEA8-513B-4B1D-8AED-16DEDF2FD6F3</string>
-					</dict>
-				</array>
-				<key>elselabel</key>
-				<string></string>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.utility.conditional</string>
-			<key>uid</key>
-			<string>5ADA32AC-FEB2-42C7-9B76-742D2F6400FB</string>
-			<key>version</key>
-			<integer>1</integer>
 		</dict>
 		<dict>
 			<key>config</key>
@@ -2748,9 +2750,9 @@
 		<key>1E14D937-9A92-48E2-96CA-B31EC6715C7C</key>
 		<dict>
 			<key>xpos</key>
-			<integer>700</integer>
+			<integer>695</integer>
 			<key>ypos</key>
-			<integer>2505</integer>
+			<integer>2495</integer>
 		</dict>
 		<key>2A958B0F-FC3C-4909-B21D-127BB5040193</key>
 		<dict>
@@ -2762,9 +2764,9 @@
 		<key>2BB77A73-CDB6-43D2-AA7F-C2ECBA2648C3</key>
 		<dict>
 			<key>xpos</key>
-			<integer>555</integer>
+			<integer>550</integer>
 			<key>ypos</key>
-			<integer>2390</integer>
+			<integer>2380</integer>
 		</dict>
 		<key>32E62E1E-C16F-4781-B2E3-4625B0184935</key>
 		<dict>
@@ -2834,7 +2836,7 @@
 			<key>xpos</key>
 			<integer>355</integer>
 			<key>ypos</key>
-			<integer>2420</integer>
+			<integer>2405</integer>
 		</dict>
 		<key>5D4D8D1D-7272-4700-9CBD-1C7541C325B5</key>
 		<dict>
@@ -3056,9 +3058,9 @@
 		<key>D068509A-57C0-49F6-A3E8-755CAC86FE03</key>
 		<dict>
 			<key>xpos</key>
-			<integer>555</integer>
+			<integer>550</integer>
 			<key>ypos</key>
-			<integer>2620</integer>
+			<integer>2610</integer>
 		</dict>
 		<key>D317DC7C-A9D7-4A26-BBC6-95DA9A05750E</key>
 		<dict>
@@ -3147,9 +3149,9 @@
 		<key>F3D4F96F-2893-4F0D-B5E4-022405CEB1A0</key>
 		<dict>
 			<key>xpos</key>
-			<integer>555</integer>
+			<integer>550</integer>
 			<key>ypos</key>
-			<integer>2505</integer>
+			<integer>2495</integer>
 		</dict>
 		<key>FA25A968-8378-4B1E-9858-2B0DE0135CD0</key>
 		<dict>
@@ -3179,8 +3181,10 @@
 		<key>RESULT_COUNT_LIMIT</key>
 		<string>50</string>
 	</dict>
+	<key>variablesdontexport</key>
+	<array/>
 	<key>version</key>
-	<string>0.1.5</string>
+	<string>0.2.0</string>
 	<key>webaddress</key>
 	<string>https://github.com/jopemachine/alfred-chromium-workflow</string>
 </dict>

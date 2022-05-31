@@ -1,5 +1,7 @@
 package src
 
+// Ref: https://github.com/deanishe/alfred-sublime-text/blob/master/cli.go
+
 import (
 	"log"
 
@@ -29,9 +31,9 @@ var RunWorkflowHelper = func(wf *aw.Workflow, query string) {
 
 		wf.NewItem("Workflow Update Available!").
 			Subtitle("⇥ or ↩ to install update").
-			Autocomplete("workflow:update").
-			Valid(false).
-			Icon(iconUpdateAvailable)
+			Valid(true).
+			Icon(iconUpdateAvailable).
+			Var("update", "true")
 	} else {
 		wf.NewItem("Workflow Is Up To Date").
 			Subtitle("").
@@ -60,7 +62,7 @@ var RunWorkflowHelper = func(wf *aw.Workflow, query string) {
 	wf.NewItem("Cache Favicons Manually").
 		Subtitle("").
 		Valid(true).
-		Var("cache-favicon", "true")
+		Var("cacheFavicons", "true")
 
 	if query != "" {
 		wf.Filter(query)

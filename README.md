@@ -146,11 +146,15 @@ Switch profiles with ease.
 
 Tip: You can check what is your Browser's profile's name in `chrome://version`.
 
-### ch cache
+### ch helper
 
-Cache favicon images based on your visit histories.
+Provides several useful helper features.
 
-You don't need this command since caching runs automatically every three days in the background.
+* Update workflow if a new version is available
+* Cache favicon manually
+* Open Github issues
+* Open Alfred forum link
+* Open READMD.md
 
 ## 🔖 Options
 
@@ -220,6 +224,7 @@ To add new browser, please follow below guideline.
 
 You may also consider below workflows interesting.
 
+- [alfred-firefox](https://github.com/deanishe/alfred-firefox/): Search and control Firefox from Alfred
 - [chrome-control](https://github.com/bit2pixel/chrome-control): A JXA script and an Alfred Workflow for controlling Google Chrome
 
 ## License
