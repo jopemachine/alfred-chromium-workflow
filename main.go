@@ -25,7 +25,6 @@ func alfredCallback() {
 			query = ""
 		}
 
-		API.ShowUpdateStatus(wf, query)
 		API.EnsureFaviconCacheUptodated(wf)
 
 		switch commandType {
@@ -65,6 +64,11 @@ func alfredCallback() {
 			return
 
 		// Change setting
+		case "helper":
+			API.RunWorkflowHelper(wf, query)
+		case "update":
+			API.UpdateWorkflow(wf)
+			return
 		case "cache-favicons":
 			API.CacheFavicons(wf)
 			return
