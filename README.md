@@ -40,13 +40,14 @@ The prerequisites below are required to use that package.
 
 Currently supported browsers are as follows.
 
-* `Chrome`
-* `Chrome Canary`
-* `Chromium`
-* `Edge`
-* `Brave`
-* `Naver Whale`
-* `Epic`
+- [x] Chrome
+- [x] Chrome Canary
+- [x] Chromium
+- [x] Edge
+- [x] Brave
+- [x] Naver Whale
+- [x] Epic
+- [x] Vivaldi
 
 This workflow assumes your browser is `Chrome` at default.
 

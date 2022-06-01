@@ -48,6 +48,8 @@ var GetProfileRootPath = func(browserName string) string {
 		targetPath = `/Users/%s/Library/Application Support/Google/Chrome`
 	case "Naver Whale":
 		targetPath = `/Users/%s/Library/Application Support/Naver/Whale`
+	case "Vivaldi":
+		targetPath = `/Users/%s/Library/Application Support/Vivaldi`
 	case "Epic":
 		targetPath = `/Users/%s/Library/Application Support/HiddenReflex/Epic`
 	default:

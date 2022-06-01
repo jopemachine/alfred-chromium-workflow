@@ -29,6 +29,8 @@ var getApplicationName = func(browserName string) string {
 		return "Whale"
 	case "Epic":
 		return "Epic"
+	case "Vivaldi":
+		return "Vivaldi"
 	default:
 		panic("Unsupported browser. Please consider to make a issue to support the browser if the browser is based on Chromium.")
 	}

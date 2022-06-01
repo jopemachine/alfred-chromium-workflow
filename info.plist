@@ -47,7 +47,18 @@
 			</dict>
 		</array>
 		<key>181306F1-AB65-43C2-BC13-DA02A2F31A94</key>
-		<array/>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>0CC72CE4-1A28-4B5B-A5F0-F3FE5F56A3C7</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
 		<key>2A958B0F-FC3C-4909-B21D-127BB5040193</key>
 		<array>
 			<dict>
@@ -90,7 +101,7 @@
 				<key>destinationuid</key>
 				<string>32E62E1E-C16F-4781-B2E3-4625B0184935</string>
 				<key>modifiers</key>
-				<integer>524288</integer>
+				<integer>1048576</integer>
 				<key>modifiersubtext</key>
 				<string>Close this tab</string>
 				<key>vitoclose</key>
@@ -193,6 +204,18 @@
 				<string></string>
 				<key>sourceoutputuid</key>
 				<string>8F136A9C-846B-4B4B-B91B-BEAD47366700</string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>1E4C5769-71B1-4250-9962-5D3E905B818B</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>sourceoutputuid</key>
+				<string>83B4A474-7EE2-48C6-950D-41C62A51173A</string>
 				<key>vitoclose</key>
 				<false/>
 			</dict>
@@ -620,7 +643,18 @@
 			</dict>
 		</array>
 		<key>D876220A-7127-42E0-A7FF-158840C20BB4</key>
-		<array/>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>FA98A771-8011-4182-8C7B-72B1C040ABCF</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
 		<key>DFE2923A-9229-42B0-A44B-6F1DCE291579</key>
 		<array>
 			<dict>
@@ -941,6 +975,20 @@
 						<string>epic</string>
 						<key>uid</key>
 						<string>8F136A9C-846B-4B4B-B91B-BEAD47366700</string>
+					</dict>
+					<dict>
+						<key>inputstring</key>
+						<string>{var:BROWSER}</string>
+						<key>matchcasesensitive</key>
+						<false/>
+						<key>matchmode</key>
+						<integer>0</integer>
+						<key>matchstring</key>
+						<string>vivaldi</string>
+						<key>outputlabel</key>
+						<string>vivaldi</string>
+						<key>uid</key>
+						<string>83B4A474-7EE2-48C6-950D-41C62A51173A</string>
 					</dict>
 				</array>
 				<key>elselabel</key>
@@ -1298,6 +1346,27 @@
 		<dict>
 			<key>config</key>
 			<dict>
+				<key>lastpathcomponent</key>
+				<false/>
+				<key>onlyshowifquerypopulated</key>
+				<true/>
+				<key>removeextension</key>
+				<false/>
+				<key>text</key>
+				<string></string>
+				<key>title</key>
+				<string>"{query}" copied to clipboard</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.notification</string>
+			<key>uid</key>
+			<string>FA98A771-8011-4182-8C7B-72B1C040ABCF</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
 				<key>alfredfiltersresults</key>
 				<false/>
 				<key>alfredfiltersresultsmatchmode</key>
@@ -1560,7 +1629,7 @@
 			<key>config</key>
 			<dict>
 				<key>browser</key>
-				<string></string>
+				<string>com.vivaldi.Vivaldi</string>
 				<key>spaces</key>
 				<string></string>
 				<key>url</key>
@@ -1571,7 +1640,7 @@
 			<key>type</key>
 			<string>alfred.workflow.action.openurl</string>
 			<key>uid</key>
-			<string>4DB58061-0B2D-4534-AEE2-1B860EF71EC5</string>
+			<string>1E4C5769-71B1-4250-9962-5D3E905B818B</string>
 			<key>version</key>
 			<integer>1</integer>
 		</dict>
@@ -1593,6 +1662,25 @@
 			<string>90C33A56-1AB6-42C4-A308-95D096B6B40C</string>
 			<key>version</key>
 			<integer>3</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>browser</key>
+				<string></string>
+				<key>spaces</key>
+				<string></string>
+				<key>url</key>
+				<string>{query}</string>
+				<key>utf8</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.openurl</string>
+			<key>uid</key>
+			<string>4DB58061-0B2D-4534-AEE2-1B860EF71EC5</string>
+			<key>version</key>
+			<integer>1</integer>
 		</dict>
 		<dict>
 			<key>config</key>
@@ -1989,6 +2077,27 @@
 			<string>9D817542-BF4C-46FA-9C74-6D7756BB86A9</string>
 			<key>version</key>
 			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>lastpathcomponent</key>
+				<false/>
+				<key>onlyshowifquerypopulated</key>
+				<true/>
+				<key>removeextension</key>
+				<false/>
+				<key>text</key>
+				<string></string>
+				<key>title</key>
+				<string>"{query}" copied to clipboard</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.notification</string>
+			<key>uid</key>
+			<string>0CC72CE4-1A28-4B5B-A5F0-F3FE5F56A3C7</string>
+			<key>version</key>
+			<integer>1</integer>
 		</dict>
 		<dict>
 			<key>config</key>
@@ -2496,7 +2605,7 @@
 						<key>matchstring</key>
 						<string></string>
 						<key>outputlabel</key>
-						<string>Open Browser</string>
+						<string>Open browser</string>
 						<key>uid</key>
 						<string>3DD87DB0-67EE-4F7F-BC65-8598FC366EB7</string>
 					</dict>
@@ -2719,6 +2828,13 @@
 			<key>ypos</key>
 			<integer>2385</integer>
 		</dict>
+		<key>0CC72CE4-1A28-4B5B-A5F0-F3FE5F56A3C7</key>
+		<dict>
+			<key>xpos</key>
+			<integer>520</integer>
+			<key>ypos</key>
+			<integer>1630</integer>
+		</dict>
 		<key>1068986A-512F-42A6-9AA1-F9AFF3C207AB</key>
 		<dict>
 			<key>xpos</key>
@@ -2753,6 +2869,13 @@
 			<integer>695</integer>
 			<key>ypos</key>
 			<integer>2495</integer>
+		</dict>
+		<key>1E4C5769-71B1-4250-9962-5D3E905B818B</key>
+		<dict>
+			<key>xpos</key>
+			<integer>1065</integer>
+			<key>ypos</key>
+			<integer>975</integer>
 		</dict>
 		<key>2A958B0F-FC3C-4909-B21D-127BB5040193</key>
 		<dict>
@@ -2815,7 +2938,7 @@
 			<key>xpos</key>
 			<integer>1065</integer>
 			<key>ypos</key>
-			<integer>990</integer>
+			<integer>1100</integer>
 		</dict>
 		<key>4F9A5738-F86E-4275-81C9-16CFC2E465D2</key>
 		<dict>
@@ -3095,7 +3218,7 @@
 			<key>xpos</key>
 			<integer>1065</integer>
 			<key>ypos</key>
-			<integer>860</integer>
+			<integer>855</integer>
 		</dict>
 		<key>DBEF9EBC-450B-40A2-978F-D8774A2B6AD6</key>
 		<dict>
@@ -3142,9 +3265,9 @@
 		<key>F3B05156-E3D0-4FE9-A221-1B84FA8ACFCB</key>
 		<dict>
 			<key>xpos</key>
-			<integer>395</integer>
+			<integer>365</integer>
 			<key>ypos</key>
-			<integer>350</integer>
+			<integer>325</integer>
 		</dict>
 		<key>F3D4F96F-2893-4F0D-B5E4-022405CEB1A0</key>
 		<dict>
@@ -3159,6 +3282,13 @@
 			<integer>370</integer>
 			<key>ypos</key>
 			<integer>2275</integer>
+		</dict>
+		<key>FA98A771-8011-4182-8C7B-72B1C040ABCF</key>
+		<dict>
+			<key>xpos</key>
+			<integer>515</integer>
+			<key>ypos</key>
+			<integer>665</integer>
 		</dict>
 		<key>FB888326-8BEC-4DAE-BE47-69F473BD604C</key>
 		<dict>
@@ -3184,7 +3314,7 @@
 	<key>variablesdontexport</key>
 	<array/>
 	<key>version</key>
-	<string>0.2.1</string>
+	<string>0.2.2</string>
 	<key>webaddress</key>
 	<string>https://github.com/jopemachine/alfred-chromium-workflow</string>
 </dict>

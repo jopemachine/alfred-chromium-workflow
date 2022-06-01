@@ -52,6 +52,7 @@ var SelectBrowser = func(wf *aw.Workflow, query string) {
 		"Edge",
 		"Brave",
 		"Naver Whale",
+		"Vivaldi",
 		"Epic",
 	}
 
@@ -96,10 +97,13 @@ var SelectProfile = func(wf *aw.Workflow, query string) {
 	possibleProfiles = append(possibleProfiles, profiles...)
 
 	for _, profile := range possibleProfiles {
+		title := profile
+
 		if Conf.Profile == profile {
-			profile = "[✔] " + profile
+			title = "[✔] " + profile
 		}
-		wf.NewItem(profile).
+
+		wf.NewItem(title).
 			Valid(true).
 			Arg(profile).
 			Autocomplete(profile)

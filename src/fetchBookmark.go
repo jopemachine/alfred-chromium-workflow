@@ -74,6 +74,8 @@ var FetchBookmark = func(wf *aw.Workflow, query string) {
 			Autocomplete(bookmark.Name).
 			Largetype(bookmark.Url)
 
+		item.Cmd().Subtitle("Press Enter to copy this url to clipboard")
+
 		if FileExist(iconPath) {
 			item.Icon(&aw.Icon{iconPath, ""})
 		}
