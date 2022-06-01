@@ -40,12 +40,16 @@ var GetProfileRootPath = func(browserName string) string {
 		targetPath = `/Users/%s/Library/Application Support/Google/Chrome Canary`
 	case "Edge":
 		targetPath = `/Users/%s/Library/Application Support/Microsoft Edge`
+	case "Edge Canary":
+		targetPath = `/Users/%s/Library/Application Support/Microsoft Edge Canary`
 	case "Chromium":
 		targetPath = `/Users/%s/Library/Application Support/Google/Chrome Cloud Enrollment`
 	case "Brave":
 		targetPath = `/Users/%s/Library/Application Support/BraveSoftware/Brave-Browser`
 	case "Chrome":
 		targetPath = `/Users/%s/Library/Application Support/Google/Chrome`
+	case "Chrome Beta":
+		targetPath = `/Users/%s/Library/Application Support/Google/Chrome Beta`
 	case "Naver Whale":
 		targetPath = `/Users/%s/Library/Application Support/Naver/Whale`
 	case "Vivaldi":

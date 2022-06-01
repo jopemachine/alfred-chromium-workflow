@@ -47,9 +47,11 @@ func addNewBrowserItem(wf *aw.Workflow, browserName string) {
 var SelectBrowser = func(wf *aw.Workflow, query string) {
 	browsers := []string{
 		"Chrome",
+		"Chrome Beta",
 		"Chrome Canary",
 		"Chromium",
 		"Edge",
+		"Edge Canary",
 		"Brave",
 		"Naver Whale",
 		"Vivaldi",

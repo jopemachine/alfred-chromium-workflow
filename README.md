@@ -41,9 +41,11 @@ The prerequisites below are required to use that package.
 Currently supported browsers are as follows.
 
 - [x] Chrome
+- [x] Chrome Beta
 - [x] Chrome Canary
 - [x] Chromium
 - [x] Edge
+- [x] Edge Canary
 - [x] Brave
 - [x] Naver Whale
 - [x] Epic

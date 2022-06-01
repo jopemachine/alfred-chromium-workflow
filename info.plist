@@ -137,6 +137,18 @@
 			</dict>
 			<dict>
 				<key>destinationuid</key>
+				<string>FE231AC9-0C2B-409F-88FC-465AA8904F9E</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>sourceoutputuid</key>
+				<string>618CD57A-1E7B-408B-8534-F873BEB0C138</string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
 				<string>83FD56DB-A00B-46E7-9BDB-639CB45842BB</string>
 				<key>modifiers</key>
 				<integer>0</integer>
@@ -168,6 +180,18 @@
 				<string></string>
 				<key>sourceoutputuid</key>
 				<string>160635B7-4C52-4059-B45D-6134C9969AF9</string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>5EAC7BF9-EFB2-468B-96C0-B3E277DD3F1C</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>sourceoutputuid</key>
+				<string>EEB76945-A1FF-4051-ACE5-73B3D3F6055B</string>
 				<key>vitoclose</key>
 				<false/>
 			</dict>
@@ -806,7 +830,7 @@
 				<key>argument</key>
 				<integer>3</integer>
 				<key>argumenttext</key>
-				<string>Open new window through selected profile</string>
+				<string>Open New Window Through Selected Profile</string>
 				<key>focusedappvariable</key>
 				<false/>
 				<key>focusedappvariablename</key>
@@ -990,6 +1014,34 @@
 						<key>uid</key>
 						<string>83B4A474-7EE2-48C6-950D-41C62A51173A</string>
 					</dict>
+					<dict>
+						<key>inputstring</key>
+						<string>{var:BROWSER}</string>
+						<key>matchcasesensitive</key>
+						<false/>
+						<key>matchmode</key>
+						<integer>0</integer>
+						<key>matchstring</key>
+						<string>edge canary</string>
+						<key>outputlabel</key>
+						<string>edge canary</string>
+						<key>uid</key>
+						<string>EEB76945-A1FF-4051-ACE5-73B3D3F6055B</string>
+					</dict>
+					<dict>
+						<key>inputstring</key>
+						<string>{var:BROWSER}</string>
+						<key>matchcasesensitive</key>
+						<false/>
+						<key>matchmode</key>
+						<integer>0</integer>
+						<key>matchstring</key>
+						<string>chrome beta</string>
+						<key>outputlabel</key>
+						<string>chrome beta</string>
+						<key>uid</key>
+						<string>618CD57A-1E7B-408B-8534-F873BEB0C138</string>
+					</dict>
 				</array>
 				<key>elselabel</key>
 				<string>else</string>
@@ -1058,7 +1110,7 @@
 				<key>argument</key>
 				<integer>3</integer>
 				<key>argumenttext</key>
-				<string>Search query log</string>
+				<string>Retrieve Queries</string>
 				<key>focusedappvariable</key>
 				<false/>
 				<key>focusedappvariablename</key>
@@ -1087,7 +1139,7 @@
 			<key>config</key>
 			<dict>
 				<key>browser</key>
-				<string>org.chromium.Chromium</string>
+				<string>com.google.Chrome.beta</string>
 				<key>spaces</key>
 				<string></string>
 				<key>url</key>
@@ -1098,7 +1150,7 @@
 			<key>type</key>
 			<string>alfred.workflow.action.openurl</string>
 			<key>uid</key>
-			<string>83FD56DB-A00B-46E7-9BDB-639CB45842BB</string>
+			<string>FE231AC9-0C2B-409F-88FC-465AA8904F9E</string>
 			<key>version</key>
 			<integer>1</integer>
 		</dict>
@@ -1125,6 +1177,25 @@
 			<key>config</key>
 			<dict>
 				<key>browser</key>
+				<string>org.chromium.Chromium</string>
+				<key>spaces</key>
+				<string></string>
+				<key>url</key>
+				<string>{query}</string>
+				<key>utf8</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.openurl</string>
+			<key>uid</key>
+			<string>83FD56DB-A00B-46E7-9BDB-639CB45842BB</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>browser</key>
 				<string>com.brave.Browser</string>
 				<key>spaces</key>
 				<string></string>
@@ -1137,25 +1208,6 @@
 			<string>alfred.workflow.action.openurl</string>
 			<key>uid</key>
 			<string>38BA7CBF-1BD3-4091-80E8-A8FC8D39D117</string>
-			<key>version</key>
-			<integer>1</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>browser</key>
-				<string>com.microsoft.edgemac</string>
-				<key>spaces</key>
-				<string></string>
-				<key>url</key>
-				<string>{query}</string>
-				<key>utf8</key>
-				<true/>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.action.openurl</string>
-			<key>uid</key>
-			<string>83172FAA-9D67-426D-8467-B9092DC4873E</string>
 			<key>version</key>
 			<integer>1</integer>
 		</dict>
@@ -1214,7 +1266,7 @@
 				<key>argument</key>
 				<integer>3</integer>
 				<key>argumenttext</key>
-				<string>Bookmark Folder</string>
+				<string>Retrieve Bookmark Folders</string>
 				<key>focusedappvariable</key>
 				<false/>
 				<key>focusedappvariablename</key>
@@ -1328,7 +1380,7 @@
 			<key>config</key>
 			<dict>
 				<key>browser</key>
-				<string>com.google.Chrome.canary</string>
+				<string>com.microsoft.edgemac</string>
 				<key>spaces</key>
 				<string></string>
 				<key>url</key>
@@ -1339,7 +1391,7 @@
 			<key>type</key>
 			<string>alfred.workflow.action.openurl</string>
 			<key>uid</key>
-			<string>A090A5B3-91A4-484B-99B4-292D6100ABFD</string>
+			<string>83172FAA-9D67-426D-8467-B9092DC4873E</string>
 			<key>version</key>
 			<integer>1</integer>
 		</dict>
@@ -1440,7 +1492,7 @@
 				<key>argument</key>
 				<integer>3</integer>
 				<key>argumenttext</key>
-				<string>Autofill Data</string>
+				<string>Retrieve Autofill Data</string>
 				<key>focusedappvariable</key>
 				<false/>
 				<key>focusedappvariablename</key>
@@ -1469,7 +1521,7 @@
 			<key>config</key>
 			<dict>
 				<key>browser</key>
-				<string>com.naver.Whale</string>
+				<string>com.microsoft.edgemac.Canary</string>
 				<key>spaces</key>
 				<string></string>
 				<key>url</key>
@@ -1480,7 +1532,7 @@
 			<key>type</key>
 			<string>alfred.workflow.action.openurl</string>
 			<key>uid</key>
-			<string>87DE6A56-358B-4761-ABDF-345E89076DD8</string>
+			<string>5EAC7BF9-EFB2-468B-96C0-B3E277DD3F1C</string>
 			<key>version</key>
 			<integer>1</integer>
 		</dict>
@@ -1528,7 +1580,7 @@
 			<key>config</key>
 			<dict>
 				<key>browser</key>
-				<string>com.hiddenreflex.Epic</string>
+				<string>com.google.Chrome.canary</string>
 				<key>spaces</key>
 				<string></string>
 				<key>url</key>
@@ -1539,7 +1591,7 @@
 			<key>type</key>
 			<string>alfred.workflow.action.openurl</string>
 			<key>uid</key>
-			<string>D9347EBB-8677-40B3-81C1-478ED5AD7A13</string>
+			<string>A090A5B3-91A4-484B-99B4-292D6100ABFD</string>
 			<key>version</key>
 			<integer>1</integer>
 		</dict>
@@ -1551,7 +1603,7 @@
 				<key>argument</key>
 				<integer>3</integer>
 				<key>argumenttext</key>
-				<string>Bookmark</string>
+				<string>Retrieve Bookmarks</string>
 				<key>focusedappvariable</key>
 				<false/>
 				<key>focusedappvariablename</key>
@@ -1629,7 +1681,7 @@
 			<key>config</key>
 			<dict>
 				<key>browser</key>
-				<string>com.vivaldi.Vivaldi</string>
+				<string>com.naver.Whale</string>
 				<key>spaces</key>
 				<string></string>
 				<key>url</key>
@@ -1640,7 +1692,7 @@
 			<key>type</key>
 			<string>alfred.workflow.action.openurl</string>
 			<key>uid</key>
-			<string>1E4C5769-71B1-4250-9962-5D3E905B818B</string>
+			<string>87DE6A56-358B-4761-ABDF-345E89076DD8</string>
 			<key>version</key>
 			<integer>1</integer>
 		</dict>
@@ -1667,7 +1719,7 @@
 			<key>config</key>
 			<dict>
 				<key>browser</key>
-				<string></string>
+				<string>com.hiddenreflex.Epic</string>
 				<key>spaces</key>
 				<string></string>
 				<key>url</key>
@@ -1678,7 +1730,7 @@
 			<key>type</key>
 			<string>alfred.workflow.action.openurl</string>
 			<key>uid</key>
-			<string>4DB58061-0B2D-4534-AEE2-1B860EF71EC5</string>
+			<string>D9347EBB-8677-40B3-81C1-478ED5AD7A13</string>
 			<key>version</key>
 			<integer>1</integer>
 		</dict>
@@ -1739,7 +1791,7 @@
 				<key>argument</key>
 				<integer>3</integer>
 				<key>argumenttext</key>
-				<string>Visit History</string>
+				<string>Retrieve Visit Histories</string>
 				<key>focusedappvariable</key>
 				<false/>
 				<key>focusedappvariablename</key>
@@ -1767,6 +1819,25 @@
 		<dict>
 			<key>config</key>
 			<dict>
+				<key>browser</key>
+				<string>com.vivaldi.Vivaldi</string>
+				<key>spaces</key>
+				<string></string>
+				<key>url</key>
+				<string>{query}</string>
+				<key>utf8</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.openurl</string>
+			<key>uid</key>
+			<string>1E4C5769-71B1-4250-9962-5D3E905B818B</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
 				<key>autopaste</key>
 				<false/>
 				<key>clipboardtext</key>
@@ -1786,12 +1857,31 @@
 		<dict>
 			<key>config</key>
 			<dict>
+				<key>browser</key>
+				<string></string>
+				<key>spaces</key>
+				<string></string>
+				<key>url</key>
+				<string>{query}</string>
+				<key>utf8</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.openurl</string>
+			<key>uid</key>
+			<string>4DB58061-0B2D-4534-AEE2-1B860EF71EC5</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
 				<key>action</key>
 				<integer>0</integer>
 				<key>argument</key>
 				<integer>3</integer>
 				<key>argumenttext</key>
-				<string>Download History</string>
+				<string>Retrieve Download Histories</string>
 				<key>focusedappvariable</key>
 				<false/>
 				<key>focusedappvariablename</key>
@@ -1888,7 +1978,7 @@
 				<key>argument</key>
 				<integer>3</integer>
 				<key>argumenttext</key>
-				<string>Download History (show only existing files)</string>
+				<string>Retrieve Download Histories (show only existing files)</string>
 				<key>focusedappvariable</key>
 				<false/>
 				<key>focusedappvariablename</key>
@@ -2053,7 +2143,7 @@
 				<key>argument</key>
 				<integer>3</integer>
 				<key>argumenttext</key>
-				<string>Login Data (Id)</string>
+				<string>Retrieve User Ids</string>
 				<key>focusedappvariable</key>
 				<false/>
 				<key>focusedappvariablename</key>
@@ -2196,7 +2286,7 @@
 				<key>argument</key>
 				<integer>3</integer>
 				<key>argumenttext</key>
-				<string>List up opened tabs</string>
+				<string>List All Tabs</string>
 				<key>focusedappvariable</key>
 				<false/>
 				<key>focusedappvariablename</key>
@@ -2275,7 +2365,7 @@
 				<key>argument</key>
 				<integer>3</integer>
 				<key>argumenttext</key>
-				<string>Select Browser</string>
+				<string>Select and Change Browser</string>
 				<key>focusedappvariable</key>
 				<false/>
 				<key>focusedappvariablename</key>
@@ -2357,7 +2447,7 @@
 				<key>scriptfile</key>
 				<string></string>
 				<key>subtext</key>
-				<string>Select and change Browser</string>
+				<string>Select and Change Browser</string>
 				<key>title</key>
 				<string>ch browser</string>
 				<key>type</key>
@@ -2444,7 +2534,7 @@
 				<key>scriptfile</key>
 				<string></string>
 				<key>subtext</key>
-				<string>Select and change Profile</string>
+				<string>Select and Change Profile</string>
 				<key>title</key>
 				<string>ch profile</string>
 				<key>type</key>
@@ -2472,7 +2562,7 @@
 				<key>argument</key>
 				<integer>3</integer>
 				<key>argumenttext</key>
-				<string>Select Profile</string>
+				<string>Select and Change Profile</string>
 				<key>focusedappvariable</key>
 				<false/>
 				<key>focusedappvariablename</key>
@@ -2682,7 +2772,7 @@
 				<key>scriptfile</key>
 				<string></string>
 				<key>subtext</key>
-				<string>View and edit workflow's setting</string>
+				<string>View and Edit Workflow's Setting</string>
 				<key>title</key>
 				<string>ch helper</string>
 				<key>type</key>
@@ -2705,7 +2795,7 @@
 				<key>argument</key>
 				<integer>3</integer>
 				<key>argumenttext</key>
-				<string>View, change alfred-chromium-workflow's setting</string>
+				<string>View and Edit Workflow's Setting</string>
 				<key>focusedappvariable</key>
 				<false/>
 				<key>focusedappvariablename</key>
@@ -2875,7 +2965,7 @@
 			<key>xpos</key>
 			<integer>1065</integer>
 			<key>ypos</key>
-			<integer>975</integer>
+			<integer>1215</integer>
 		</dict>
 		<key>2A958B0F-FC3C-4909-B21D-127BB5040193</key>
 		<dict>
@@ -2903,7 +2993,7 @@
 			<key>xpos</key>
 			<integer>1065</integer>
 			<key>ypos</key>
-			<integer>360</integer>
+			<integer>475</integer>
 		</dict>
 		<key>4313D6C1-93E7-437D-A19E-B3E7132327C3</key>
 		<dict>
@@ -2938,7 +3028,7 @@
 			<key>xpos</key>
 			<integer>1065</integer>
 			<key>ypos</key>
-			<integer>1100</integer>
+			<integer>1340</integer>
 		</dict>
 		<key>4F9A5738-F86E-4275-81C9-16CFC2E465D2</key>
 		<dict>
@@ -2967,6 +3057,13 @@
 			<integer>370</integer>
 			<key>ypos</key>
 			<integer>1875</integer>
+		</dict>
+		<key>5EAC7BF9-EFB2-468B-96C0-B3E277DD3F1C</key>
+		<dict>
+			<key>xpos</key>
+			<integer>1065</integer>
+			<key>ypos</key>
+			<integer>725</integer>
 		</dict>
 		<key>6689E2B4-9ED7-4C19-A68F-702131243A46</key>
 		<dict>
@@ -3043,21 +3140,21 @@
 			<key>xpos</key>
 			<integer>1065</integer>
 			<key>ypos</key>
-			<integer>490</integer>
+			<integer>605</integer>
 		</dict>
 		<key>83FD56DB-A00B-46E7-9BDB-639CB45842BB</key>
 		<dict>
 			<key>xpos</key>
 			<integer>1065</integer>
 			<key>ypos</key>
-			<integer>240</integer>
+			<integer>355</integer>
 		</dict>
 		<key>87DE6A56-358B-4761-ABDF-345E89076DD8</key>
 		<dict>
 			<key>xpos</key>
 			<integer>1065</integer>
 			<key>ypos</key>
-			<integer>735</integer>
+			<integer>975</integer>
 		</dict>
 		<key>8AD934DC-8F4A-4CD6-A83F-BB96B7AF56AE</key>
 		<dict>
@@ -3113,7 +3210,7 @@
 			<key>xpos</key>
 			<integer>1065</integer>
 			<key>ypos</key>
-			<integer>610</integer>
+			<integer>850</integer>
 		</dict>
 		<key>A0DF88BD-B7DC-46FA-8C18-795233355D02</key>
 		<dict>
@@ -3218,7 +3315,7 @@
 			<key>xpos</key>
 			<integer>1065</integer>
 			<key>ypos</key>
-			<integer>855</integer>
+			<integer>1095</integer>
 		</dict>
 		<key>DBEF9EBC-450B-40A2-978F-D8774A2B6AD6</key>
 		<dict>
@@ -3296,6 +3393,13 @@
 			<integer>30</integer>
 			<key>ypos</key>
 			<integer>1375</integer>
+		</dict>
+		<key>FE231AC9-0C2B-409F-88FC-465AA8904F9E</key>
+		<dict>
+			<key>xpos</key>
+			<integer>1065</integer>
+			<key>ypos</key>
+			<integer>240</integer>
 		</dict>
 	</dict>
 	<key>variables</key>

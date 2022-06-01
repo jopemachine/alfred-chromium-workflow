@@ -17,10 +17,14 @@ var getApplicationName = func(browserName string) string {
 	switch browserName {
 	case "Edge":
 		return "Microsoft Edge"
+	case "Edge Canary":
+		return "Microsoft Edge Canary"
 	case "Chrome":
 		return "Google Chrome"
 	case "Chrome Canary":
 		return "Google Chrome Canary"
+	case "Chrome Beta":
+		return "Google Chrome Beta"
 	case "Brave":
 		return "Brave Browser"
 	case "Chromium":
