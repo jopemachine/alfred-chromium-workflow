@@ -15,6 +15,8 @@ import (
 
 var getApplicationName = func(browserName string) string {
 	switch browserName {
+	case "Opera":
+		return "Opera"
 	case "Edge":
 		return "Microsoft Edge"
 	case "Edge Canary":

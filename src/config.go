@@ -55,6 +55,7 @@ var SelectBrowser = func(wf *aw.Workflow, query string) {
 		"Brave",
 		"Naver Whale",
 		"Vivaldi",
+		"Opera",
 		"Epic",
 	}
 

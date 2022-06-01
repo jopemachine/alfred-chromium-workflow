@@ -36,6 +36,8 @@ var GetProfileRootPath = func(browserName string) string {
 	userName := user.Username
 
 	switch browserName {
+	case "Opera":
+		targetPath = `/Users/%s/Library/Application Support/com.operasoftware.Opera`
 	case "Chrome Canary":
 		targetPath = `/Users/%s/Library/Application Support/Google/Chrome Canary`
 	case "Edge":
@@ -64,6 +66,9 @@ var GetProfileRootPath = func(browserName string) string {
 }
 
 var GetDBFilePath = func(browserName string, chromeProfilePath string, dbFile string) string {
+	if (browserName == "Opera") {
+		return fmt.Sprintf(`%s/%s`, GetProfileRootPath(browserName), dbFile)
+	}
 	return fmt.Sprintf(`%s/%s/%s`, GetProfileRootPath(browserName), chromeProfilePath, dbFile)
 }
 

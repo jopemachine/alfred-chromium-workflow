@@ -50,6 +50,7 @@ Currently supported browsers are as follows.
 - [x] Naver Whale
 - [x] Epic
 - [x] Vivaldi
+- [x] Opera
 
 This workflow assumes your browser is `Chrome` at default.
 
