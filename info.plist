@@ -3184,7 +3184,7 @@
 	<key>variablesdontexport</key>
 	<array/>
 	<key>version</key>
-	<string>0.2.0</string>
+	<string>0.2.1</string>
 	<key>webaddress</key>
 	<string>https://github.com/jopemachine/alfred-chromium-workflow</string>
 </dict>
