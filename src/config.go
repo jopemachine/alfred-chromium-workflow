@@ -95,8 +95,11 @@ var SelectProfile = func(wf *aw.Workflow, query string) {
 		profiles = append(profiles, profileFilePathArr[len(profileFilePathArr)-1])
 	}
 
-	possibleProfiles := strings.Split(Conf.CustomizedProfiles, ",")
-	possibleProfiles = append(possibleProfiles, profiles...)
+	possibleProfiles := profiles
+
+	if Conf.CustomizedProfiles != "" {
+		possibleProfiles = append(strings.Split(Conf.CustomizedProfiles, ","), profiles...)
+	}
 
 	for _, profile := range possibleProfiles {
 		title := profile
