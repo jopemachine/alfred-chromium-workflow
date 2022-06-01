@@ -44,6 +44,7 @@ var FetchLoginData = func(wf *aw.Workflow, query string) {
 		item := wf.NewItem(userNameValue).
 			Subtitle(subtitle).
 			Valid(true).
+			Arg(userNameValue).
 			Autocomplete(userNameValue).
 			Copytext(userNameValue).
 			Largetype(userNameValue)

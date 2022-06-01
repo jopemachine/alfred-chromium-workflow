@@ -37,6 +37,7 @@ var FetchAutofillData = func(wf *aw.Workflow, query string) {
 			Subtitle(subtitle).
 			Valid(true).
 			Copytext(autofillValue).
+			Arg(autofillValue).
 			Largetype(autofillValue).
 			Autocomplete(autofillValue).
 			Icon(&aw.Icon{"assets/info.png", ""})
