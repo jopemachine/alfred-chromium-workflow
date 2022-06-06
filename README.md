@@ -62,6 +62,8 @@ Download and double click the `.alfredworkflow` file on the [Release page](https
 
 Note that if your browser is not the default browser (`Chrome`), you need to switch your browser through `ch browser` first.
 
+Register your customized hotkeys if you need to.
+
 ## 📗 Usage
 
 ### chb
