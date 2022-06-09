@@ -1814,7 +1814,7 @@
 				<key>queuemode</key>
 				<integer>2</integer>
 				<key>runningsubtext</key>
-				<string>Searching...</string>
+				<string>Fetching...</string>
 				<key>script</key>
 				<string>./alfred-chromium-workflow 'visit-history' '{query}'</string>
 				<key>scriptargtype</key>
@@ -3581,8 +3581,6 @@
 		<key>RESULT_COUNT_LIMIT</key>
 		<string>50</string>
 	</dict>
-	<key>variablesdontexport</key>
-	<array/>
 	<key>version</key>
 	<string>0.2.6</string>
 	<key>webaddress</key>

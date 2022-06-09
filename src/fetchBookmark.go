@@ -72,7 +72,7 @@ var FetchBookmark = func(wf *aw.Workflow, query string) {
 			Arg(bookmark.Url).
 			Copytext(bookmark.Url).
 			Autocomplete(bookmark.Name).
-			Largetype(bookmark.Url)
+			Largetype(bookmark.Name)
 
 		item.Cmd().Subtitle("Press Enter to copy this url to clipboard")
 

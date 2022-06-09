@@ -66,7 +66,7 @@ var GetProfileRootPath = func(browserName string) string {
 }
 
 var GetDBFilePath = func(browserName string, chromeProfilePath string, dbFile string) string {
-	if (browserName == "Opera") {
+	if browserName == "Opera" {
 		return fmt.Sprintf(`%s/%s`, GetProfileRootPath(browserName), dbFile)
 	}
 	return fmt.Sprintf(`%s/%s/%s`, GetProfileRootPath(browserName), chromeProfilePath, dbFile)

@@ -30,19 +30,19 @@ var FetchDownloadHistory = func(wf *aw.Workflow, query string, showOnlyExistingF
 
 		var subtitle string
 		if FileExist(downloadedFilePath) {
-			subtitle = "[✔]"
+			subtitle = "[✔] "
 		} else {
 			if showOnlyExistingFiles == true {
 				continue
 			}
-			subtitle = "[✖]"
+			subtitle = "[✖] "
 		}
 
 		domainName := ExtractDomainName(downloadedFileFrom)
 		unixTimestamp := ConvertChromeTimeToUnixTimestamp(downloadedStartTime)
 		localeTimeStr := GetLocaleString(unixTimestamp)
 
-		subtitle += fmt.Sprintf(` Downloaded In '%s', From '%s'`, localeTimeStr, domainName)
+		subtitle += localeTimeStr
 
 		item := wf.NewItem(fileName).
 			Subtitle(subtitle).

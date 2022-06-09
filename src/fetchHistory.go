@@ -49,13 +49,13 @@ var FetchHistory = func(wf *aw.Workflow, query string) {
 		localeTimeStr := GetLocaleString(unixTimestamp)
 
 		item := wf.NewItem(urlTitle).
-			Subtitle(fmt.Sprintf(`From '%s', In '%s'`, domainName, localeTimeStr)).
+			Subtitle(localeTimeStr).
 			Valid(true).
 			Quicklook(url).
 			Autocomplete(urlTitle).
 			Arg(url).
 			Copytext(url).
-			Largetype(url)
+			Largetype(urlTitle)
 
 		item.Cmd().Subtitle("Press Enter to copy this url to clipboard")
 
