@@ -109,10 +109,16 @@ var SelectProfile = func(wf *aw.Workflow, query string) {
 			title = "[✔] " + profile
 		}
 
-		wf.NewItem(title).
+		profileImgPath := GetDBFilePath(Conf.Browser, profile, "Google Profile Picture.png")
+
+		item := wf.NewItem(title).
 			Valid(true).
 			Arg(profile).
 			Autocomplete(profile)
+
+		if FileExist(profileImgPath) {
+			item.Icon(&aw.Icon{profileImgPath, ""})
+		}
 	}
 
 	if query != "" {
