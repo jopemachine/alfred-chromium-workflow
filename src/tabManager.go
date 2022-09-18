@@ -59,7 +59,7 @@ var getListUpTabScript = func() string {
 					let title = allTabsTitle[winIdx][tabIdx]
 					let url = allTabsUrls[winIdx][tabIdx]
 
-					if (!query || title.includes(query) || url.includes(query)) {
+					if (!query || title.toLowerCase().includes(query) || url.toLowerCase().includes(query)) {
 						titleToUrl[title] = {
 							 'title': title || 'No Title',
 							 'url': url,
@@ -144,6 +144,7 @@ var getNewTabScript = func() string {
 }
 
 var ListOpenedTabs = func(wf *aw.Workflow, query string) {
+	query = strings.ToLower(query)
 	stdout, err := util.RunJS(getListUpTabScript(), query)
 	CheckError(err)
 
