@@ -6,7 +6,7 @@ require (
 	github.com/deanishe/awgo v0.29.1 // indirect
 	github.com/jpillora/go-tld v1.1.1 // indirect
 	github.com/klauspost/lctime v0.1.0 // indirect
-	github.com/magefile/mage v1.13.0 // indirect
+	github.com/magefile/mage v1.14.0 // indirect
 	github.com/mattn/go-sqlite3 v1.14.13 // indirect
 	github.com/weppos/publicsuffix-go v0.15.0 // indirect
 	go.deanishe.net/env v0.5.1 // indirect
