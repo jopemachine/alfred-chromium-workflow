@@ -887,8 +887,6 @@
 				<integer>0</integer>
 				<key>hotmod</key>
 				<integer>0</integer>
-				<key>hotstring</key>
-				<string></string>
 				<key>leftcursor</key>
 				<false/>
 				<key>modsmode</key>
@@ -908,12 +906,14 @@
 			<dict>
 				<key>browser</key>
 				<string>com.google.Chrome</string>
+				<key>skipqueryencode</key>
+				<false/>
+				<key>skipvarencode</key>
+				<false/>
 				<key>spaces</key>
 				<string></string>
 				<key>url</key>
 				<string>{query}</string>
-				<key>utf8</key>
-				<true/>
 			</dict>
 			<key>type</key>
 			<string>alfred.workflow.action.openurl</string>
@@ -1107,6 +1107,8 @@
 				</array>
 				<key>elselabel</key>
 				<string>else</string>
+				<key>hideelse</key>
+				<false/>
 			</dict>
 			<key>type</key>
 			<string>alfred.workflow.utility.conditional</string>
@@ -1179,8 +1181,6 @@
 				<integer>0</integer>
 				<key>hotmod</key>
 				<integer>0</integer>
-				<key>hotstring</key>
-				<string></string>
 				<key>leftcursor</key>
 				<false/>
 				<key>modsmode</key>
@@ -1200,12 +1200,14 @@
 			<dict>
 				<key>browser</key>
 				<string>com.google.Chrome.beta</string>
+				<key>skipqueryencode</key>
+				<false/>
+				<key>skipvarencode</key>
+				<false/>
 				<key>spaces</key>
 				<string></string>
 				<key>url</key>
 				<string>{query}</string>
-				<key>utf8</key>
-				<true/>
 			</dict>
 			<key>type</key>
 			<string>alfred.workflow.action.openurl</string>
@@ -1238,12 +1240,14 @@
 			<dict>
 				<key>browser</key>
 				<string>org.chromium.Chromium</string>
+				<key>skipqueryencode</key>
+				<false/>
+				<key>skipvarencode</key>
+				<false/>
 				<key>spaces</key>
 				<string></string>
 				<key>url</key>
 				<string>{query}</string>
-				<key>utf8</key>
-				<true/>
 			</dict>
 			<key>type</key>
 			<string>alfred.workflow.action.openurl</string>
@@ -1257,12 +1261,14 @@
 			<dict>
 				<key>browser</key>
 				<string>com.brave.Browser</string>
+				<key>skipqueryencode</key>
+				<false/>
+				<key>skipvarencode</key>
+				<false/>
 				<key>spaces</key>
 				<string></string>
 				<key>url</key>
 				<string>{query}</string>
-				<key>utf8</key>
-				<true/>
 			</dict>
 			<key>type</key>
 			<string>alfred.workflow.action.openurl</string>
@@ -1333,8 +1339,6 @@
 				<integer>0</integer>
 				<key>hotmod</key>
 				<integer>0</integer>
-				<key>hotstring</key>
-				<string></string>
 				<key>leftcursor</key>
 				<false/>
 				<key>modsmode</key>
@@ -1439,12 +1443,14 @@
 			<dict>
 				<key>browser</key>
 				<string>com.microsoft.edgemac</string>
+				<key>skipqueryencode</key>
+				<false/>
+				<key>skipvarencode</key>
+				<false/>
 				<key>spaces</key>
 				<string></string>
 				<key>url</key>
 				<string>{query}</string>
-				<key>utf8</key>
-				<true/>
 			</dict>
 			<key>type</key>
 			<string>alfred.workflow.action.openurl</string>
@@ -1557,8 +1563,6 @@
 				<integer>0</integer>
 				<key>hotmod</key>
 				<integer>0</integer>
-				<key>hotstring</key>
-				<string></string>
 				<key>leftcursor</key>
 				<false/>
 				<key>modsmode</key>
@@ -1578,12 +1582,14 @@
 			<dict>
 				<key>browser</key>
 				<string>com.microsoft.edgemac.Canary</string>
+				<key>skipqueryencode</key>
+				<false/>
+				<key>skipvarencode</key>
+				<false/>
 				<key>spaces</key>
 				<string></string>
 				<key>url</key>
 				<string>{query}</string>
-				<key>utf8</key>
-				<true/>
 			</dict>
 			<key>type</key>
 			<string>alfred.workflow.action.openurl</string>
@@ -1637,12 +1643,14 @@
 			<dict>
 				<key>browser</key>
 				<string>com.google.Chrome.canary</string>
+				<key>skipqueryencode</key>
+				<false/>
+				<key>skipvarencode</key>
+				<false/>
 				<key>spaces</key>
 				<string></string>
 				<key>url</key>
 				<string>{query}</string>
-				<key>utf8</key>
-				<true/>
 			</dict>
 			<key>type</key>
 			<string>alfred.workflow.action.openurl</string>
@@ -1666,8 +1674,6 @@
 				<integer>0</integer>
 				<key>hotmod</key>
 				<integer>0</integer>
-				<key>hotstring</key>
-				<string></string>
 				<key>leftcursor</key>
 				<false/>
 				<key>modsmode</key>
@@ -1736,12 +1742,14 @@
 			<dict>
 				<key>browser</key>
 				<string>com.naver.Whale</string>
+				<key>skipqueryencode</key>
+				<false/>
+				<key>skipvarencode</key>
+				<false/>
 				<key>spaces</key>
 				<string></string>
 				<key>url</key>
 				<string>{query}</string>
-				<key>utf8</key>
-				<true/>
 			</dict>
 			<key>type</key>
 			<string>alfred.workflow.action.openurl</string>
@@ -1774,12 +1782,14 @@
 			<dict>
 				<key>browser</key>
 				<string>com.hiddenreflex.Epic</string>
+				<key>skipqueryencode</key>
+				<false/>
+				<key>skipvarencode</key>
+				<false/>
 				<key>spaces</key>
 				<string></string>
 				<key>url</key>
 				<string>{query}</string>
-				<key>utf8</key>
-				<true/>
 			</dict>
 			<key>type</key>
 			<string>alfred.workflow.action.openurl</string>
@@ -1852,8 +1862,6 @@
 				<integer>0</integer>
 				<key>hotmod</key>
 				<integer>0</integer>
-				<key>hotstring</key>
-				<string></string>
 				<key>leftcursor</key>
 				<false/>
 				<key>modsmode</key>
@@ -1873,12 +1881,14 @@
 			<dict>
 				<key>browser</key>
 				<string>com.vivaldi.Vivaldi</string>
+				<key>skipqueryencode</key>
+				<false/>
+				<key>skipvarencode</key>
+				<false/>
 				<key>spaces</key>
 				<string></string>
 				<key>url</key>
 				<string>{query}</string>
-				<key>utf8</key>
-				<true/>
 			</dict>
 			<key>type</key>
 			<string>alfred.workflow.action.openurl</string>
@@ -1911,12 +1921,14 @@
 			<dict>
 				<key>browser</key>
 				<string>com.operasoftware.Opera</string>
+				<key>skipqueryencode</key>
+				<false/>
+				<key>skipvarencode</key>
+				<false/>
 				<key>spaces</key>
 				<string></string>
 				<key>url</key>
 				<string>{query}</string>
-				<key>utf8</key>
-				<true/>
 			</dict>
 			<key>type</key>
 			<string>alfred.workflow.action.openurl</string>
@@ -1940,8 +1952,6 @@
 				<integer>0</integer>
 				<key>hotmod</key>
 				<integer>0</integer>
-				<key>hotstring</key>
-				<string></string>
 				<key>leftcursor</key>
 				<false/>
 				<key>modsmode</key>
@@ -2025,12 +2035,14 @@
 			<dict>
 				<key>browser</key>
 				<string></string>
+				<key>skipqueryencode</key>
+				<false/>
+				<key>skipvarencode</key>
+				<false/>
 				<key>spaces</key>
 				<string></string>
 				<key>url</key>
 				<string>{query}</string>
-				<key>utf8</key>
-				<true/>
 			</dict>
 			<key>type</key>
 			<string>alfred.workflow.action.openurl</string>
@@ -2054,8 +2066,6 @@
 				<integer>0</integer>
 				<key>hotmod</key>
 				<integer>0</integer>
-				<key>hotstring</key>
-				<string></string>
 				<key>leftcursor</key>
 				<false/>
 				<key>modsmode</key>
@@ -2217,8 +2227,6 @@
 				<integer>0</integer>
 				<key>hotmod</key>
 				<integer>0</integer>
-				<key>hotstring</key>
-				<string></string>
 				<key>leftcursor</key>
 				<false/>
 				<key>modsmode</key>
@@ -2358,8 +2366,6 @@
 				<integer>0</integer>
 				<key>hotmod</key>
 				<integer>0</integer>
-				<key>hotstring</key>
-				<string></string>
 				<key>leftcursor</key>
 				<false/>
 				<key>modsmode</key>
@@ -2435,8 +2441,6 @@
 				<integer>0</integer>
 				<key>hotmod</key>
 				<integer>0</integer>
-				<key>hotstring</key>
-				<string></string>
 				<key>leftcursor</key>
 				<false/>
 				<key>modsmode</key>
@@ -2545,6 +2549,8 @@
 				</array>
 				<key>elselabel</key>
 				<string>Switch profile</string>
+				<key>hideelse</key>
+				<false/>
 			</dict>
 			<key>type</key>
 			<string>alfred.workflow.utility.conditional</string>
@@ -2681,8 +2687,6 @@
 				<integer>0</integer>
 				<key>hotmod</key>
 				<integer>0</integer>
-				<key>hotstring</key>
-				<string></string>
 				<key>leftcursor</key>
 				<false/>
 				<key>modsmode</key>
@@ -2742,6 +2746,8 @@
 				</array>
 				<key>elselabel</key>
 				<string>profile not found</string>
+				<key>hideelse</key>
+				<false/>
 			</dict>
 			<key>type</key>
 			<string>alfred.workflow.utility.conditional</string>
@@ -2772,6 +2778,8 @@
 				</array>
 				<key>elselabel</key>
 				<string>Switch profile</string>
+				<key>hideelse</key>
+				<false/>
 			</dict>
 			<key>type</key>
 			<string>alfred.workflow.utility.conditional</string>
@@ -2851,6 +2859,8 @@
 				</array>
 				<key>elselabel</key>
 				<string></string>
+				<key>hideelse</key>
+				<false/>
 			</dict>
 			<key>type</key>
 			<string>alfred.workflow.utility.conditional</string>
@@ -2864,12 +2874,14 @@
 			<dict>
 				<key>browser</key>
 				<string></string>
+				<key>skipqueryencode</key>
+				<false/>
+				<key>skipvarencode</key>
+				<false/>
 				<key>spaces</key>
 				<string></string>
 				<key>url</key>
 				<string>{var:url}</string>
-				<key>utf8</key>
-				<true/>
 			</dict>
 			<key>type</key>
 			<string>alfred.workflow.action.openurl</string>
@@ -2942,8 +2954,6 @@
 				<integer>0</integer>
 				<key>hotmod</key>
 				<integer>0</integer>
-				<key>hotstring</key>
-				<string></string>
 				<key>leftcursor</key>
 				<false/>
 				<key>modsmode</key>
@@ -3568,6 +3578,8 @@
 			<integer>240</integer>
 		</dict>
 	</dict>
+	<key>userconfigurationconfig</key>
+	<array/>
 	<key>variables</key>
 	<dict>
 		<key>BROWSER</key>
@@ -3584,7 +3596,7 @@
 	<key>variablesdontexport</key>
 	<array/>
 	<key>version</key>
-	<string>0.2.7</string>
+	<string>0.2.8</string>
 	<key>webaddress</key>
 	<string>https://github.com/jopemachine/alfred-chromium-workflow</string>
 </dict>

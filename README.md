@@ -1,6 +1,6 @@
 <h1 align="center">
 		Alfred-chromium-workflow<br>
-		<img src="https://img.shields.io/badge/Alfred-4-blueviolet">
+		<img src="https://img.shields.io/badge/Alfred-5-blueviolet">
 		<img src="https://img.shields.io/github/downloads/jopemachine/alfred-chromium-workflow/total.svg">
 		<img src="https://img.shields.io/github/license/jopemachine/alfred-chromium-workflow.svg" alt="License">
 </h1>
@@ -83,7 +83,7 @@ Retrieve bookmark folders.
 Retrieve visit histories.
 
 Append word starting with `#` to retrieve only the logs in that domain.
- 
+
 Example:
 
 `chh #github [foo bar]`
