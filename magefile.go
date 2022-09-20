@@ -1,3 +1,4 @@
+//go:build mage
 // +build mage
 
 package main
@@ -46,4 +47,10 @@ func Clean() error { return sh.Run("mage", "-clean") }
 
 func Formatter() error { return sh.Run("gofmt", "-w", "src", "main.go") }
 
-func Builder() error { return sh.Run("go", "build", ".") }
+func Builder() error {
+	return sh.RunWith(map[string]string{
+		"GOOS":        "darwin",
+		"GOARCH":      "amd64",
+		"CGO_ENABLED": "1",
+	}, "go", "build", "-o", "alfred-chromium-workflow", ".")
+}
