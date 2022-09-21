@@ -58,11 +58,13 @@ You can switch the browser with `ch browser`.
 
 ## 🔨 How to install
 
-Download and double click the `.alfredworkflow` file on the [Release page](https://github.com/jopemachine/alfred-chromium-workflow/releases).
+Download `alfred-chromium-workflow.alfredworkflow` on the [Release page](https://github.com/jopemachine/alfred-chromium-workflow/releases) and double click the file to add to Alfred.
 
-Note that if your browser is not the default browser (`Chrome`), you need to switch your browser through `ch browser` first.
+* The executable is not [code-signed](https://developer.apple.com/support/code-signing/) so manual verification of the executable is required to run Alfred commands. From the Alfred Preferences' Workflows tab, right-click `alfred-chromium-workflow` in the left nav, and select "Open in Finder". Find and right-click the `alfred-chromium-workflow` executable, then click "Open" (do not simply double-click the file). You will be presented with a modal dialog that reads "macOS cannot verify the developer of “alfred-chromium-workflow”. Are you sure you want to open it?" - click Open. The warning will no longer appear during workflow usage.
 
-Register your customized hotkeys if you need to.
+* Note that if your browser is not the default browser (`Chrome`), you need to switch your browser through `ch browser` first.
+
+* Register your customized hotkeys if you need to.
 
 ## 📗 Usage
 
