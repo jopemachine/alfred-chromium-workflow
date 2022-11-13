@@ -3,6 +3,7 @@
 		<img src="https://img.shields.io/badge/Alfred-5-blueviolet">
 		<img src="https://img.shields.io/github/downloads/jopemachine/alfred-chromium-workflow/total.svg">
 		<img src="https://img.shields.io/github/license/jopemachine/alfred-chromium-workflow.svg" alt="License">
+		<img src="https://goreportcard.com/badge/github.com/jopemachine/alfred-chromium-workflow">
 </h1>
 
 Alfred workflow for Chromium browsers
