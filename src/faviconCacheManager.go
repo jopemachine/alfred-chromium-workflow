@@ -9,7 +9,7 @@ import (
 	"path/filepath"
 	"time"
 
-	"github.com/deanishe/awgo"
+	aw "github.com/deanishe/awgo"
 )
 
 var IsFaviconCacheExpired = func(wf *aw.Workflow) bool {

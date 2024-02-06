@@ -5,7 +5,7 @@ import (
 	"path/filepath"
 	"strings"
 
-	"github.com/deanishe/awgo"
+	aw "github.com/deanishe/awgo"
 )
 
 type WorkflowConfig struct {
@@ -57,6 +57,7 @@ var SelectBrowser = func(wf *aw.Workflow, query string) {
 		"Vivaldi",
 		"Opera",
 		"Epic",
+		"Arc",
 	}
 
 	for _, browser := range browsers {

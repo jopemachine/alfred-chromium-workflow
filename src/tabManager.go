@@ -9,7 +9,7 @@ import (
 	"sort"
 	"strings"
 
-	"github.com/deanishe/awgo"
+	aw "github.com/deanishe/awgo"
 	"github.com/deanishe/awgo/util"
 )
 
@@ -37,6 +37,8 @@ var getApplicationName = func(browserName string) string {
 		return "Epic"
 	case "Vivaldi":
 		return "Vivaldi"
+	case "Arc":
+		return "Arc"
 	default:
 		panic("Unsupported browser. Please consider to make a issue to support the browser if the browser is based on Chromium.")
 	}

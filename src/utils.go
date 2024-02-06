@@ -16,7 +16,7 @@ import (
 	"strings"
 	"time"
 
-	"github.com/deanishe/awgo"
+	aw "github.com/deanishe/awgo"
 	"github.com/klauspost/lctime"
 	_ "github.com/mattn/go-sqlite3"
 	psl "github.com/weppos/publicsuffix-go/publicsuffix"
@@ -58,6 +58,8 @@ var GetProfileRootPath = func(browserName string) string {
 		targetPath = `/Users/%s/Library/Application Support/Vivaldi`
 	case "Epic":
 		targetPath = `/Users/%s/Library/Application Support/HiddenReflex/Epic`
+	case "Arc":
+		targetPath = `/Users/%s/Library/Application Support/Arc/User Data`
 	default:
 		panic("Unsupported browser. Please consider to make a issue to support the browser if the browser is based on Chromium.")
 	}

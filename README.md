@@ -52,6 +52,7 @@ Currently supported browsers are as follows.
 - [x] Epic
 - [x] Vivaldi
 - [x] Opera
+- [x] Arc
 
 This workflow assumes your browser is `Chrome` at default.
 
@@ -66,6 +67,8 @@ Download `alfred-chromium-workflow.alfredworkflow` on the [Release page](https:/
 * Note that if your browser is not the default browser (`Chrome`), you need to switch your browser through `ch browser` first.
 
 * Register your customized hotkeys if you need to.
+
+> Note : This workflow may not work on Intel Macs in versions 0.3.0 and above.
 
 ## 📗 Usage
 

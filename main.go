@@ -3,7 +3,7 @@ package main
 import (
 	"flag"
 
-	"github.com/deanishe/awgo"
+	aw "github.com/deanishe/awgo"
 	"github.com/deanishe/awgo/update"
 	API "github.com/jopemachine/alfred-chromium-workflow/src"
 	"github.com/klauspost/lctime"
